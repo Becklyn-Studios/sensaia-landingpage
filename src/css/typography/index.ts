@@ -4,6 +4,7 @@ import { Typeface, typefaces } from "@css/typography/typeface";
 //@todo adjust font weights
 const fontWeights = {
     regular: 400,
+    medium: 500,
     semiBold: 600,
     bold: 700,
 } as const;

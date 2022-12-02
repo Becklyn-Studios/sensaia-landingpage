@@ -19,6 +19,8 @@ export const theme = {
 
         yellow: "#FFED00",
         yellowLight: "#FFF788",
+
+        white: "#ffffff",
     },
     //endregion
 

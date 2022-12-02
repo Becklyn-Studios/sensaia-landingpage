@@ -12,6 +12,15 @@ export const parameters = {
             date: /Date$/,
         },
     },
+    backgrounds: {
+        default: "dark-blue",
+        values: [
+            {
+                name: "dark-blue",
+                value: "#041C31",
+            },
+        ],
+    },
 };
 
 Object.defineProperty(NextImage, "default", {
