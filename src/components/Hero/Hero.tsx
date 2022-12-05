@@ -43,7 +43,7 @@ export const Hero: React.FC<{}> = () => {
     return (
         <Container>
             <HeroWrapper>
-                <Image src="/blob.png" width={942} height={920} />
+                <Image src="/blob.png" width={942} height={920} alt="Blob" />
 
                 <HeroContentWrapper>
                     <Headline size="xlarge">The AI Sensation for Renewable Energy.</Headline>

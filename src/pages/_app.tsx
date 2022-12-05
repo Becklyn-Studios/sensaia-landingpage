@@ -3,6 +3,7 @@ import { AppProps } from "next/app";
 import { ThemeProvider } from "styled-components";
 import { theme } from "@css/theme";
 import { GlobalStyle } from "@css/GlobalStyle";
+import { appWithTranslation } from "next-i18next";
 
 const App: React.FC<AppProps> = ({ Component, pageProps }) => {
     return (
@@ -13,4 +14,4 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => {
     );
 };
 
-export default App;
+export default appWithTranslation(App);

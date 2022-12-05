@@ -1,6 +1,6 @@
 import React, { AnchorHTMLAttributes, ButtonHTMLAttributes, PropsWithChildren } from "react";
 import Link, { LinkProps } from "next/link";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { text } from "@css/typography";
 import { hover } from "@css/helper";
 
