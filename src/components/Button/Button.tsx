@@ -8,7 +8,8 @@ const ButtonWrapper = styled.button`
     border-radius: 6.25rem;
     background-color: ${p => p.theme.colors.yellow};
     padding: 15px 25px;
-    ${text("textMd", "semiBold")};
+    ${text("textMd", "medium")};
+    line-height: 1;
 
     ${p => hover`
         background-color: ${p.theme.colors.yellowLight};

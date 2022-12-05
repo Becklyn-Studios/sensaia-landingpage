@@ -18,5 +18,4 @@ export const flowText = (typeface: Typeface, fontWeight: FontWeight = "regular")
 
 export const text = (typeface: Typeface, fontWeight: FontWeight = "regular") => css`
     ${flowText(typeface, fontWeight)};
-    line-height: normal;
 `;

@@ -23,7 +23,7 @@ const HeadlineWrapper = styled.div<HeadlineProps>`
 
 interface HeadlineProps {
     children: React.ReactNode;
-    size: "xlarge";
+    size: "xxlarge";
 }
 
 export const Headline: React.FC<HeadlineProps> = ({ children, size }) => {

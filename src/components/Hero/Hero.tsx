@@ -46,9 +46,9 @@ export const Hero: React.FC<{}> = () => {
                 <Image src="/blob.png" width={942} height={920} alt="Blob" />
 
                 <HeroContentWrapper>
-                    <Headline size="xlarge">The AI Sensation for Renewable Energy.</Headline>
+                    <Headline size="xxlarge">The AI Sensation for Renewable Energy.</Headline>
 
-                    <Button href="#">Say HI to Sensaia</Button>
+                    <Button href="#">Say Hi to Sensaia</Button>
                 </HeroContentWrapper>
             </HeroWrapper>
         </Container>
