@@ -4,6 +4,8 @@
 import React from "react";
 import styled from "styled-components";
 
+import { useTranslation } from "next-i18next";
+
 /**
  * Internal dependencies
  */
@@ -35,6 +37,8 @@ const HeaderMenuUtils = styled.div`
 `;
 
 export const Header: React.FC<{}> = () => {
+    const { t } = useTranslation();
+
     return (
         <Container>
             <HeaderWrapper>
@@ -42,18 +46,18 @@ export const Header: React.FC<{}> = () => {
 
                 <HeaderMenuWrapper>
                     <Menu>
-                        <MenuItem href="#">Solar & Wind</MenuItem>
-                        <MenuItem href="#">Features</MenuItem>
-                        <MenuItem href="#">USPs</MenuItem>
-                        <MenuItem href="#">Benefits</MenuItem>
-                        <MenuItem href="#">About</MenuItem>
+                        <MenuItem href="#">{t("menu.Solar & Wind")}</MenuItem>
+                        <MenuItem href="#">{t("menu.Features")}</MenuItem>
+                        <MenuItem href="#">{t("menu.USPs")}</MenuItem>
+                        <MenuItem href="#">{t("menu.Benefits")}</MenuItem>
+                        <MenuItem href="#">{t("menu.About")}</MenuItem>
                     </Menu>
                 </HeaderMenuWrapper>
 
                 <HeaderMenuUtils>
                     <LanguageSwitcher />
 
-                    <Button>Get in touch</Button>
+                    <Button>{t("contact-button")}</Button>
                 </HeaderMenuUtils>
             </HeaderWrapper>
         </Container>

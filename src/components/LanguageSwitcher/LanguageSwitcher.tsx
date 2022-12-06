@@ -3,18 +3,33 @@
  */
 import React from "react";
 import styled from "styled-components";
+import { useRouter } from "next/router";
+import { hover } from "@css/helper";
 
 const LanguageSwitcherButton = styled.div`
     font-size: 16px;
     line-height: 16px;
     color: #3f5e79;
+    cursor: pointer;
+
+    ${hover`
+        opacity: .7;
+    `}
 `;
 
 export const LanguageSwitcher: React.FC<{}> = () => {
-    // const languageOptions = {
-    //     en: "EN",
-    //     de: "DE",
-    // };
+    const router = useRouter();
 
-    return <LanguageSwitcherButton>DE</LanguageSwitcherButton>;
+    const currentLocale = router.locale;
+    const switchableLocale = currentLocale === "en" ? "de" : "en";
+
+    const handleLocaleSwitch = () => {
+        router.push("/", "/", { locale: switchableLocale });
+    };
+
+    return (
+        <LanguageSwitcherButton onClick={handleLocaleSwitch}>
+            {switchableLocale.toUpperCase()}
+        </LanguageSwitcherButton>
+    );
 };

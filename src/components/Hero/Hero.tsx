@@ -5,6 +5,8 @@ import React from "react";
 import Image from "next/image";
 import styled from "styled-components";
 
+import { useTranslation } from "next-i18next";
+
 /**
  * Internal dependencies
  */
@@ -40,15 +42,17 @@ const HeroContentWrapper = styled.div`
 `;
 
 export const Hero: React.FC<{}> = () => {
+    const { t } = useTranslation("common");
+
     return (
         <Container>
             <HeroWrapper>
                 <Image src="/blob.png" width={942} height={920} alt="Blob" />
 
                 <HeroContentWrapper>
-                    <Headline size="xxlarge">The AI Sensation for Renewable Energy.</Headline>
+                    <Headline size="xxlarge">{t("hero.text")}</Headline>
 
-                    <Button href="#">Say Hi to Sensaia</Button>
+                    <Button href="#">{t("hero.button")}</Button>
                 </HeroContentWrapper>
             </HeroWrapper>
         </Container>

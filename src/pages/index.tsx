@@ -3,6 +3,8 @@
  */
 import React from "react";
 
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+
 /**
  * Internal dependencies
  */
@@ -20,3 +22,12 @@ const Home: React.FC = () => {
 };
 
 export default Home;
+
+export async function getStaticProps({ locale }) {
+    return {
+        props: {
+            ...(await serverSideTranslations(locale, ["common"])),
+            // Will be passed to the page component as props
+        },
+    };
+}

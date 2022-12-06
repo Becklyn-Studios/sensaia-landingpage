@@ -1,0 +1,14 @@
+{
+    "menu": {
+        "Solar & Wind": "Solar & Wind",
+        "Features": "Features",
+        "USPs": "USPs",
+        "Benefits": "Benefits",
+        "About": "About"
+    },
+    "contact-button": "Get in Touch",
+    "hero": {
+        "text": "The AI Sensation for Renewable Energy.",
+        "button": "Say Hi to Sensaia"
+    }
+}
