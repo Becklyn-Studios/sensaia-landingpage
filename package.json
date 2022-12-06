@@ -9,8 +9,8 @@
         "analyze": "ANALYZE=true next build",
         "format": "prettier --write \"**/*.{ts,tsx,json}\"",
         "lint": "prettier --check \"**/*.{ts,tsx,json}\"",
-        "storybook": "start-storybook -p 6006",
-        "build-storybook": "build-storybook -c .storybook -o .storybook/build"
+        "storybook": "start-storybook -p 6006 -s ./src",
+        "build-storybook": "build-storybook -c .storybook -o .storybook/build -s ./src"
     },
     "dependencies": {
         "i18next": "^22.0.7",
@@ -19,6 +19,7 @@
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "react-i18next": "^12.0.0",
+        "storybook-addon-next-router": "^4.0.1",
         "styled-components": "^5.3.6"
     },
     "devDependencies": {
@@ -45,5 +46,10 @@
         "typescript": "^4.9.3",
         "webpack": "^5.75.0"
     },
-    "prettier": "@becklyn/prettier"
+    "prettier": "@becklyn/prettier",
+    "overrides": {
+        "storybook-addon-next-router": {
+            "next": "$next"
+        }
+    }
 }

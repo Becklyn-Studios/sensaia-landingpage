@@ -1,3 +1,4 @@
+import { RouterContext } from "next/dist/shared/lib/router-context"; // next 12
 import { default as NextImage } from "next/image";
 import { addDecorator } from "@storybook/react";
 import { ThemeProvider } from "styled-components";
@@ -20,6 +21,9 @@ export const parameters = {
                 value: "#041C31",
             },
         ],
+    },
+    nextRouter: {
+        Provider: RouterContext.Provider,
     },
 };
 
