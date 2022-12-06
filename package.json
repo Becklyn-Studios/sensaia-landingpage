@@ -9,8 +9,8 @@
         "analyze": "ANALYZE=true next build",
         "format": "prettier --write \"**/*.{ts,tsx,json}\"",
         "lint": "prettier --check \"**/*.{ts,tsx,json}\"",
-        "storybook": "start-storybook -p 6006 -s ./src",
-        "build-storybook": "build-storybook -c .storybook -o .storybook/build -s ./src"
+        "storybook": "start-storybook -p 6006",
+        "build-storybook": "build-storybook -c .storybook -o .storybook/build"
     },
     "dependencies": {
         "i18next": "^22.0.7",
@@ -38,6 +38,7 @@
         "@types/react": "^18.0.25",
         "@types/styled-components": "^5.1.26",
         "babel-loader": "^8.3.0",
+        "copy-webpack-plugin": "^11.0.0",
         "eslint": "^7.30.0",
         "eslint-config-next": "^13.0.4",
         "prettier": "^2.6.2",
