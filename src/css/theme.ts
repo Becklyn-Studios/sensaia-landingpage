@@ -16,10 +16,8 @@ export const theme = {
         gray700: "#6e6e6e",
         gray800: "#4b4b4b",
         gray900: "#2c2c2c",
-
         yellow: "#FFED00",
         yellowLight: "#FFF788",
-
         white: "#ffffff",
     },
     //endregion

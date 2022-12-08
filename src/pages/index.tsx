@@ -11,6 +11,7 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
  */
 import { Header } from "../components/Header/Header";
 import { Hero } from "../components/Hero/Hero";
+import { Features } from "../components/Features/Features";
 
 const Home: React.FC = () => {
     return (
@@ -18,6 +19,8 @@ const Home: React.FC = () => {
             <Header />
 
             <Hero />
+            
+            <Features />
         </div>
     );
 };
