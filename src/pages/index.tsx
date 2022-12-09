@@ -14,6 +14,7 @@ import { Hero } from "../components/Hero/Hero";
 import { Features } from "../components/Features/Features";
 import { Spacer } from "../components/Spacer/Spacer";
 import { Intro } from "../components/Intro/Intro";
+import { DecorBlob } from "../components/DecorBlob/DecorBlob";
 
 const Home: React.FC = () => {
     return (
@@ -21,6 +22,8 @@ const Home: React.FC = () => {
             <Header />
 
             <Hero />
+
+            <DecorBlob/>
 
             <Intro/>
 

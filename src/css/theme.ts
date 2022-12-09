@@ -34,7 +34,7 @@ export const theme = {
         m: "calc(100vw - 12rem)",
         l: "calc(100vw - 12rem)",
         xl: "calc(100vw - 19rem)",
-        xxl: "125rem",
+        xxl: "168rem",
     },
     //endregion
 

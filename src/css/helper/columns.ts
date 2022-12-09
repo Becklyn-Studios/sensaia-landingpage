@@ -13,9 +13,11 @@ export const columns = (columns: PartialRecord<Breakpoint, number>) => {
             return;
         }
 
+        console.log(`${breakpoints().only(breakpoint)}`)
+
         return css`
             ${breakpoints().only(breakpoint)} {
-                width: calc(${p => p.theme.contentWidth[breakpoint]} * (${column} / 12));
+                width: calc(100% * (${column} / 12));
             }
         `;
     });

@@ -7,6 +7,7 @@ export const GlobalStyle = createGlobalStyle`
     ${stylesheet};
 
     body {
+    	color: #fff;
         background-color: #041C31;
         font-family: 'Sharp Grotesk DB Cyr', sans-serif;
     }

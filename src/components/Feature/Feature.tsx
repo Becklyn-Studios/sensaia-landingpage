@@ -6,14 +6,13 @@ import styled from "styled-components";
 import Image from "next/image";
 
 import { Headline } from "../Headline/Headline";
-import { Paragraph } from "../Paragraph/Paragraph";
 
-const ServicesWrapper = styled.div`
+const FeatureWrapper = styled.div`
     color:white;
     width:100%;
 `;
 
-const ServicesInner = styled.div`
+const FeatureInner = styled.div`
     position:relative;
     background: #143756;
     border: 1px solid #3F5E79;
@@ -21,7 +20,7 @@ const ServicesInner = styled.div`
     padding:60px 20px 20px;
 `;
 
-const ServicesMedia = styled.div`
+const FeatureMedia = styled.div`
     position:absolute;
     top:0;
     left:50%;
@@ -48,19 +47,19 @@ type Props = {
     text : string,
 };
 
-export const Services: React.FC<Props> = ({ icon, title, text }) => {
+export const Feature: React.FC<Props> = ({ icon, title, text }) => {
     return (
-    	<ServicesWrapper className="services">
-    		<ServicesInner className="services__inner">
-    			<ServicesMedia className="services__media">
+    	<FeatureWrapper className="Feature">
+    		<FeatureInner className="Feature__inner">
+    			<FeatureMedia className="Feature__media">
     				<Image src={icon} width={0} height={0} alt="icon" />
-    			</ServicesMedia>
+    			</FeatureMedia>
 
-                <div className="services__content">
+                <div className="Feature__content">
                     <Headline size="small">{title}</Headline>
-                    <Paragraph size="copyText">{text}</Paragraph>
+                    <p>{text}</p>
                 </div>
-    		</ServicesInner>
-    	</ServicesWrapper>
+    		</FeatureInner>
+    	</FeatureWrapper>
     );
 };

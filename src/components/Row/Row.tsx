@@ -5,11 +5,12 @@ import React from "react";
 import styled from "styled-components";
 
 const Grid = styled.div`
-    --guter-x : 4rem;
-    --guter-y : 4rem;
+    --guter-x : 2rem;
+    --guter-y : 2rem;
 
     display:flex;
     flex-wrap: wrap;
+    width:100%;
     margin: calc(var(--guter-y) * -1) calc(var(--guter-x) * -0.5) 0;
 `;
 
@@ -20,7 +21,7 @@ type Props = {
 
 export const Row: React.FC<Props> = ({ children }) => {
     return (
-        <Grid>
+        <Grid className="row">
             {children}
         </Grid>
     );

@@ -11,7 +11,8 @@ const BlockHeadWrapper = styled.div`
 		}
 	}
 
-	.paragraph {
+	p {
+		color:inherit;
 		&:not(:last-child) {
 			margin-bottom: 1.5rem;
 		}
