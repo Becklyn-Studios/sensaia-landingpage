@@ -7,7 +7,7 @@ import styled from "styled-components";
 import { text } from "@css/typography";
 
 const paragraphVariants = {
-    copyText: text("textMd", "medium"),
+    copyText: text("textMd", "regular"),
 };
 
 const ParagraphWrapper = styled.div<ParagraphProps>`
@@ -22,5 +22,5 @@ interface ParagraphProps {
 }
 
 export const Paragraph: React.FC<ParagraphProps> = ({ children, size }) => {
-    return <ParagraphWrapper size={size}>{children}</ParagraphWrapper>;
+    return <ParagraphWrapper size={size} className="paragraph">{children}</ParagraphWrapper>;
 };

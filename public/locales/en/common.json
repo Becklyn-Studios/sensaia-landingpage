@@ -13,16 +13,16 @@
     },
     "features": {
         "title": "All your renewable assets  need – on one platform.",
-        "subTitle": "Sensaia is a digital solution tailored to the needs of PV and WTG plant owners, operators and asset managers. Sensaia helps to turn insights into actions and thus to boost the profitability of renewable energy assets. The independent asset management software is technology agnostic, but specialized in solar and wind.",
+        "sub-title": "Sensaia is a digital solution tailored to the needs of PV and WTG plant owners, operators and asset managers. Sensaia helps to turn insights into actions and thus to boost the profitability of renewable energy assets. The independent asset management software is technology agnostic, but specialized in solar and wind.",
         "list-features": [
             {
                 "image":"",
                 "title":"Solar use cases",
-                "subTitle":"e.g. soiling forecasts or reliable identification of tracker failures and misalignment",
+                "sub-title":"e.g. soiling forecasts or reliable identification of tracker failures and misalignment",
             },{
                 "image":"",
                 "title":"Wind use cases",
-                "subTitle":"e.g. schedule maintenance during low wind season, sourcing spare parts in advance and spot WTG inefficiency before it hurts",
+                "sub-title":"e.g. schedule maintenance during low wind season, sourcing spare parts in advance and spot WTG inefficiency before it hurts",
             }
         ]
     }

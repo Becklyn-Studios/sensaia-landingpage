@@ -27,5 +27,5 @@ interface HeadlineProps {
 }
 
 export const Headline: React.FC<HeadlineProps> = ({ children, size }) => {
-    return <HeadlineWrapper size={size}>{children}</HeadlineWrapper>;
+    return <HeadlineWrapper size={size} className="heading">{children}</HeadlineWrapper>;
 };

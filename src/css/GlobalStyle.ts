@@ -8,6 +8,10 @@ export const GlobalStyle = createGlobalStyle`
 
     body {
         background-color: #041C31;
-        font-family: 'Sharp Grotesk DB Cyr Medium 22 Regular', sans-serif;
+        font-family: 'Sharp Grotesk DB Cyr', sans-serif;
+    }
+
+    .wrapper {
+    	overflow:hidden;
     }
 `;

@@ -12,15 +12,21 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { Header } from "../components/Header/Header";
 import { Hero } from "../components/Hero/Hero";
 import { Features } from "../components/Features/Features";
+import { Spacer } from "../components/Spacer/Spacer";
+import { Intro } from "../components/Intro/Intro";
 
 const Home: React.FC = () => {
     return (
-        <div>
+        <div className="wrapper">
             <Header />
 
             <Hero />
-            
-            <Features />
+
+            <Intro/>
+
+            <Spacer>
+                <Features/>
+            </Spacer>
         </div>
     );
 };

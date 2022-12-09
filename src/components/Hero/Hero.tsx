@@ -22,6 +22,7 @@ const HeroWrapper = styled.div`
     position: relative;
     max-width: 942px;
     margin: auto;
+    margin-bottom:8.1rem;
 `;
 
 const HeroContentWrapper = styled.div`
