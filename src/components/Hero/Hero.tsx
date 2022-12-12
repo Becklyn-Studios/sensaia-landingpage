@@ -2,7 +2,6 @@
  * External dependencies
  */
 import React from "react";
-import Image from "next/image";
 import styled from "styled-components";
 
 import { useTranslation } from "next-i18next";
@@ -13,6 +12,7 @@ import { useTranslation } from "next-i18next";
 import { Button } from "../Button/Button";
 import { Container } from "../Container/Container";
 import { Headline } from "../Headline/Headline";
+import { DecorBlob } from "../DecorBlob/DecorBlob";
 
 const HeroWrapper = styled.div`
     display: flex;
@@ -23,10 +23,15 @@ const HeroWrapper = styled.div`
     max-width: 942px;
     margin: auto;
     margin-bottom:8.1rem;
+
+    .hero__decor {
+        width:100%;
+    }
 `;
 
 const HeroContentWrapper = styled.div`
     position: absolute;
+    z-index:2;
     left: 0;
     right: 0;
     top: 0;
@@ -48,7 +53,9 @@ export const Hero: React.FC<{}> = () => {
     return (
         <Container>
             <HeroWrapper>
-                <Image src="/blob.png" width={942} height={920} alt="Blob" />
+                <div className="hero__decor">
+                    <DecorBlob/>
+                </div>
 
                 <HeroContentWrapper>
                     <Headline size="xxlarge">{t("hero.text")}</Headline>

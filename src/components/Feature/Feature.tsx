@@ -47,7 +47,7 @@ type Props = {
     text : string,
 };
 
-export const Feature: React.FC<Props> = ({ icon, title, text }) => {
+export const Feature: React.FC<Props> = ({ icon, title = "", text }) => {
     return (
     	<FeatureWrapper className="Feature">
     		<FeatureInner className="Feature__inner">
@@ -56,7 +56,7 @@ export const Feature: React.FC<Props> = ({ icon, title, text }) => {
     			</FeatureMedia>
 
                 <div className="Feature__content">
-                    <Headline size="small">{title}</Headline>
+                    { !!title && <Headline size="small">{title}</Headline>}
                     <p>{text}</p>
                 </div>
     		</FeatureInner>

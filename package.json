@@ -13,6 +13,7 @@
         "build-storybook": "build-storybook -c .storybook -o .storybook/build"
     },
     "dependencies": {
+        "embla-carousel-react": "^7.0.5",
         "i18next": "^22.0.7",
         "next": "^13.0.4",
         "next-i18next": "^13.0.0",

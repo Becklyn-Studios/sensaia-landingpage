@@ -14,21 +14,48 @@ import { Hero } from "../components/Hero/Hero";
 import { Features } from "../components/Features/Features";
 import { Spacer } from "../components/Spacer/Spacer";
 import { Intro } from "../components/Intro/Intro";
-import { DecorBlob } from "../components/DecorBlob/DecorBlob";
+import { DecorHolder } from "../components/DecorHolder/DecorHolder";
+import { VerticalSlider } from "../components/VerticalSlider/VerticalSlider";
+import { Testimonials } from "../components/Testimonials/Testimonials";
+import { FeaturesAlt } from "../components/FeaturesAlt/FeaturesAlt";
+import { Bulletpoint } from "../components/Bulletpoint/Bulletpoint";
+
 
 const Home: React.FC = () => {
     return (
         <div className="wrapper">
-            <Header />
+            <Header/>
 
-            <Hero />
+            <Hero/>
 
-            <DecorBlob/>
+            <DecorHolder>
+                <Intro/>
 
-            <Intro/>
+                <Spacer>
+                    <Features/>
+                </Spacer>
+            </DecorHolder>
+            
+            <Spacer>
+                <VerticalSlider/>
+            </Spacer>
+
+            <DecorHolder>
+                <Spacer>
+                    <FeaturesAlt/>
+                </Spacer>
+
+                <Spacer>
+                    <Bulletpoint/>
+                </Spacer>
+            </DecorHolder>
 
             <Spacer>
-                <Features/>
+                <Testimonials/>
+            </Spacer>
+
+            <Spacer>
+                context
             </Spacer>
         </div>
     );

@@ -10,6 +10,7 @@ export const GlobalStyle = createGlobalStyle`
     	color: #fff;
         background-color: #041C31;
         font-family: 'Sharp Grotesk DB Cyr', sans-serif;
+        letter-spacing: -0.02em;
     }
 
     .wrapper {

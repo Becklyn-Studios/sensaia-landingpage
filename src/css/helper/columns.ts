@@ -13,8 +13,6 @@ export const columns = (columns: PartialRecord<Breakpoint, number>) => {
             return;
         }
 
-        console.log(`${breakpoints().only(breakpoint)}`)
-
         return css`
             ${breakpoints().only(breakpoint)} {
                 width: calc(100% * (${column} / 12));

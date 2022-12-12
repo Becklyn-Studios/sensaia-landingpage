@@ -10,7 +10,6 @@ const Grid = styled.div`
 
     display:flex;
     flex-wrap: wrap;
-    width:100%;
     margin: calc(var(--guter-y) * -1) calc(var(--guter-x) * -0.5) 0;
 `;
 

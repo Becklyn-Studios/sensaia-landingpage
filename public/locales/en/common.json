@@ -1,138 +1,167 @@
 {
-    "menu": {
-        "Solar & Wind": "Solar & Wind",
-        "Features": "Features",
-        "USPs": "USPs",
-        "Benefits": "Benefits",
-        "About": "About"
-    },
-    "contact-button": "Get in Touch",
-    "hero": {
-        "text": "The AI Sensation for Renewable Energy.",
-        "button": "Say Hi to Sensaia"
-    },
-    "intro-text": "Meet Sensaia, the smartest software suite for holistic asset management and renewable energy optimization.",
-    "features": {
-        "title": "All your renewable assets  need – on one platform.",
-        "sub-title": "Sensaia is a digital solution tailored to the needs of PV and WTG plant owners, operators and asset managers. Sensaia helps to turn insights into actions and thus to boost the profitability of renewable energy assets. The independent asset management software is technology agnostic, but specialized in solar and wind.",
-        "list-features": [
-            {
-                "title":"Solar use cases",
-                "sub-title":"e.g. soiling forecasts or reliable identification of tracker failures and misalignment"
-            },{
-                "title":"Wind use cases",
-                "sub-title":"e.g. schedule maintenance during low wind season, sourcing spare parts in advance and spot WTG inefficiency before it hurts"
-            }
-        ],
-        "button": "Request more insights"
-    },
-    "monitoring": {
-        "media": [
-            {
-                "title": "Monitoring.",
-                "content": "The data from all your assets flow into Sensaia, where they are stored and analyzed. Ready to be monitored anytime – in a customizable dashboard, with technical-commercial insights."
-            },
-            {
-                "title": "Predicting.",
-                "content": "Sensaia allows for precise forecasts about where a system is likely to fail – before it does. Thanks to AI and the experience from using proven algorithms for over 10 years."
-            },
-            {
-                "title": "Alerting.",
-                "content": "Energy must flow. If it does not, Sensaia is there to alert you. This allows early effective actions, reduces costly plant downtime and helps to create ideal maintenance schedules."
-            },
-            {
-                "title": "Ticketing.",
-                "content": "Sensaia get’s the job done. Create tickets from alerts, assign and track them in an intuitive Kanban board to make sure everything is up and running."
-            },
-            {
-                "title": "Reporting.",
-                "content": "Rely on automated benchmark reports that summarize everything you and your stakeholders need to know."
-            }
-        ]
-    },
-    "features-big": {
-        "title": "What makes Sensaia so sensational.",
-        "list-features": [
-            {
-                "sub-title":"One cloud-based platform solution for multiple renewable energy technologies."
-            },
-            {
-                "sub-title":"AI with over 10 years of experience in the market maximizing fault validity."
-            },
-            {
-                "sub-title":"Best in class user interface and work flows for a wide range of O&M tasks."
-            },
-            {
-                "sub-title":"Fast onboarding and efficient operation of all your renewable assets."
-            }
-        ]
-    },
-    "actions" : {
-        "title" : "Turning insights into actions.",
-        "content" : [
-            {
-                "sub-title": "Operate efficiently",
-                "list" :  ["Maximize availability and profitability", "Reduce operation costs", "Avoid unplanned downtimes", "Execute contract monitoring", "Get reliable generation forecasts", "Scale onboarding of new plants"]
-            },
-            {
-                "sub-title": "Collaborate effectively",
-                "list" :  ["Create transparency for all stakeholders", "Combine technical-commercial insights", "Rely on highest alarm validity", "Perform preventive measures", "Schedule maintenance smartly", "Manage tasks via Kanban"]
-            }
-
-        ],
-        "button": "Get in touch"
-    },
-    "testimonials": {
-        "title": "What users think.",
-        "list": [
-            {
-                "coment": "Transparent, dynamic, smart – Probably the most intuitive monitoring portal on the market.",
-                "autor": "Carsten Roller, O&M Manager"
-            },
-            {
-                "coment": "Transparent, dynamic, smart – Probably the most intuitive monitoring portal on the market.",
-                "autor": "Carsten Roller, O&M Manager"
-            }
-        ],
-    },
-    "form": {
-        "title": "Get a live demo",
-        "sub-title": "Would you like to learn more about our sensational asset management solution? We’d love to introduce Sensaia to you in a live demo. Get exclusive insights with our O&M experts and explore the possibilities of digitalization as an enabler for mastering the energy transition.",
-        "fields": {
-            "title": {
-                "label" : "Title",
-                "options" : ["Mr", "Mrs", "Miss", "Ms"],
-            },
-            "first-name":"First name",
-            "last-name":"Last name",
-            "company":"Company",
-            "mail*":"E-mail address"
-        },
-        "checkbox":"I have read the information on data protection and I agree",
-        "submit": "Submit"
-    },
-    "about": {
-        "small-title": "About",
-        "title": "Experienced in IT and O&M of Renewables",
-        "sub-title": "Sensaia is rooted in decades of energy expertise. We design, build and manage renewable assets all over the world and provide solutions for the energy transition. Through our years of experience in the field of O&M of PV and wind parks, we saw the need for a software that thinks for itself, saves time and money and, in short, does things better.",
-        "list": [
-            {
-                "title": "45+ GW installed capacity ",
-                "content": "have been equipped with Sensaia’s proven AI algorithms – broadly established with a „energy sector-first approach“"
-            },{
-                "title": "100.000 $ revenue potential",
-                "content": "by avoiding controllable downtimes – shown in our wind project experience with 100+MW Wind Farms"
-            },{
-                "title": "20 days potential payback period",
-                "content": "by using a smart cleaning strategy for your PV asset – based on our O&M experience (3 MWp PV Park)"
-            }
-        ]
-    },
-    "footer": {
-        "title": "Renewable Energy Intelligence.",
-        "menu": {
-            "data-privacy": "Data Privacy",
-            "impressum": "Impressum",
-        }
-    }
+   "menu":{
+      "Solar & Wind":"Solar & Wind",
+      "Features":"Features",
+      "USPs":"USPs",
+      "Benefits":"Benefits",
+      "About":"About"
+   },
+   "contact-button":"Get in Touch",
+   "hero":{
+      "text":"The AI Sensation for Renewable Energy.",
+      "button":"Say Hi to Sensaia"
+   },
+   "intro-text":"Meet Sensaia, the smartest software suite for holistic asset management and renewable energy optimization.",
+   "features":{
+      "title":"All your renewable assets  need – on one platform.",
+      "sub-title":"Sensaia is a digital solution tailored to the needs of PV and WTG plant owners, operators and asset managers. Sensaia helps to turn insights into actions and thus to boost the profitability of renewable energy assets. The independent asset management software is technology agnostic, but specialized in solar and wind.",
+      "list-features":[
+         {
+            "title":"Solar use cases",
+            "sub-title":"e.g. soiling forecasts or reliable identification of tracker failures and misalignment"
+         },
+         {
+            "title":"Wind use cases",
+            "sub-title":"e.g. schedule maintenance during low wind season, sourcing spare parts in advance and spot WTG inefficiency before it hurts"
+         }
+      ],
+      "button":"Request more insights"
+   },
+   "monitoring":{
+      "media":[
+         {
+            "title":"Monitoring.",
+            "content":"The data from all your assets flow into Sensaia, where they are stored and analyzed. Ready to be monitored anytime – in a customizable dashboard, with technical-commercial insights."
+         },
+         {
+            "title":"Predicting.",
+            "content":"Sensaia allows for precise forecasts about where a system is likely to fail – before it does. Thanks to AI and the experience from using proven algorithms for over 10 years."
+         },
+         {
+            "title":"Alerting.",
+            "content":"Energy must flow. If it does not, Sensaia is there to alert you. This allows early effective actions, reduces costly plant downtime and helps to create ideal maintenance schedules."
+         },
+         {
+            "title":"Ticketing.",
+            "content":"Sensaia get’s the job done. Create tickets from alerts, assign and track them in an intuitive Kanban board to make sure everything is up and running."
+         },
+         {
+            "title":"Reporting.",
+            "content":"Rely on automated benchmark reports that summarize everything you and your stakeholders need to know."
+         }
+      ]
+   },
+   "features-big":{
+      "title":"What makes Sensaia so sensational.",
+      "list-features":[
+         {
+            "sub-title":"One cloud-based platform solution for multiple renewable energy technologies."
+         },
+         {
+            "sub-title":"AI with over 10 years of experience in the market maximizing fault validity."
+         },
+         {
+            "sub-title":"Best in class user interface and work flows for a wide range of O&M tasks."
+         },
+         {
+            "sub-title":"Fast onboarding and efficient operation of all your renewable assets."
+         }
+      ]
+   },
+   "actions":{
+      "title":"Turning insights into actions.",
+      "content":[
+         {
+            "sub-title":"Operate efficiently",
+            "list":[
+               "Maximize availability and profitability",
+               "Reduce operation costs",
+               "Avoid unplanned downtimes",
+               "Execute contract monitoring",
+               "Get reliable generation forecasts",
+               "Scale onboarding of new plants"
+            ]
+         },
+         {
+            "sub-title":"Collaborate effectively",
+            "list":[
+               "Create transparency for all stakeholders",
+               "Combine technical-commercial insights",
+               "Rely on highest alarm validity",
+               "Perform preventive measures",
+               "Schedule maintenance smartly",
+               "Manage tasks via Kanban"
+            ]
+         }
+      ],
+      "button":"Get in touch"
+   },
+   "testimonials":{
+      "title":"What users think.",
+      "list":[
+         {
+            "comment":"Transparent, dynamic, smart – Probably the most intuitive monitoring portal on the market.",
+            "author":"Carsten Roller, O&M Manager"
+         },
+         {
+            "comment":"We set the benchmark in early and reliable detection of upcoming defects.",
+            "author":"Christian Pagel, Head of Wind Center"
+         },
+         {
+            "comment":"We were able to optimize the maintenance strategy increasing availability and performance; thus,  the solution significantly contributed to our efforts aiming at maximum power generation.",
+            "author":"Maintenance Manager, Wien Energie"
+         },
+         {
+            "comment":"The assistance on monitoring wind turbines (36 x 3MW) were up to standards. We increased availability and performance as well as we improved the condition of the turbines.",
+            "author":"Hidroelectrica Wind Services SRL"
+         }
+      ]
+   },
+   "form":{
+      "title":"Get a live demo",
+      "sub-title":"Would you like to learn more about our sensational asset management solution? We’d love to introduce Sensaia to you in a live demo. Get exclusive insights with our O&M experts and explore the possibilities of digitalization as an enabler for mastering the energy transition.",
+      "fields":{
+         "title":{
+            "label":"Title",
+            "options":[
+               "Mr",
+               "Mrs",
+               "Miss",
+               "Ms"
+            ]
+         },
+         "first-name":"First name",
+         "last-name":"Last name",
+         "company":"Company",
+         "mail":"E-mail address"
+      },
+      "checkbox":"I have read the information on data protection and I agree",
+      "submit":"Submit"
+   },
+   "about":{
+      "small-title":"About",
+      "title":"Experienced in IT and O&M of Renewables",
+      "sub-title":"Sensaia is rooted in decades of energy expertise. We design, build and manage renewable assets all over the world and provide solutions for the energy transition. Through our years of experience in the field of O&M of PV and wind parks, we saw the need for a software that thinks for itself, saves time and money and, in short, does things better.",
+      "list":[
+         {
+            "title":"45+ GW installed capacity ",
+            "content":"have been equipped with Sensaia’s proven AI algorithms – broadly established with a „energy sector-first approach“"
+         },
+         {
+            "title":"100.000 $ revenue potential",
+            "content":"by avoiding controllable downtimes – shown in our wind project experience with 100+MW Wind Farms"
+         },
+         {
+            "title":"20 days potential payback period",
+            "content":"by using a smart cleaning strategy for your PV asset – based on our O&M experience (3 MWp PV Park)"
+         }
+      ]
+   },
+   "footer":{
+      "title":"Renewable Energy Intelligence.",
+      "menu":{
+         "data-privacy":"Data Privacy",
+         "impressum":"Impressum"
+      }
+   }
 }

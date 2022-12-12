@@ -38,19 +38,25 @@ const FeaturedFoot = styled.div`
     text-aling:center;
 `;
 
-export const Features: React.FC<{}> = () => {
+export const FeaturesAlt: React.FC<{}> = () => {
     const { t } = useTranslation("common");
 
     const featuresList = [
         {
-            icon: "/ico-1.svg",
-            title: t("features.list-features.0.title"),
-            subtitle: t("features.list-features.0.sub-title")
+            icon: "/ico-cloud.svg",
+            subtitle: t("features-big.list-features.0.sub-title")
         },
         {
-            icon: "/ico-2.svg",
-            title: t("features.list-features.1.title"),
-            subtitle: t("features.list-features.1.sub-title")
+            icon: "/ico-3.svg",
+            subtitle: t("features-big.list-features.1.sub-title")
+        },
+        {
+            icon: "/ico-4.svg",
+            subtitle: t("features-big.list-features.2.sub-title")
+        },
+        {
+            icon: "/ico-5.svg",
+            subtitle: t("features-big.list-features.3.sub-title")
         }
     ];
 
@@ -59,9 +65,7 @@ export const Features: React.FC<{}> = () => {
             <FeaturesWrapper className="featured">
                 <FeaturedHead className="featured__head">
                     <BlockHead>
-                        <Headline size="large">{t("features.title")}</Headline>
-                        
-                        <p>{t("features.sub-title")}</p>
+                        <Headline size="large">{t("features-big.title")}</Headline>
                     </BlockHead>
                 </FeaturedHead>
 
@@ -69,8 +73,8 @@ export const Features: React.FC<{}> = () => {
                     <Row>
                         {
                             featuresList.map((item, index) => (
-                                <Col size={{ s: 12, m: 6, l: 8, xl: 12, xxl: 4 }} key={index}>
-                                    <Feature icon={item.icon} title={item.title} text={item.subtitle} />
+                                <Col size={{ s: 12, m: 6, l: 8, xl: 12, xxl: 3 }} key={index}>
+                                    <Feature icon={item.icon} title="" text={item.subtitle} />
                                 </Col>
                             ))
                         }

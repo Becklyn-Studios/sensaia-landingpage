@@ -7,7 +7,7 @@ import styled from "styled-components";
 import { breakpoints } from "@css/helper/breakpoints";
 import { columns } from "@css/helper/columns";
 
-const ColWrapper = styled.div`
+const ColWrapper = styled.div<Props>`
     padding: var(--guter-y) calc(var(--guter-x) * 0.5) 0;
     width: 100%;
 
@@ -19,8 +19,9 @@ const ColWrapper = styled.div`
 `;
 
 
+
 type Props = {
-    children: | JSX.Element | JSX.Element[],
+    children: React.ReactNode,
     size: object,
 };
 

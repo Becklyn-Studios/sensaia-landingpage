@@ -8,6 +8,7 @@ const ButtonWrapper = styled.button`
     border-radius: 6.25rem;
     background-color: ${p => p.theme.colors.yellow};
     padding: 15px 25px;
+    color: ${p => p.theme.colors.blue2};
     ${text("textMd", "medium")};
     line-height: 1;
 

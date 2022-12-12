@@ -1,138 +1,167 @@
 {
-    "menu": {
-        "Solar & Wind": "Sonne & Wind",
-        "Features": "Merkmale",
-        "USPs": "USPs",
-        "Benefits": "Vorteile",
-        "About": "Um"
-    },
-    "contact-button": "Kontakt",
-    "hero": {
-        "text": "Die AI Sensation für Erneuerbare Energien.",
-        "button": "Say Hi to Sensaia"
-    },
-    "intro-text": "Entdecke Sensaia: Die smarteste Software-Suite für  ganzheitliches Asset Management zur Optimierung Erneuerbarer Energien.",
-    "features": {
-        "title": "Alles, was erneuerbare Anlagen brauchen. Auf einer Plattform.",
-        "sub-title": "Sensaia ist eine digitale Lösung für Menschen, die PV- und WEA-Anlagen besitzen, betreiben oder  verwalten. Sensaia hilft dabei, Insights in Actions umzuwandeln und so die Rentabilität von  Anlagen im Bereich der Erneuerbaren Energien zu steigern. Die unabhängige Asset-Management- Software ist technologieunabhängig, aber auf Solar- und Windenergie spezialisiert.",
-        "list-features": [
-            {
-                "title":"Use Cases für Solar",
-                "sub-title":"z.B. Verschmutzungsprognosen oder zuverlässige  Erkennung von Tracker-Ausfällen und  Fehlausrichtungen"
-            },{
-                "title":"Use Cases für Wind",
-                "sub-title":"z. B. Planung der Wartung während windschwacher  Perioden, proaktive Beschaffung von Ersatzteilen oder  frühzeitige Erkennung von WEA-Ineffizienzen"
-            }
-        ],
-        "button": "Mehr Einblicke anfragen"
-    },
-    "monitoring": {
-        "media": [
-            {
-                "title": "Monitoring.",
-                "content": "Die Daten aus all deinen Anlagen fließen in  Sensaia, wo sie gespeichert, analysiert und jederzeit überwacht werden können: in einem  konfigurierbaren Dashboard mit technisch- wirtschaftlichen Einblicken."
-            },
-            {
-                "title": "Predicting.",
-                "content": "Sensaia allows for precise forecasts about where a system is likely to fail – before it does. Thanks to AI and the experience from using proven algorithms for over 10 years."
-            },
-            {
-                "title": "Alerting.",
-                "content": "Energy must flow. If it does not, Sensaia is there to alert you. This allows early effective actions, reduces costly plant downtime and helps to create ideal maintenance schedules."
-            },
-            {
-                "title": "Ticketing.",
-                "content": "Sensaia get’s the job done. Create tickets from alerts, assign and track them in an intuitive Kanban board to make sure everything is up and running."
-            },
-            {
-                "title": "Reporting.",
-                "content": "Rely on automated benchmark reports that summarize everything you and your stakeholders need to know."
-            }
-        ]
-    },
-    "features-big": {
-        "title": "Was Sensaia so sensationell macht",
-        "list-features": [
-            {
-                "sub-title":"Eine Cloud-Plattform für  verschiedene  Erneuerbare Energien"
-            },
-            {
-                "sub-title":"KI mit über 10 Jahren  Markt-Erfahrung – zur  Maximierung der  Fehlertoleranz"
-            },
-            {
-                "sub-title":"Erstklassige  Bedienoberfläche und  zahlreiche Workflows für  O&M-Aufgaben"
-            },
-            {
-                "sub-title":"Schnelles Onboarding  und effizienter Betrieb all  deiner EE-Anlagen"
-            }
-        ]
-    },
-    "actions" : {
-        "title": "Wie aus Insights Actions werden",
-        "content": [
-            {
-                "sub-title": "Effizienter Betrieb",
-                "list" :  ["Maximiere Verfügbarkeit und  Rentabilität", "Senke die Betriebskosten", "Vermeide ungeplante Ausfallzeiten", "Führe Contract Monitoring durch", "Erhalte Erzeugungsprognosen", "Schnelles Onboarden neuer Assets"]
-            },
-            {
-                "sub-title": "Effektive Zusammenarbeit",
-                "list" :  ["Schaffe Transparenz für alle Stakeholder", "Erhalte technisch-wirtschaftliche Einblicke", "Beziehe höchste Alarmvalidität", "Führe vorbeugende Maßnahmen durch", "Plane Wartung intelligent", "Steuere Aufgaben mit Kanban"]
-            }
-
-        ],
-        "button": "Mehr erfahren"
-    },
-    "testimonials": {
-        "title": "Was User denken",
-        "list": [
-            {
-                "coment": "Transparent, dynamisch, smart – das wohl intuitivste Monitoring-Portal auf dem Markt. ",
-                "autor": "Carsten Roller, O&M Manager"
-            },
-            {
-                "coment": "Transparent, dynamisch, smart – das wohl intuitivste Monitoring-Portal auf dem Markt. ",
-                "autor": "Carsten Roller, O&M Manager"
-            }
-        ],
-    },
-    "form": {
-        "title": "Live-Demo erhalten",
-        "sub-title": "Möchtest du mehr über unsere sensationelle Asset-Management-Lösung erfahren? Gerne stellen  wir dir Sensaia in einer Live-Demo vor. Erhalte exklusive Einblicke von unseren O&M-Experten und  entdecke die Möglichkeiten der Digitalisierung als Wegbereiter der Energiewende.",
-        "fields": {
-            "title": {
-                "label" : "Anrede",
-                "options" : ["Mr", "Mrs", "Miss", "Ms"]
-            },
-            "first-name":"Vorname",
-            "last-name":"Nachname",
-            "company":"Unternehmen",
-            "mail*":"E-Mail Adresse"
-        },
-        "checkbox":"Ich habe die Datenschutzerklärung gelesen und stimme zu.",
-        "submit": "Abschicken"
-    },
-    "about": {
-        "small-title": "About",
-        "title": "Erfahren in IT und O&M der Erneuerbaren",
-        "sub-title": "Sensaia stützt sich auf jahrzehntelange Erfahrung im Energiebereich. Wir planen, bauen und  verwalten Anlagen für Erneuerbare Energien auf der ganzen Welt und bieten Lösungen für  die Energiewende. Durch unsere Expertise im Bereich O&M von Solar- und Windparks  erkannten wir den Bedarf an einer Software, die mitdenkt, Zeit und Geld spart und, kurzum,  die Dinge besser macht.",
-        "list": [
-            {
-                "title": "45+ GW  installierte Leistung",
-                "content": "nutzen die bewährten KI- Algorithmen von Sensaia –  entwickelt im \\\"Energy Sector- First\\\"-Ansatz"
-            },{
-                "title": "100.000 $  Ertragspotenzia",
-                "content": "durch die Vermeidung von  kontrollierbaren Ausfallzeiten –  das zeigen unsere Erfahrungen  aus Windprojekten mit 100+ MW  Windparks"
-            },{
-                "title": "20 Tage potenzielle  Payback Period",
-                "content": "dank smarter Reinigungs- Strategie für eine PV-Anlage –  basierend auf unserer O&M- Erfahrung (3 MWp PV Park)"
-            }
-        ]
-    },
-    "footer": {
-        "title": "Renewable Energy Intelligence",
-        "menu": {
-            "data-privacy": "Datenschutz",
-            "impressum": "Impressum",
-        }
-    }
+   "menu":{
+      "Solar & Wind":"Sonne & Wind",
+      "Features":"Merkmale",
+      "USPs":"USPs",
+      "Benefits":"Vorteile",
+      "About":"Um"
+   },
+   "contact-button":"Kontakt",
+   "hero":{
+      "text":"Die AI Sensation für Erneuerbare Energien.",
+      "button":"Say Hi to Sensaia"
+   },
+   "intro-text":"Entdecke Sensaia: Die smarteste Software-Suite für  ganzheitliches Asset Management zur Optimierung Erneuerbarer Energien.",
+   "features":{
+      "title":"Alles, was erneuerbare Anlagen brauchen. Auf einer Plattform.",
+      "sub-title":"Sensaia ist eine digitale Lösung für Menschen, die PV- und WEA-Anlagen besitzen, betreiben oder  verwalten. Sensaia hilft dabei, Insights in Actions umzuwandeln und so die Rentabilität von  Anlagen im Bereich der Erneuerbaren Energien zu steigern. Die unabhängige Asset-Management- Software ist technologieunabhängig, aber auf Solar- und Windenergie spezialisiert.",
+      "list-features":[
+         {
+            "title":"Use Cases für Solar",
+            "sub-title":"z.B. Verschmutzungsprognosen oder zuverlässige  Erkennung von Tracker-Ausfällen und  Fehlausrichtungen"
+         },
+         {
+            "title":"Use Cases für Wind",
+            "sub-title":"z. B. Planung der Wartung während windschwacher  Perioden, proaktive Beschaffung von Ersatzteilen oder  frühzeitige Erkennung von WEA-Ineffizienzen"
+         }
+      ],
+      "button":"Mehr Einblicke anfragen"
+   },
+   "monitoring":{
+      "media":[
+         {
+            "title":"Monitoring.",
+            "content":"Die Daten aus all deinen Anlagen fließen in  Sensaia, wo sie gespeichert, analysiert und jederzeit überwacht werden können: in einem  konfigurierbaren Dashboard mit technisch- wirtschaftlichen Einblicken."
+         },
+         {
+            "title":"Predicting.",
+            "content":"Sensaia allows for precise forecasts about where a system is likely to fail – before it does. Thanks to AI and the experience from using proven algorithms for over 10 years."
+         },
+         {
+            "title":"Alerting.",
+            "content":"Energy must flow. If it does not, Sensaia is there to alert you. This allows early effective actions, reduces costly plant downtime and helps to create ideal maintenance schedules."
+         },
+         {
+            "title":"Ticketing.",
+            "content":"Sensaia get’s the job done. Create tickets from alerts, assign and track them in an intuitive Kanban board to make sure everything is up and running."
+         },
+         {
+            "title":"Reporting.",
+            "content":"Rely on automated benchmark reports that summarize everything you and your stakeholders need to know."
+         }
+      ]
+   },
+   "features-big":{
+      "title":"Was Sensaia so sensationell macht",
+      "list-features":[
+         {
+            "sub-title":"Eine Cloud-Plattform für  verschiedene  Erneuerbare Energien"
+         },
+         {
+            "sub-title":"KI mit über 10 Jahren  Markt-Erfahrung – zur  Maximierung der  Fehlertoleranz"
+         },
+         {
+            "sub-title":"Erstklassige  Bedienoberfläche und  zahlreiche Workflows für  O&M-Aufgaben"
+         },
+         {
+            "sub-title":"Schnelles Onboarding  und effizienter Betrieb all  deiner EE-Anlagen"
+         }
+      ]
+   },
+   "actions":{
+      "title":"Wie aus Insights Actions werden",
+      "content":[
+         {
+            "sub-title":"Effizienter Betrieb",
+            "list":[
+               "Maximiere Verfügbarkeit und  Rentabilität",
+               "Senke die Betriebskosten",
+               "Vermeide ungeplante Ausfallzeiten",
+               "Führe Contract Monitoring durch",
+               "Erhalte Erzeugungsprognosen",
+               "Schnelles Onboarden neuer Assets"
+            ]
+         },
+         {
+            "sub-title":"Effektive Zusammenarbeit",
+            "list":[
+               "Schaffe Transparenz für alle Stakeholder",
+               "Erhalte technisch-wirtschaftliche Einblicke",
+               "Beziehe höchste Alarmvalidität",
+               "Führe vorbeugende Maßnahmen durch",
+               "Plane Wartung intelligent",
+               "Steuere Aufgaben mit Kanban"
+            ]
+         }
+      ],
+      "button":"Mehr erfahren"
+   },
+   "testimonials":{
+      "title":"Was User denken",
+      "list":[
+         {
+            "comment":"Transparent, dynamic, smart – Probably the most intuitive monitoring portal on the market.",
+            "author":"Carsten Roller, O&M Manager"
+         },
+         {
+            "comment":"We set the benchmark in early and reliable detection of upcoming defects.",
+            "author":"Christian Pagel, Head of Wind Center"
+         },
+         {
+            "comment":"We were able to optimize the maintenance strategy increasing availability and performance; thus,  the solution significantly contributed to our efforts aiming at maximum power generation.",
+            "author":"Maintenance Manager, Wien Energie"
+         },
+         {
+            "comment":"The assistance on monitoring wind turbines (36 x 3MW) were up to standards. We increased availability and performance as well as we improved the condition of the turbines.",
+            "author":"Hidroelectrica Wind Services SRL"
+         }
+      ]
+   },
+   "form":{
+      "title":"Live-Demo erhalten",
+      "sub-title":"Möchtest du mehr über unsere sensationelle Asset-Management-Lösung erfahren? Gerne stellen  wir dir Sensaia in einer Live-Demo vor. Erhalte exklusive Einblicke von unseren O&M-Experten und  entdecke die Möglichkeiten der Digitalisierung als Wegbereiter der Energiewende.",
+      "fields":{
+         "title":{
+            "label":"Anrede",
+            "options":[
+               "Mr",
+               "Mrs",
+               "Miss",
+               "Ms"
+            ]
+         },
+         "first-name":"Vorname",
+         "last-name":"Nachname",
+         "company":"Unternehmen",
+         "mail":"E-Mail Adresse"
+      },
+      "checkbox":"Ich habe die Datenschutzerklärung gelesen und stimme zu.",
+      "submit":"Abschicken"
+   },
+   "about":{
+      "small-title":"About",
+      "title":"Erfahren in IT und O&M der Erneuerbaren",
+      "sub-title":"Sensaia stützt sich auf jahrzehntelange Erfahrung im Energiebereich. Wir planen, bauen und  verwalten Anlagen für Erneuerbare Energien auf der ganzen Welt und bieten Lösungen für  die Energiewende. Durch unsere Expertise im Bereich O&M von Solar- und Windparks  erkannten wir den Bedarf an einer Software, die mitdenkt, Zeit und Geld spart und, kurzum,  die Dinge besser macht.",
+      "list":[
+         {
+            "title":"45+ GW  installierte Leistung",
+            "content":"nutzen die bewährten KI- Algorithmen von Sensaia –  entwickelt im \\\"Energy Sector- First\\\"-Ansatz"
+         },
+         {
+            "title":"100.000 $  Ertragspotenzia",
+            "content":"durch die Vermeidung von  kontrollierbaren Ausfallzeiten –  das zeigen unsere Erfahrungen  aus Windprojekten mit 100+ MW  Windparks"
+         },
+         {
+            "title":"20 Tage potenzielle  Payback Period",
+            "content":"dank smarter Reinigungs- Strategie für eine PV-Anlage –  basierend auf unserer O&M- Erfahrung (3 MWp PV Park)"
+         }
+      ]
+   },
+   "footer":{
+      "title":"Renewable Energy Intelligence",
+      "menu":{
+         "data-privacy":"Datenschutz",
+         "impressum":"Impressum"
+      }
+   }
 }
