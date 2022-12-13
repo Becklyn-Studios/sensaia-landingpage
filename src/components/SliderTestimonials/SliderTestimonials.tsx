@@ -61,15 +61,18 @@ const SliderWrapper = styled.div`
 `;
 
 type PropType = {
-  slides: React.ReactNode[]
-}
+   slides: {
+        comment: string,
+        author: string
+   }[]
+ }
 
 export const SliderTestimonials: React.FC<PropType> = ({slides}) => {
     const [emblaRef, embla] = useEmblaCarousel({ loop: true })
     const [prevBtnEnabled, setPrevBtnEnabled] = useState(false);
     const [nextBtnEnabled, setNextBtnEnabled] = useState(false);
     const [selectedIndex, setSelectedIndex] = useState(0);
-    const [scrollSnaps, setScrollSnaps] = useState([]);
+    const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
 
     const scrollPrev = useCallback(() => embla && embla.scrollPrev(), [embla]);
     const scrollNext = useCallback(() => embla && embla.scrollNext(), [embla]);
