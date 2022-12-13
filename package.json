@@ -13,15 +13,19 @@
         "build-storybook": "build-storybook -c .storybook -o .storybook/build"
     },
     "dependencies": {
+        "@hookform/resolvers": "^2.9.10",
+        "classnames": "^2.3.2",
         "embla-carousel-react": "^7.0.5",
         "i18next": "^22.0.7",
         "next": "^13.0.4",
         "next-i18next": "^13.0.0",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
+        "react-hook-form": "^7.40.0",
         "react-i18next": "^12.0.0",
         "storybook-addon-next-router": "^4.0.1",
-        "styled-components": "^5.3.6"
+        "styled-components": "^5.3.6",
+        "yup": "^0.32.11"
     },
     "devDependencies": {
         "@babel/core": "^7.20.2",

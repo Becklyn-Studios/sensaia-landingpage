@@ -16,4 +16,8 @@ export const GlobalStyle = createGlobalStyle`
     .wrapper {
     	overflow:hidden;
     }
+
+    .hidden {
+        display:none;
+    }
 `;

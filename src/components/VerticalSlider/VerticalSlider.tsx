@@ -108,7 +108,9 @@ export const VerticalSlider = () => {
 
                                 <div className="slider__main">
                                     <Row>
-                                        <Col size={{ xl: 0, xxl: 5 }}>.</Col>
+                                        <Col size={{ xl: 0, xxl: 5 }}>
+                                            <div className="hidden"></div>
+                                        </Col>
 
                                         <Col size={{ m: 12,  xl: 5, xxl: 6 }}>
                                             <div className="slider__media">
@@ -116,7 +118,9 @@ export const VerticalSlider = () => {
                                             </div>
                                         </Col>
 
-                                        <Col size={{ m: 12,  xl: 1, xxl: 1 }}>.</Col>
+                                        <Col size={{ m: 12,  xl: 1, xxl: 1 }}>
+                                            <div className="hidden"></div>
+                                        </Col>
                                     </Row>
                                 </div>
                             </div>

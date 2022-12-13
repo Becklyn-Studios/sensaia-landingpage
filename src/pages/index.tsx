@@ -9,16 +9,17 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 /**
  * Internal dependencies
  */
-import { Header } from "../components/Header/Header";
-import { Hero } from "../components/Hero/Hero";
-import { Features } from "../components/Features/Features";
-import { Spacer } from "../components/Spacer/Spacer";
-import { Intro } from "../components/Intro/Intro";
-import { DecorHolder } from "../components/DecorHolder/DecorHolder";
+import { Header }         from "../components/Header/Header";
+import { Hero }           from "../components/Hero/Hero";
+import { Features }       from "../components/Features/Features";
+import { Spacer }         from "../components/Spacer/Spacer";
+import { Intro }          from "../components/Intro/Intro";
+import { DecorHolder }    from "../components/DecorHolder/DecorHolder";
 import { VerticalSlider } from "../components/VerticalSlider/VerticalSlider";
-import { Testimonials } from "../components/Testimonials/Testimonials";
-import { FeaturesAlt } from "../components/FeaturesAlt/FeaturesAlt";
-import { Bulletpoint } from "../components/Bulletpoint/Bulletpoint";
+import { Testimonials }   from "../components/Testimonials/Testimonials";
+import { FeaturesAlt }    from "../components/FeaturesAlt/FeaturesAlt";
+import { Bulletpoint }    from "../components/Bulletpoint/Bulletpoint";
+import { Form }           from "../components/Form/Form";
 
 
 const Home: React.FC = () => {
@@ -55,7 +56,7 @@ const Home: React.FC = () => {
             </Spacer>
 
             <Spacer>
-                context
+                <Form/>
             </Spacer>
         </div>
     );

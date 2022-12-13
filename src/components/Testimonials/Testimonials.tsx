@@ -9,7 +9,7 @@ import { Container } from "../Container/Container";
 import { Headline } from "../Headline/Headline";
 import { Row } from "../Row/Row";
 import { Col } from "../Col/Col";
-// import { SliderTestimonials } from "../SliderTestimonials/SliderTestimonials";
+import { SliderTestimonials } from "../SliderTestimonials/SliderTestimonials";
 
 const TestimonialsWrapper = styled.div`
 `;
@@ -18,16 +18,24 @@ const TestimonialsWrapper = styled.div`
 export const Testimonials: React.FC<{}> = () => {
     const { t } = useTranslation();
 
-    {/*const featuresList = [
+    const testimonials = [
         {
-            "comment": "Transparent, dynamisch, smart – das wohl intuitivste Monitoring-Portal auf dem Markt. ",
-            "author": "Carsten Roller, O&M Manager"
+            "comment": t("testimonials.list.0.comment"),
+            "author": t("testimonials.list.0.author")
         },
         {
-            "comment": "Transparent, dynamisch, smart – das wohl intuitivste Monitoring-Portal auf dem Markt. ",
-            "author": "Carsten Roller, O&M Manager"
+            "comment": t("testimonials.list.1.comment"),
+            "author": t("testimonials.list.1.author")
+        },
+        {
+            "comment": t("testimonials.list.2.comment"),
+            "author": t("testimonials.list.2.author")
+        },
+        {
+            "comment": t("testimonials.list.3.comment"),
+            "author": t("testimonials.list.3.author")
         }
-    ];*/}
+    ];
 
     return (
         <Container>
@@ -41,7 +49,7 @@ export const Testimonials: React.FC<{}> = () => {
 
                     <Col size={{ s: 12, m: 6, l: 8, xl: 5, xxl: 5 }} >
                         <div className="testimonials__media">
-                            {/*<SliderTestimonials slides={featuresList}/>*/}
+                            {<SliderTestimonials slides={testimonials}/>}
                         </div>
                     </Col>
                 </Row>

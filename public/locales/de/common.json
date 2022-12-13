@@ -121,15 +121,7 @@
       "title":"Live-Demo erhalten",
       "sub-title":"Möchtest du mehr über unsere sensationelle Asset-Management-Lösung erfahren? Gerne stellen  wir dir Sensaia in einer Live-Demo vor. Erhalte exklusive Einblicke von unseren O&M-Experten und  entdecke die Möglichkeiten der Digitalisierung als Wegbereiter der Energiewende.",
       "fields":{
-         "title":{
-            "label":"Anrede",
-            "options":[
-               "Mr",
-               "Mrs",
-               "Miss",
-               "Ms"
-            ]
-         },
+         "title":"Title",
          "first-name":"Vorname",
          "last-name":"Nachname",
          "company":"Unternehmen",
