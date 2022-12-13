@@ -43,6 +43,10 @@ const BlobWrapper = styled.div`
 			z-index:2;
 			opacity:1;
 
+			&:after {
+				animation: rotating-bounce 14s linear infinite;
+			}
+
 		}
 
 		&:nth-child(2){
@@ -73,9 +77,18 @@ const BlobWrapper = styled.div`
 	  	from { transform: rotate(0deg); }
 	  	to { transform: rotate(360deg); }
 	}
+
 	@keyframes rotating-backwards {
 	  	from { transform: rotate(0deg); }
 	  	to { transform: rotate(-360deg); }
+	}
+
+	@keyframes rotating-bounce {
+	  	0%  { transform: rotate(0deg) scale(1); }
+	  	25% { transform: rotate(90deg) scale(0.95); }
+	  	50% { transform: rotate(180deg) scale(1); }
+	  	75% { transform: rotate(270deg) scale(0.95); }
+	  	100%{ transform: rotate(360deg) scale(1); }
 	}
 `;
 

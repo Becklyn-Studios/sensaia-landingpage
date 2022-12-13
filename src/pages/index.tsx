@@ -58,6 +58,10 @@ const Home: React.FC = () => {
             <Spacer>
                 <Form/>
             </Spacer>
+
+            <Spacer>
+                about
+            </Spacer>
         </div>
     );
 };
