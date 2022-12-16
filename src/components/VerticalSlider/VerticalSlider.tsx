@@ -4,7 +4,7 @@
 import React from "react";
 import styled from "styled-components";
 import Image from "next/image";
-
+import { Parallax } from "react-parallax";
 import { useTranslation } from "next-i18next";
 
 import { Headline } from "../Headline/Headline";
@@ -12,6 +12,7 @@ import { BlockHead } from "../BlockHead/BlockHead";
 import { Container } from "../Container/Container";
 import { Row } from "../Row/Row";
 import { Col } from "../Col/Col";
+import { Paging } from "../Paging/Paging";
 
 const SliderWrapper = styled.div`
     .row {
@@ -21,14 +22,20 @@ const SliderWrapper = styled.div`
 
     .slider__slides {
         .slider__slide {
-            clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
-            display:flex;
-            align-items:center;
-            flex-wrap: wrap;
+            &-inner {
+                position:relative;
+                display:flex;
+                align-items:center;
+                flex-wrap: wrap;
+                padding: 8rem 0;
+                min-height:50rem;
+            }
 
-            + .slider__slide {
-                padding: 6rem 0;
-                min-height:50vh;
+            &:first-child .slider__slide-inner {
+                padding-top: 0;
+            }
+            &:last-child .slider__slide-inner {
+                padding-bottom: 0;
             }
         }
     }
@@ -40,7 +47,6 @@ const SliderWrapper = styled.div`
 
     .slider__content {
         position:fixed;
-
         left:0;
         width:100%;
         top:50%;
@@ -52,6 +58,18 @@ const SliderWrapper = styled.div`
             width:100%;
             height:auto;
         }
+    }
+
+    .pagging-holder {
+        text-align:right;
+        width:100%;
+        direction: rtl;
+        transition: opacity 0.2s;
+    }
+
+    .paging {
+        position:fixed;
+        top:50%;
     }
 `;
 
@@ -86,6 +104,21 @@ export const VerticalSlider = () => {
         }
     ];
 
+    const setOpacity = (value:number, startPoint:number, endPoint:number) => {
+        if (startPoint < value && value < endPoint ) {
+            const mapedValue =  (value - startPoint)/( endPoint - startPoint);
+
+            if (mapedValue < 0.33) {
+                return (mapedValue * 2)
+            }if (0.33 <= mapedValue && mapedValue <= 0.66) {
+                return (1)
+            }else {
+                return ( 1 - (mapedValue - 0.66)*3 )
+            }
+        }
+        return ( 0 )
+    }
+
     return (
     	<SliderWrapper>
             <Container>
@@ -93,36 +126,44 @@ export const VerticalSlider = () => {
                     {
                         featuresList.map((item, index) => (
                             <div className="slider__slide" key={index}>
-                                <div className="slider__content">
-                                    <Container>
-                                        <Row>
-                                            <Col size={{ m: 12,  xl: 6, xxl: 4 }}>
-                                                <BlockHead>
-                                                    <Headline size="large">{item.title}</Headline>
-                                                    <p>{item.content}</p>
-                                                </BlockHead>
-                                            </Col>
-                                        </Row>
-                                    </Container>
-                                </div>
-
-                                <div className="slider__main">
-                                    <Row>
-                                        <Col size={{ xl: 0, xxl: 5 }}>
-                                            <div className="hidden"></div>
-                                        </Col>
-
-                                        <Col size={{ m: 12,  xl: 5, xxl: 6 }}>
-                                            <div className="slider__media">
-                                                <Image src={item.media} width={807.6} height={423} alt="icon" />
+                                <Parallax
+                                    renderLayer={(percentage) => (  
+                                        <div className="slider__slide-inner">
+                                            <div className="slider__content" style={{opacity: setOpacity(percentage, 0.5, 0.85)}}>
+                                                <Container>
+                                                    <Row>
+                                                        <Col size={{ m: 12,  xl: 6, xxl: 4 }}>
+                                                            <BlockHead>
+                                                                <Headline size="large">{item.title}</Headline>
+                                                                <p>{item.content}</p>
+                                                            </BlockHead>
+                                                        </Col>
+                                                    </Row>
+                                                </Container>
                                             </div>
-                                        </Col>
 
-                                        <Col size={{ m: 12,  xl: 1, xxl: 1 }}>
-                                            <div className="hidden"></div>
-                                        </Col>
-                                    </Row>
-                                </div>
+                                            <div className="slider__main">
+                                                <Row>
+                                                    <Col size={{ xl: 0, xxl: 5 }}>
+                                                        <div className="hidden"></div>
+                                                    </Col>
+
+                                                    <Col size={{ m: 12,  xl: 5, xxl: 6 }}>
+                                                        <div className="slider__media" style={{opacity: setOpacity(percentage, 0.2, 1.2)}}>
+                                                            <Image src={item.media} width={807.6} height={423} alt="icon" />
+                                                        </div>
+                                                    </Col>
+
+                                                    <Col size={{ m: 12,  xl: 1, xxl: 1 }}>
+                                                        <div className="pagging-holder" style={{opacity: (0.2 < percentage && percentage < 0.85) ? 1 : 0}}>
+                                                            <Paging list={featuresList} index={index}/>
+                                                        </div>
+                                                    </Col>
+                                                </Row>
+                                            </div>
+                                        </div>
+                                    )}
+                                />
                             </div>
                         ))
                     }
@@ -131,3 +172,5 @@ export const VerticalSlider = () => {
     	</SliderWrapper>
     );
 };
+
+

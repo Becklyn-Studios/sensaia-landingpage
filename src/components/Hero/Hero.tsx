@@ -1,9 +1,10 @@
 /**
  * External dependencies
  */
-import React from "react";
+import React, {useEffect} from "react";
 import styled from "styled-components";
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import { useTranslation } from "next-i18next";
 
 /**
@@ -15,49 +16,48 @@ import { Headline } from "../Headline/Headline";
 import { DecorBlob } from "../DecorBlob/DecorBlob";
 
 const HeroWrapper = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    max-width: 942px;
-    margin: auto;
-    margin-bottom:8.1rem;
+    position:relative;
+    padding:31.8rem 0 28.9rem;
+    margin-bottom:16rem;
 
     .hero__decor {
+        position: absolute;
+        z-index:1;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
         width:100%;
+        max-width: 63.3rem;
     }
 `;
 
 const HeroContentWrapper = styled.div`
-    position: absolute;
+    position: relative;
     z-index:2;
-    left: 0;
-    right: 0;
-    top: 0;
-    right: 0;
-    height: 100%;
-    width: 100%;
+    max-width: 94rem;
+    margin:0 auto;
+    text-align:center;
 
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 30px;
+    .button {
+        margin-top:3.1rem;
+    }
 `;
 
 export const Hero: React.FC<{}> = () => {
     const { t } = useTranslation("common");
 
+    useEffect(() => {
+        AOS.init();
+    }, [])
+
     return (
         <Container>
-            <HeroWrapper>
-                <div className="hero__decor">
+            <HeroWrapper data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
+                <div className="hero__decor" >
                     <DecorBlob/>
                 </div>
 
-                <HeroContentWrapper>
+                <HeroContentWrapper data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
                     <Headline size="xxlarge">{t("hero.text")}</Headline>
 
                     <Button href="#">{t("hero.button")}</Button>

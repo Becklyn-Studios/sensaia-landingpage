@@ -20,6 +20,8 @@ import { Testimonials }   from "../components/Testimonials/Testimonials";
 import { FeaturesAlt }    from "../components/FeaturesAlt/FeaturesAlt";
 import { Bulletpoint }    from "../components/Bulletpoint/Bulletpoint";
 import { Form }           from "../components/Form/Form";
+import { About }          from "../components/About/About";
+import { Footer }         from "../components/Footer/Footer";
 
 
 const Home: React.FC = () => {
@@ -29,39 +31,50 @@ const Home: React.FC = () => {
 
             <Hero/>
 
-            <DecorHolder>
-                <Intro/>
+            <section id="section1">
+                <DecorHolder>
+                    <Intro/>
 
+                    <Spacer>
+                        <Features/>
+                    </Spacer>
+                </DecorHolder>
+                
                 <Spacer>
-                    <Features/>
+                    <VerticalSlider/>
                 </Spacer>
-            </DecorHolder>
-            
-            <Spacer>
-                <VerticalSlider/>
-            </Spacer>
+            </section>
 
-            <DecorHolder>
+            <section id="section2">
+                <DecorHolder position="right">
+                    <Spacer>
+                        <FeaturesAlt/>
+                    </Spacer>
+
+                    <Spacer>
+                        <Bulletpoint/>
+                    </Spacer>
+                </DecorHolder>
+            </section>
+
+            <section id="section3">
                 <Spacer>
-                    <FeaturesAlt/>
+                    <Testimonials/>
                 </Spacer>
+            </section>
 
+            <section id="section4">
                 <Spacer>
-                    <Bulletpoint/>
+                    <Form/>
                 </Spacer>
-            </DecorHolder>
+            </section>
 
-            <Spacer>
-                <Testimonials/>
-            </Spacer>
-
-            <Spacer>
-                <Form/>
-            </Spacer>
-
-            <Spacer>
-                about
-            </Spacer>
+            <section id="section5">
+                <DecorHolder position="right" size="big">
+                    <About/>
+                </DecorHolder>
+            </section>
+            <Footer/>
         </div>
     );
 };

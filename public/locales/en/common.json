@@ -6,7 +6,7 @@
       "Benefits":"Benefits",
       "About":"About"
    },
-   "contact-button":"Get in Touch",
+   "contact-button":"Get in touch",
    "hero":{
       "text":"The AI Sensation for Renewable Energy.",
       "button":"Say Hi to Sensaia"
@@ -118,6 +118,7 @@
       ]
    },
    "form":{
+      "alert":"Your request has been sent. We’ll get in touch with you soon.",
       "title":"Get a live demo",
       "sub-title":"Would you like to learn more about our sensational asset management solution? We’d love to introduce Sensaia to you in a live demo. Get exclusive insights with our O&M experts and explore the possibilities of digitalization as an enabler for mastering the energy transition.",
       "fields":{

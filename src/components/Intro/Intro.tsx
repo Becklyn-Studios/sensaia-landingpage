@@ -1,11 +1,12 @@
 /**
  * External dependencies
  */
-import React from "react";
+import React,{useEffect} from "react";
 import Image from "next/image";
 import styled from "styled-components";
-
 import { useTranslation } from "next-i18next";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 /**
  * Internal dependencies
@@ -93,16 +94,20 @@ const IntroWrapper = styled.div`
 export const Intro: React.FC<{}> = () => {
     const { t } = useTranslation("common");
 
+    useEffect(() => {
+        AOS.init();
+    }, [])
+
     return (
         <Container>
             <IntroWrapper>
-                <div className="inro__head">
+                <div className="inro__head" data-aos="fade-up">
                     <BlockHead>
-                        <Headline size="large">{t("hero.text")}</Headline>
+                        <Headline size="large">{t("intro-text")}</Headline>
                     </BlockHead>
                 </div>
 
-                <div className="inro__body">
+                <div className="inro__body" data-aos="fade-up">
                     <ul>
                         <li>
                             <ul>

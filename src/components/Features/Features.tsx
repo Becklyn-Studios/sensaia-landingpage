@@ -1,8 +1,10 @@
 /**
  * External dependencies
  */
-import React from "react";
+import React, {useEffect} from "react";
 import styled from "styled-components";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 
 import { useTranslation } from "next-i18next";
@@ -23,7 +25,7 @@ const FeaturesWrapper = styled.div`
 `;
 
 const FeaturedHead = styled.div`
-    margin:0 auto 9rem;
+    margin:0 auto 8.9rem;
     max-width:81rem;
 `;
 
@@ -54,10 +56,14 @@ export const Features: React.FC<{}> = () => {
         }
     ];
 
+    useEffect(() => {
+        AOS.init();
+    }, [])
+
     return (
         <Container>
             <FeaturesWrapper className="featured">
-                <FeaturedHead className="featured__head">
+                <FeaturedHead className="featured__head" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
                     <BlockHead>
                         <Headline size="large">{t("features.title")}</Headline>
                         
@@ -65,7 +71,7 @@ export const Features: React.FC<{}> = () => {
                     </BlockHead>
                 </FeaturedHead>
 
-                <FeaturedBody className="featured__body">
+                <FeaturedBody className="featured__body" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
                     <Row>
                         {
                             featuresList.map((item, index) => (
@@ -77,7 +83,7 @@ export const Features: React.FC<{}> = () => {
                     </Row>
                 </FeaturedBody>
 
-                <FeaturedFoot>
+                <FeaturedFoot data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
                     <Button href="#">{t("features.button")}</Button>
                 </FeaturedFoot>
             </FeaturesWrapper>

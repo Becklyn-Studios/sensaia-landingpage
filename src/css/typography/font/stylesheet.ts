@@ -13,4 +13,10 @@ export const stylesheet = css`
         src: url("/fonts/SharpGroteskCyrMedium-22.woff2") format("woff2");
         font-weight: 500;
     }
+
+    @font-face {
+        font-family: "Sharp Grotesk DB Cyr 19";
+        src: url("/fonts/SharpGroteskCyrMedium-19.woff2") format("woff2");
+        font-weight: 500;
+    }
 `;

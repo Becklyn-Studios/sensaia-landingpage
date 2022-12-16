@@ -6,6 +6,7 @@ const BlobWrapper = styled.div`
 	width:100%;
 	max-width:103rem;
 	margin: auto;
+	pointer-events:none;
 	
 	&:after {
 		content:"";

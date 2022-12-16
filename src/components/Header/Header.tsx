@@ -13,8 +13,9 @@ import { Button } from "../Button/Button";
 import { Container } from "../Container/Container";
 import { Logo } from "../Logo/Logo";
 import Menu from "../Menu/Menu";
-import MenuItem from "../Menu/MenuItem";
+// import MenuItem from "../Menu/MenuItem";
 import { LanguageSwitcher } from "../LanguageSwitcher/LanguageSwitcher";
+import { Link } from "react-scroll";
 
 const HeaderWrapper = styled.div`
     padding-top: 80px;
@@ -26,7 +27,29 @@ const HeaderWrapper = styled.div`
 
 const HeaderMenuWrapper = styled.div`
     margin-left: auto;
-    margin-right: 80px;
+    margin-right: 5.1%;
+
+    a {
+        position: relative;
+        color: ${p => p.theme.colors.white};
+
+        ::before {
+            content: "";
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: ${p => p.theme.colors.white};
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        &:hover:before {
+            transform: scaleX(1);
+        }
+    }
 `;
 
 const HeaderMenuUtils = styled.div`
@@ -46,11 +69,11 @@ export const Header: React.FC<{}> = () => {
 
                 <HeaderMenuWrapper>
                     <Menu>
-                        <MenuItem href="#">{t("menu.Solar & Wind")}</MenuItem>
-                        <MenuItem href="#">{t("menu.Features")}</MenuItem>
-                        <MenuItem href="#">{t("menu.USPs")}</MenuItem>
-                        <MenuItem href="#">{t("menu.Benefits")}</MenuItem>
-                        <MenuItem href="#">{t("menu.About")}</MenuItem>
+                        <Link activeClass="active" smooth spy to="section1">{ t("menu.Solar & Wind") }</Link>
+                        <Link activeClass="active" smooth spy to="section2">{ t("menu.Features") }</Link>
+                        <Link activeClass="active" smooth spy to="section3">{ t("menu.USPs") }</Link>
+                        <Link activeClass="active" smooth spy to="section4">{ t("menu.Benefits") }</Link>
+                        <Link activeClass="active" smooth spy to="section5">{ t("menu.About") }</Link>
                     </Menu>
                 </HeaderMenuWrapper>
 

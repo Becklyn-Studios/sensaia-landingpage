@@ -1,0 +1,64 @@
+/**
+ * External dependencies
+ */
+import React from "react";
+import styled from "styled-components";
+import { useTranslation } from "next-i18next";
+
+const ListLinksWrapper = styled.div`
+    font-family: "Sharp Grotesk DB Cyr 19";
+    ul {
+        list-style-type:none;
+        display:inline-flex;
+        align-items:center;
+        flex-wrap: wrap;
+
+        li {
+            + li {
+                margin-left:4.3rem;
+
+            }
+        }
+    }
+
+    a {
+        display:block;
+        transition: color 0.3s;
+
+        &:hover {
+            color: ${p => p.theme.colors.yellow};
+        }
+    }
+`;
+
+
+export const ListLinks = () => {
+    const { t } = useTranslation("common");
+
+    const list = [
+        {
+            "title": t("footer.menu.data-privacy"),
+            "link": "#"
+        },
+        {
+            "title": t("footer.menu.impressum"),
+            "link": "#"
+        }
+    ]
+
+    return (
+    	<ListLinksWrapper className="list-logos">
+            <ul>
+                {
+                    list.map((item, index) => (
+                        <li key={index}>
+                            <a href={item.link}>
+                                {item.title}
+                            </a>
+                        </li>
+                    ))
+                }
+            </ul>
+        </ListLinksWrapper>
+    );
+};

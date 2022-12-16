@@ -1,8 +1,10 @@
 /**
  * External dependencies
  */
-import React from "react";
+import React, {useEffect} from "react";
 import styled from "styled-components";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 import { useTranslation } from "next-i18next";
 
@@ -18,7 +20,7 @@ import { Addition } from "../Addition/Addition";
 
 const BulletpointWrapper = styled.div`
     .bulletpoint__head {
-        margin-bottom:9.8rem;
+        margin-bottom:10.1rem;
     }
 
     .bulletpoint__body {
@@ -30,6 +32,7 @@ const BulletpointWrapper = styled.div`
 
         ul {
             list-style-type:none;
+
 
             li {
                 position:relative;
@@ -47,14 +50,14 @@ const BulletpointWrapper = styled.div`
                  }
 
                 + li {
-                   margin-top:1.2rem;
+                   margin-top:0.7rem;
                 }
             }
         }
     }
 
     .bulletpoint__foot {
-        margin-top:5.1rem;
+        margin-top:4.9rem;
     }
 `;
 
@@ -72,10 +75,14 @@ export const Bulletpoint: React.FC<{}> = () => {
         }
     ]
 
+    useEffect(() => {
+        AOS.init();
+    }, [])
+
     return (
         <Container>
             <BulletpointWrapper>
-                <div className="bulletpoint__head">
+                <div className="bulletpoint__head" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
                     <Row>
                         <Col size={{ s: 12, m: 6, l: 8, xl: 5, xxl: 5 }} >
                             <Headline size="xlarge">{t("actions.title")}</Headline>
@@ -83,7 +90,7 @@ export const Bulletpoint: React.FC<{}> = () => {
                     </Row>
                 </div>
 
-                <div className="bulletpoint__body">
+                <div className="bulletpoint__body" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
                     <Row>
                         {
                             content.map((contentItem, contentIndex) => (
@@ -105,7 +112,7 @@ export const Bulletpoint: React.FC<{}> = () => {
                     </Row>
                 </div>
 
-                <div className="bulletpoint__foot">
+                <div className="bulletpoint__foot" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
                     <Button href="#">{t("actions.button")}</Button>
                 </div>
             </BulletpointWrapper>

@@ -118,6 +118,7 @@
       ]
    },
    "form":{
+      "alert":"Your request has been sent. We’ll get in touch with you soon.",
       "title":"Live-Demo erhalten",
       "sub-title":"Möchtest du mehr über unsere sensationelle Asset-Management-Lösung erfahren? Gerne stellen  wir dir Sensaia in einer Live-Demo vor. Erhalte exklusive Einblicke von unseren O&M-Experten und  entdecke die Möglichkeiten der Digitalisierung als Wegbereiter der Energiewende.",
       "fields":{

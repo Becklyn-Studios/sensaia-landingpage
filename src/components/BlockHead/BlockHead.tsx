@@ -5,9 +5,15 @@ import React from "react";
 import styled from "styled-components";
 
 const BlockHeadWrapper = styled.div`
+	.addition {
+		&:not(:last-child) {
+			margin-bottom: 0.3rem;
+		}
+	}
+
 	.heading {
 		&:not(:last-child) {
-			margin-bottom: 3.4rem;
+			margin-bottom: 3.1rem;
 		}
 	}
 

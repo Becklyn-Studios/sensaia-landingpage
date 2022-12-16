@@ -7,8 +7,10 @@ import styled from "styled-components";
 const MenuWrapper = styled.div`
     display: flex;
     flex-direction: row;
-    gap: 30px;
+    gap: 3rem;
     align-items: center;
+    letter-spacing: -0.01em;
+    font-weight:500;
 `;
 
 const Menu: React.FC<PropsWithChildren> = ({ children }) => {

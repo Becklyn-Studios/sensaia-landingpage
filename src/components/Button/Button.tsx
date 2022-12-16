@@ -7,7 +7,7 @@ import { hover } from "@css/helper";
 const ButtonWrapper = styled.button`
     border-radius: 6.25rem;
     background-color: ${p => p.theme.colors.yellow};
-    padding: 15px 25px;
+    padding: 1.5rem 2.7rem;
     color: ${p => p.theme.colors.blue2};
     ${text("textMd", "medium")};
     line-height: 1;
@@ -36,7 +36,7 @@ export const Button: React.FC<PropsWithChildren<ButtonProps>> = ({ children, ...
             const { as, href, ...rest } = props;
             return (
                 <Link href={href} passHref legacyBehavior>
-                    <ButtonWrapper as="a" {...rest}>
+                    <ButtonWrapper className="button" as="a" {...rest}>
                         {children}
                     </ButtonWrapper>
                 </Link>
@@ -44,7 +44,7 @@ export const Button: React.FC<PropsWithChildren<ButtonProps>> = ({ children, ...
         }
         default: {
             const { as, ...rest } = props;
-            return <ButtonWrapper {...rest}>{children}</ButtonWrapper>;
+            return <ButtonWrapper className="button" {...rest}>{children}</ButtonWrapper>;
         }
     }
 };

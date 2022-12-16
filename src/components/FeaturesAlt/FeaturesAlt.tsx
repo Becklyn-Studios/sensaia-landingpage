@@ -1,16 +1,15 @@
 /**
  * External dependencies
  */
-import React from "react";
+import React, {useEffect} from "react";
 import styled from "styled-components";
-
-
 import { useTranslation } from "next-i18next";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 /**
  * Internal dependencies
  */
-import { Button } from "../Button/Button";
 import { Container } from "../Container/Container";
 import { Headline } from "../Headline/Headline";
 import { Feature } from "../Feature/Feature";
@@ -31,11 +30,6 @@ const FeaturedBody = styled.div`
     .row {
         justify-content:center;
     }
-`;
-
-const FeaturedFoot = styled.div`
-    margin-top:5rem;
-    text-aling:center;
 `;
 
 export const FeaturesAlt: React.FC<{}> = () => {
@@ -60,16 +54,20 @@ export const FeaturesAlt: React.FC<{}> = () => {
         }
     ];
 
+    useEffect(() => {
+        AOS.init();
+    }, [])
+
     return (
         <Container>
             <FeaturesWrapper className="featured">
-                <FeaturedHead className="featured__head">
+                <FeaturedHead className="featured__head" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
                     <BlockHead>
                         <Headline size="large">{t("features-big.title")}</Headline>
                     </BlockHead>
                 </FeaturedHead>
 
-                <FeaturedBody className="featured__body">
+                <FeaturedBody className="featured__body" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
                     <Row>
                         {
                             featuresList.map((item, index) => (
@@ -80,10 +78,6 @@ export const FeaturesAlt: React.FC<{}> = () => {
                         }
                     </Row>
                 </FeaturedBody>
-
-                <FeaturedFoot>
-                    <Button href="#">{t("features.button")}</Button>
-                </FeaturedFoot>
             </FeaturesWrapper>
         </Container>
     );

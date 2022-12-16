@@ -1,65 +1,75 @@
 /**
  * External dependencies
  */
-import React from "react";
+import React, {useEffect} from "react";
 import styled from "styled-components";
-import Image from "next/image";
+import { useTranslation } from "next-i18next";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 import { Headline } from "../Headline/Headline";
+import { Addition } from "../Addition/Addition";
+import { Container } from "../Container/Container";
+import { BlockHead } from "../BlockHead/BlockHead";
+import { Row } from "../Row/Row";
+import { Col } from "../Col/Col";
+import { Feature } from "../Feature/Feature";
 
-const FeatureWrapper = styled.div`
-    color:white;
-    width:100%;
-`;
-
-const FeatureInner = styled.div`
-    position:relative;
-    background: #143756;
-    border: 1px solid #3F5E79;
-    border-radius: 10px;
-    padding:60px 20px 20px;
-`;
-
-const FeatureMedia = styled.div`
-    position:absolute;
-    top:0;
-    left:50%;
-    transform:translate(-50%, -50%);
-    width:74px;
-    height:74px;
-    background-color:white;
-    border-radius:50%;
-
-    img {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%,-50%);
-        max-width:70%;
-        width:auto;
-        height:auto;
+const AboutWrapper = styled.div`
+    .about__head {
+        margin-bottom:7rem;
     }
 `;
 
-type Props = {
-    icon : string,
-    title : string,
-    text : string,
-};
+export const About = () => {
+    const { t } = useTranslation("common");
 
-export const Feature: React.FC<Props> = ({ icon, title = "", text }) => {
+    useEffect(() => {
+        AOS.init();
+    }, [])
+
+    const list = [
+        {
+          "title": t("about.list.0.title"),
+          "content":t("about.list.0.content")
+        },
+        {
+          "title": t("about.list.1.title"),
+          "content":t("about.list.1.content")
+        },
+        {
+          "title": t("about.list.2.title"),
+          "content":t("about.list.2.content")
+        }
+    ]
+
     return (
-    	<FeatureWrapper className="Feature">
-    		<FeatureInner className="Feature__inner">
-    			<FeatureMedia className="Feature__media">
-    				<Image src={icon} width={0} height={0} alt="icon" />
-    			</FeatureMedia>
-
-                <div className="Feature__content">
-                    { !!title && <Headline size="small">{title}</Headline>}
-                    <p>{text}</p>
+        <Container>
+        	<AboutWrapper className="about">
+                <div className="about__head" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
+                    <Row>
+                        <Col size={{ s: 12, m: 12, l: 12, xl: 12, xxl: 8 }}>
+                            <BlockHead>
+                                <Addition size="base">{t("about.small-title")}</Addition>
+                                <Headline size="xlarge">{t("about.title")}</Headline>
+                                <p >{t("about.sub-title")}</p>
+                            </BlockHead>
+                        </Col>
+                    </Row>
                 </div>
-    		</FeatureInner>
-    	</FeatureWrapper>
+
+                <div className="about__body" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
+                    <Row>
+                        {
+                            list.map((item, index) => (
+                                <Col size={{ s: 12, m: 6, l: 8, xl: 3, xxl: 3 }} key={index}>
+                                    <Feature icon="" title={item.title} text={item.content} />
+                                </Col>
+                            ))
+                        }
+                    </Row>
+                </div>
+        	</AboutWrapper>
+        </Container>
     );
 };

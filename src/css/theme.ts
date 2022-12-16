@@ -21,6 +21,8 @@ export const theme = {
         white: "#ffffff",
         blue: "#06DEEB",
         blue2: "#041C31",
+        blue3: "#3F5E79",
+        error: "#EC076A",
     },
     //endregion
 
