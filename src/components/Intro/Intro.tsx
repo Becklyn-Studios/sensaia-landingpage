@@ -107,43 +107,43 @@ export const Intro: React.FC<{}> = () => {
                     </BlockHead>
                 </div>
 
-                <div className="inro__body" data-aos="fade-up">
+                <div className="inro__body">
                     <ul>
                         <li>
                             <ul>
                                 <li>
-                                    <Image src="/cards/card-1.png" width={390} height={199} alt="img" />
+                                    <Image data-aos="fade-right" data-aos-anchor-placement="center-bottom" src="/cards/card-1.png" width={390} height={199} alt="img" />
                                 </li>
 
                                 <li>
-                                    <Image src="/cards/card-2.png" width={390} height={199} alt="img" />
+                                    <Image data-aos="fade-right" data-aos-anchor-placement="center-bottom" src="/cards/card-2.png" width={390} height={199} alt="img" />
                                 </li>
 
                                 <li>
-                                    <Image src="/cards/card-3.png" width={390} height={199} alt="img" />
+                                    <Image data-aos="fade-right" data-aos-anchor-placement="center-bottom" src="/cards/card-3.png" width={390} height={199} alt="img" />
                                 </li>
 
                                 <li>
-                                    <Image src="/cards/card-4.png" width={390} height={199} alt="img" />
+                                    <Image data-aos="fade-right" data-aos-anchor-placement="center-bottom" src="/cards/card-4.png" width={390} height={199} alt="img" />
                                 </li>
                             </ul>
                             
-                            <Image src="/cards/card-5.png" width={960} height={102} alt="img" />
+                            <Image data-aos="fade-up-right" data-aos-anchor-placement="center-bottom" src="/cards/card-5.png" width={960} height={102} alt="img" />
                         </li>
 
                         <li>
                             <ul>
-                                <li>
+                                <li data-aos="fade-left" data-aos-anchor-placement="center-bottom">
                                     <Image src="/cards/card-6.png" width={1170} height={132} alt="img" />
                                 </li>
 
                                 <li>
                                     <ul>
-                                        <li>
+                                        <li data-aos="fade-up" data-aos-anchor-placement="center-bottom">
                                             <Image src="/cards/card-7.png" width={420} height={594} alt="img" />
                                         </li>
 
-                                        <li>
+                                        <li data-aos="fade-up-left" data-aos-anchor-placement="center-bottom">
                                             <Image src="/cards/card-8.png" width={896} height={485} alt="img" />
                                         </li>
                                     </ul>

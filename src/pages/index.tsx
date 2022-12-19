@@ -1,7 +1,7 @@
 /**
  * External dependencies
  */
-import React from "react";
+import React, { useState } from "react";
 import type { GetStaticProps } from "next";
 
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
@@ -22,11 +22,17 @@ import { Bulletpoint }    from "../components/Bulletpoint/Bulletpoint";
 import { Form }           from "../components/Form/Form";
 import { About }          from "../components/About/About";
 import { Footer }         from "../components/Footer/Footer";
+import { CursorProvider } from "../components/CursorProvider/CursorProvider";
 
 
 const Home: React.FC = () => {
+    const [mousePositionY, setMousePositionY] = useState(99999);
+    const [mousePositionX, setMousePositionX] = useState(99999);
+
     return (
-        <div className="wrapper">
+        <div className="wrapper" style={{ "--mouse-left":mousePositionX+"px", "--mouse-top":mousePositionY+"px" }}>
+            <CursorProvider setMousePositionX={setMousePositionX} setMousePositionY={setMousePositionY}/>
+
             <Header/>
 
             <Hero/>
@@ -63,7 +69,7 @@ const Home: React.FC = () => {
                 </Spacer>
             </section>
 
-            <section id="section4">
+            <section id="form">
                 <Spacer>
                     <Form/>
                 </Spacer>

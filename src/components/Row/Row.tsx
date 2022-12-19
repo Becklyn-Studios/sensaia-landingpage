@@ -7,7 +7,7 @@ import styled from "styled-components";
 const Grid = styled.div`
     --guter-x : 2rem;
     --guter-y : 2rem;
-
+    
     display:flex;
     flex-wrap: wrap;
     margin: calc(var(--guter-y) * -1) calc(var(--guter-x) * -0.5) 0;

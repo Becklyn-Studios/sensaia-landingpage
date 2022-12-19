@@ -15,6 +15,7 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     .wrapper {
+        position: relative;
     	overflow:hidden;
     }
 

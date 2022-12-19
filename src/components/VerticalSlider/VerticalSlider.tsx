@@ -13,6 +13,7 @@ import { Container } from "../Container/Container";
 import { Row } from "../Row/Row";
 import { Col } from "../Col/Col";
 import { Paging } from "../Paging/Paging";
+import { ImageMasked } from "../ImageMasked/ImageMasked";
 
 const SliderWrapper = styled.div`
     .row {
@@ -51,12 +52,14 @@ const SliderWrapper = styled.div`
         width:100%;
         top:50%;
         transform:translateY(-50%);
+        pointer-events:none;
     }
 
     .slider__media {
         img {
             width:100%;
             height:auto;
+            transition: filter 0.3s;
         }
     }
 
@@ -150,7 +153,9 @@ export const VerticalSlider = () => {
 
                                                     <Col size={{ m: 12,  xl: 5, xxl: 6 }}>
                                                         <div className="slider__media" style={{opacity: setOpacity(percentage, 0.2, 1.2)}}>
-                                                            <Image src={item.media} width={807.6} height={423} alt="icon" />
+                                                            <ImageMasked>
+                                                                <Image src={item.media} width={807.6} height={423} alt="icon" />
+                                                            </ImageMasked>
                                                         </div>
                                                     </Col>
 

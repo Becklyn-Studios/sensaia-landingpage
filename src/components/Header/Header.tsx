@@ -46,8 +46,11 @@ const HeaderMenuWrapper = styled.div`
             transition: transform 0.3s ease;
         }
 
-        &:hover:before {
-            transform: scaleX(1);
+        &:hover {
+            cursor:pointer;
+            &:before {
+                transform: scaleX(1);
+            }
         }
     }
 `;
@@ -72,7 +75,7 @@ export const Header: React.FC<{}> = () => {
                         <Link activeClass="active" smooth spy to="section1">{ t("menu.Solar & Wind") }</Link>
                         <Link activeClass="active" smooth spy to="section2">{ t("menu.Features") }</Link>
                         <Link activeClass="active" smooth spy to="section3">{ t("menu.USPs") }</Link>
-                        <Link activeClass="active" smooth spy to="section4">{ t("menu.Benefits") }</Link>
+                        <Link activeClass="active" smooth spy to="form"> { t("menu.Benefits") }</Link>
                         <Link activeClass="active" smooth spy to="section5">{ t("menu.About") }</Link>
                     </Menu>
                 </HeaderMenuWrapper>
@@ -80,7 +83,9 @@ export const Header: React.FC<{}> = () => {
                 <HeaderMenuUtils>
                     <LanguageSwitcher />
 
-                    <Button>{t("contact-button")}</Button>
+                    <Link activeClass="active" smooth spy to="form">
+                        <Button>{t("contact-button")}</Button>
+                    </Link>
                 </HeaderMenuUtils>
             </HeaderWrapper>
         </Container>

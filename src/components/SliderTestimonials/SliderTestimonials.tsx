@@ -53,6 +53,9 @@ const SliderWrapper = styled.div`
         }
         
         .embla__button {
+            svg {
+                pointer-events:none;
+            }
             + .embla__button {
                 margin-left: 2rem;
             }
