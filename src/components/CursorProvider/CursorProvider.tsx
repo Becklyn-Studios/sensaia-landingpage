@@ -1,7 +1,7 @@
 /**
  * External dependencies
  */
-import React, { useEffect , useState, MouseEvent, Dispatch, SetStateAction} from "react";
+import React, { useEffect , useState, Dispatch, SetStateAction} from "react";
 import styled from "styled-components";
 
 const CursorWrapper = styled.div`
@@ -41,10 +41,10 @@ interface IProps {
 }
 
 export const CursorProvider: React.FC<IProps> = ({setMousePositionX, setMousePositionY}) => {
-    const [hoverType, setHoverType] = useState();
+    const [hoverType, setHoverType] = useState<string>();
     
     useEffect(() => {
-        const mouseMove = (e: MouseEvent): void => {
+        const mouseMove = (e: any): void => {
            setMousePositionX(e.pageX)
            setMousePositionY(e.pageY)
            setHoverType((e.target as HTMLElement).tagName);

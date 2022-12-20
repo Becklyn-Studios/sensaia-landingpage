@@ -48,7 +48,7 @@ export const About = () => {
         	<AboutWrapper className="about">
                 <div className="about__head" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
                     <Row>
-                        <Col size={{ s: 12, m: 12, l: 12, xl: 12, xxl: 8 }}>
+                        <Col size={{ s: 12, m: 12, l: 12, xl: 9, xxl: 8 }}>
                             <BlockHead>
                                 <Addition size="base">{t("about.small-title")}</Addition>
                                 <Headline size="xlarge">{t("about.title")}</Headline>

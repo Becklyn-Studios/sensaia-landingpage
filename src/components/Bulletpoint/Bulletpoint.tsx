@@ -84,7 +84,7 @@ export const Bulletpoint: React.FC<{}> = () => {
             <BulletpointWrapper>
                 <div className="bulletpoint__head" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
                     <Row>
-                        <Col size={{ s: 12, m: 6, l: 8, xl: 5, xxl: 5 }} >
+                        <Col size={{ s: 12, m: 6, l: 8, xl: 6, xxl: 5 }} >
                             <Headline size="xlarge">{t("actions.title")}</Headline>
                         </Col>
                     </Row>
@@ -94,7 +94,7 @@ export const Bulletpoint: React.FC<{}> = () => {
                     <Row>
                         {
                             content.map((contentItem, contentIndex) => (
-                                <Col size={{ s: 12, m: 6, l: 8, xl: 4, xxl: 4 }} key={contentIndex}>
+                                <Col size={{ s: 12, m: 6, l: 8, xl: 5, xxl: 4 }} key={contentIndex}>
                                     <Addition size="base">{contentItem.subtitle}</Addition>
 
                                     <ul>

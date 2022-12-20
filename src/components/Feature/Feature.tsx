@@ -5,6 +5,7 @@ import React from "react";
 import styled from "styled-components";
 import Image from "next/image";
 import classNames       from 'classnames';
+import { breakpoints } from "@css/helper/breakpoints";
 
 import { Headline } from "../Headline/Headline";
 
@@ -45,8 +46,17 @@ const FeatureWrapper = styled.div`
         .feature__inner {
             padding:5.3rem 3rem 5rem;
 
+            ${breakpoints().max("xxl")} {
+                padding:4.2rem 3rem 5rem;
+            }
+
             .heading:not(:last-child) {
                 margin-bottom: 1.5rem;
+
+                ${breakpoints().max("xxl")} {
+                    margin-bottom: 1.8rem;
+
+                }
             }
         }
     }

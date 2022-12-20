@@ -12,6 +12,7 @@ import { Headline } from "../Headline/Headline";
 import { Row } from "../Row/Row";
 import { Col } from "../Col/Col";
 import { SliderTestimonials } from "../SliderTestimonials/SliderTestimonials";
+import { breakpoints } from "@css/helper/breakpoints";
 
 const TestimonialsWrapper = styled.div`
     > .row {
@@ -22,6 +23,11 @@ const TestimonialsWrapper = styled.div`
     .testimonials__content {
         padding-right:20%;
         padding-bottom:8.8rem;
+
+        ${breakpoints().max("xxl")} {
+            padding-bottom:7.2rem;
+        }
+
     }
 `;
 
@@ -62,7 +68,7 @@ export const Testimonials: React.FC<{}> = () => {
                         </div>
                     </Col>
 
-                    <Col size={{ s: 12, m: 6, l: 8, xl: 5, xxl: 5 }} >
+                    <Col size={{ s: 12, m: 6, l: 8, xl: 6, xxl: 5 }} >
                         <div className="testimonials__media" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
                             {<SliderTestimonials slides={testimonials}/>}
                         </div>

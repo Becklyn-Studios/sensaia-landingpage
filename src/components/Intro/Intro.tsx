@@ -7,6 +7,7 @@ import styled from "styled-components";
 import { useTranslation } from "next-i18next";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { breakpoints } from "@css/helper/breakpoints";
 
 /**
  * Internal dependencies
@@ -16,8 +17,8 @@ import { Headline } from "../Headline/Headline";
 import { BlockHead } from "../BlockHead/BlockHead";
 
 const IntroWrapper = styled.div`
-    .inro__head {
-        max-width: 66.66%;
+    .intro__head {
+        max-width: 99.4rem;
         margin:0 auto 9.9rem;
 
         .heading {
@@ -25,12 +26,16 @@ const IntroWrapper = styled.div`
         }
     }
 
-    .inro__body {
+    .intro__body {
         > ul {
             font-size:0;
             display:flex;
             justify-content:center;
             margin: 0 calc(50% - 62.2vw) 0 calc(50% - 59.6vw);
+
+            ${breakpoints().max("xxl")} {
+                margin: 0 calc(50% - 68.9vw) 0 calc(50% - 69.2vw);
+            }
 
             img {
                 height:auto;
@@ -49,6 +54,12 @@ const IntroWrapper = styled.div`
                         column-gap: 2rem;
                         row-gap:1.8rem;
 
+                        ${breakpoints().max("xxl")} {
+                            column-gap: 1.68rem;
+                            row-gap: 1.68rem;
+                        }
+
+
                         &:first-child {
                             max-width:84%;
                         }
@@ -56,6 +67,11 @@ const IntroWrapper = styled.div`
 
                     > img {
                         margin-top:4.1rem;
+
+                        ${breakpoints().max("xxl")} {
+                            margin-top:3.5rem;
+                        }
+
                     }
                 }
 
@@ -63,11 +79,21 @@ const IntroWrapper = styled.div`
                     margin-left: 4.1rem;
                     text-align:left;
 
+                    ${breakpoints().max("xxl")} {
+                        margin-left:3.48rem;
+                    }
+
                     > ul {
                         display:inline-grid;
                         grid-template-columns: auto;
                         column-gap: 4rem;
                         row-gap:3.5rem;
+
+                        ${breakpoints().max("xxl")} {
+                            column-gap: 3.4rem;
+                            row-gap:3rem;
+                        }
+
 
                         > li {
                             &:first-child {
@@ -81,6 +107,9 @@ const IntroWrapper = styled.div`
                             li {
                                 + li {
                                     margin-left:4rem;
+                                    ${breakpoints().max("xxl")} {
+                                        margin-left:3.4rem;
+                                    }
                                 }
                             }
                         }
@@ -101,13 +130,13 @@ export const Intro: React.FC<{}> = () => {
     return (
         <Container>
             <IntroWrapper>
-                <div className="inro__head" data-aos="fade-up">
+                <div className="intro__head" data-aos="fade-up">
                     <BlockHead>
                         <Headline size="large">{t("intro-text")}</Headline>
                     </BlockHead>
                 </div>
 
-                <div className="inro__body">
+                <div className="intro__body">
                     <ul>
                         <li>
                             <ul>

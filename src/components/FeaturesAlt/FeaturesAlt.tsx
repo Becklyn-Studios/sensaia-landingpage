@@ -71,7 +71,7 @@ export const FeaturesAlt: React.FC<{}> = () => {
                     <Row>
                         {
                             featuresList.map((item, index) => (
-                                <Col size={{ s: 12, m: 6, l: 8, xl: 12, xxl: 3 }} key={index}>
+                                <Col size={{ s: 12, m: 6, l: 8, xl: 3, xxl: 3 }} key={index}>
                                     <Feature icon={item.icon} title="" text={item.subtitle} />
                                 </Col>
                             ))

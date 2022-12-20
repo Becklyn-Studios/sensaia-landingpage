@@ -16,6 +16,7 @@ import Menu from "../Menu/Menu";
 // import MenuItem from "../Menu/MenuItem";
 import { LanguageSwitcher } from "../LanguageSwitcher/LanguageSwitcher";
 import { Link } from "react-scroll";
+import { breakpoints } from "@css/helper/breakpoints";
 
 const HeaderWrapper = styled.div`
     padding-top: 80px;
@@ -23,11 +24,19 @@ const HeaderWrapper = styled.div`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+
+    ${breakpoints().max("xxl")} {
+        padding-top: 40px;
+    }
 `;
 
 const HeaderMenuWrapper = styled.div`
     margin-left: auto;
     margin-right: 5.1%;
+
+    ${breakpoints().max("xxl")} {
+        margin-right: 5.6%;
+    }
 
     a {
         position: relative;

@@ -75,7 +75,7 @@ export const Features: React.FC<{}> = () => {
                     <Row>
                         {
                             featuresList.map((item, index) => (
-                                <Col size={{ s: 12, m: 6, l: 8, xl: 12, xxl: 4 }} key={index}>
+                                <Col size={{ s: 12, m: 6, l: 8, xl: 5, xxl: 4 }} key={index}>
                                     <Feature icon={item.icon} title={item.title} text={item.subtitle} />
                                 </Col>
                             ))

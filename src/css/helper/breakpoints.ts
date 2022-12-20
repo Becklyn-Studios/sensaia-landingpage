@@ -4,7 +4,7 @@ export const bp = {
     m: 768, // tablet
     l: 1024, // small laptop
     xl: 1250, // laptop
-    xxl: 1440, // desktop
+    xxl: 1680, // desktop
 };
 
 export type Breakpoint = keyof typeof bp;

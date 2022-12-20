@@ -28,7 +28,7 @@ export const LanguageSwitcher: React.FC<{}> = () => {
     };
 
     return (
-        <LanguageSwitcherButton onClick={handleLocaleSwitch}>
+        <LanguageSwitcherButton className="language-switcher" onClick={handleLocaleSwitch}>
             {switchableLocale.toUpperCase()}
         </LanguageSwitcherButton>
     );

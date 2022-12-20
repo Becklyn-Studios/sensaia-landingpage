@@ -21,8 +21,9 @@ import { FeaturesAlt }    from "../components/FeaturesAlt/FeaturesAlt";
 import { Bulletpoint }    from "../components/Bulletpoint/Bulletpoint";
 import { Form }           from "../components/Form/Form";
 import { About }          from "../components/About/About";
-import { Footer }         from "../components/Footer/Footer";
+import { Footer }         from "../components/Footer/Footer";    
 import { CursorProvider } from "../components/CursorProvider/CursorProvider";
+
 
 
 const Home: React.FC = () => {
@@ -30,7 +31,7 @@ const Home: React.FC = () => {
     const [mousePositionX, setMousePositionX] = useState(99999);
 
     return (
-        <div className="wrapper" style={{ "--mouse-left":mousePositionX+"px", "--mouse-top":mousePositionY+"px" }}>
+        <div className="wrapper" style={{ "--mouse-left":mousePositionX+"px", "--mouse-top":mousePositionY+"px" } as React.CSSProperties}>
             <CursorProvider setMousePositionX={setMousePositionX} setMousePositionY={setMousePositionY}/>
 
             <Header/>

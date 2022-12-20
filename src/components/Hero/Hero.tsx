@@ -6,6 +6,7 @@ import styled from "styled-components";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useTranslation } from "next-i18next";
+import { breakpoints } from "@css/helper/breakpoints";
 
 /**
  * Internal dependencies
@@ -19,6 +20,10 @@ const HeroWrapper = styled.div`
     position:relative;
     padding:31.8rem 0 28.9rem;
     margin-bottom:16rem;
+
+    ${breakpoints().max("xxl")} {
+        padding: 32.1rem 0 28.9rem;
+    }
 
     .hero__decor {
         position: absolute;

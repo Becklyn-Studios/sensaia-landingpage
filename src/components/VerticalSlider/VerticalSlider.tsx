@@ -135,9 +135,9 @@ export const VerticalSlider = () => {
                                             <div className="slider__content" style={{opacity: setOpacity(percentage, 0.5, 0.85)}}>
                                                 <Container>
                                                     <Row>
-                                                        <Col size={{ m: 12,  xl: 6, xxl: 4 }}>
+                                                        <Col size={{ m: 12,  xl: 5, xxl: 4 }}>
                                                             <BlockHead>
-                                                                <Headline size="large">{item.title}</Headline>
+                                                                <Headline size="xxlarge">{item.title}</Headline>
                                                                 <p>{item.content}</p>
                                                             </BlockHead>
                                                         </Col>
@@ -147,7 +147,7 @@ export const VerticalSlider = () => {
 
                                             <div className="slider__main">
                                                 <Row>
-                                                    <Col size={{ xl: 0, xxl: 5 }}>
+                                                    <Col size={{ xl: 6, xxl: 5 }}>
                                                         <div className="hidden"></div>
                                                     </Col>
 

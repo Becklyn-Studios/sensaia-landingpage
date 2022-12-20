@@ -38,8 +38,8 @@ type Props = {
 
 export const ImageMasked: React.FC<Props> = ({children}) => {
     const boxRef = useRef<HTMLDivElement>(null);
-    const [x, setX] = useState<number | undefined>();
-    const [y, setY] = useState<number | undefined>();
+    const [x, setX] = useState<number | null>();
+    const [y, setY] = useState<number | null>();
 
     const getPosition = () => {
         const x = boxRef.current?.getBoundingClientRect().left;
@@ -49,21 +49,18 @@ export const ImageMasked: React.FC<Props> = ({children}) => {
         setY(y);
 
         const timer = setTimeout(() => {
-            getPosition(false);
+            getPosition();
         }, 500);
         return () => clearTimeout(timer);
     };
 
-    useEffect(() => {
+    useEffect((): void => {
         getPosition();
-    }, []);
-
-    useEffect(() => {
         window.addEventListener("resize", getPosition);
     }, []);
 
     return (
-        <ImageWrapper ref={boxRef} style={{ "--offset-x":`${x}px`, "--offset-y":`${y}px` }}>
+        <ImageWrapper ref={boxRef} style={{ "--offset-x":`${x}px`, "--offset-y":`${y}px` } as React.CSSProperties}>
             {children}
             {children}
         </ImageWrapper>
