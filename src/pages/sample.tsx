@@ -26,7 +26,6 @@ const Home: React.FC = () => {
 
             <SectionSample>
                 <div>
-                    
                     <h6>Datenschutz</h6>
 
                     <h2>Ihr gutes Recht – unsere Verpflichtung.</h2>
@@ -146,7 +145,7 @@ const Home: React.FC = () => {
 
                                             <h6>Rechtsgrundlage und Widerrufsmöglichkeit</h6>
 
-                                            <p>Für diese Datenverarbeitung ist Ihre Einwilligung, Art. 6 Abs.1 S.1 lit. a) DSGVO, Voraussetzung. Sie können Ihre Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen. Folgen Sie dazu dem unter Kapitel 4.3 „Cookies“ angegebenen Link.<br/> Nähere Informationen zu Nutzungsbedingungen von Google Analytics und zum Datenschutz bei Google finden Sie unter <a href="#">https://marketingplatform.google.com/about/analytics/terms/de/</a> und unter <a href="#">https://policies.google.com/?hl=de.</a></p>
+                                            <p>Für diese Datenverarbeitung ist Ihre Einwilligung, Art. 6 Abs.1 S.1 lit. a) DSGVO, Voraussetzung. Sie können Ihre Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen. Folgen Sie dazu dem unter Kapitel 4.3 „Cookies“ angegebenen Link.<br/> Nähere Informationen zu Nutzungsbedingungen von Google Analytics und zum Datenschutz bei Google finden Sie unter <a href='#'>https://marketingplatform.google.com/about/analytics/terms/de/</a> und unter <a href='#'>https://policies.google.com/?hl=de.</a></p>
                                         </li>
 
                                         <li>
@@ -171,7 +170,7 @@ const Home: React.FC = () => {
 
                             <p>Bezogen auf den Einsatz von Analyse- und Drittanbieter-Cookies (Google) kann eine Datenübertragung in die USA nicht ausgeschlossen werden. Dies ist leider derzeit nicht datenschutzkonform möglich. Insofern beachten Sie dieses bitte, wenn Sie uns Ihre Einwilligungserklärung hinsichtlich des Setzens dieser Cookies erteilen.</p>
 
-                            <p>Wir weisen darauf hin, dass der EuGH in seinem Urteil vom 16.07.2020 (Rechtssache C-311/18) die EU-US Privacy-Shield-Vereinbarung zum zulässigen Datentransfer zwischen der EU und den USA für unzulässig erklärt hat und personenbezogenen Daten derzeit nicht datenschutzkonform in die USA übertragen werden können. Grund dafür sind bestehende Gesetze in den USA, die Sicherheitsbehörden weitreichende Befugnisse zur Überwachung "ausländischer Kommunikation" ermöglichen. Wir weisen Sie hiermit ausdrücklich auf dieses Risiko hin.</p>
+                            <p>`Wir weisen darauf hin, dass der EuGH in seinem Urteil vom 16.07.2020 (Rechtssache C-311/18) die EU-US Privacy-Shield-Vereinbarung zum zulässigen Datentransfer zwischen der EU und den USA für unzulässig erklärt hat und personenbezogenen Daten derzeit nicht datenschutzkonform in die USA übertragen werden können. Grund dafür sind bestehende Gesetze in den USA, die Sicherheitsbehörden weitreichende Befugnisse zur Überwachung &apos;ausländischer Kommunikation&apos; ermöglichen. Wir weisen Sie hiermit ausdrücklich auf dieses Risiko hin.`</p>
                         </li>
 
                         <li>
