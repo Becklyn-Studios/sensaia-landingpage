@@ -42,11 +42,13 @@ export const ImageMasked: React.FC<Props> = ({children}) => {
     const [y, setY] = useState<number | null>();
 
     const getPosition = () => {
-        const x = boxRef.current?.getBoundingClientRect().left;
-        setX(x);
+        if (boxRef.current?.getBoundingClientRect()) {
+            const x = boxRef.current?.getBoundingClientRect().left;
+            setX(x);
 
-        const y = boxRef.current?.getBoundingClientRect().top + window.scrollY;
-        setY(y);
+            const y = boxRef.current?.getBoundingClientRect().top + window.scrollY;
+            setY(y);
+        }
 
         const timer = setTimeout(() => {
             getPosition();
@@ -54,9 +56,11 @@ export const ImageMasked: React.FC<Props> = ({children}) => {
         return () => clearTimeout(timer);
     };
 
-    useEffect((): void => {
+    useEffect(() => {
         getPosition();
         window.addEventListener("resize", getPosition);
+
+        return () => window.removeEventListener("resize", getPosition);
     }, []);
 
     return (

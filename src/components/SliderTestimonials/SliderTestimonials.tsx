@@ -4,6 +4,7 @@
 import styled from "styled-components";
 import React, { useState, useEffect, useCallback } from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
+import AutoHeight from 'embla-carousel-auto-height'
 import { PrevButton, NextButton, DotButton } from "./EmblaCarouselButtons";
 
 import { Testimonial } from "../Testimonial/Testimonial";
@@ -11,18 +12,19 @@ import { Testimonial } from "../Testimonial/Testimonial";
 const SliderWrapper = styled.div`
     .embla {
         .embla__viewport {
-          overflow: hidden;
+            overflow: hidden;
+            margin:0 -1rem;
         }
 
         .embla__container {
             display: flex;
             flex-direction: row;
-            height: auto;
-            margin:0 -1rem;
+            align-items: flex-start;
+            transition: height 0.3s;
         }
 
         .embla__slide {
-            flex: 0 0 100%;
+            flex: 1 0 100%;
             padding:0 1rem;
         }
 
@@ -71,7 +73,8 @@ type PropType = {
  }
 
 export const SliderTestimonials: React.FC<PropType> = ({slides}) => {
-    const [emblaRef, embla] = useEmblaCarousel({ loop: true })
+    const options = { destroyHeight: 'auto' } // Options
+    const [emblaRef, embla] = useEmblaCarousel({ loop: true }, [AutoHeight(options)])
     const [prevBtnEnabled, setPrevBtnEnabled] = useState(false);
     const [nextBtnEnabled, setNextBtnEnabled] = useState(false);
     const [selectedIndex, setSelectedIndex] = useState(0);
@@ -94,6 +97,11 @@ export const SliderTestimonials: React.FC<PropType> = ({slides}) => {
       onSelect();
       setScrollSnaps(embla.scrollSnapList());
       embla.on("select", onSelect);
+
+      const timer = setTimeout(() => {
+          embla.reInit()
+      }, 100);
+      return () => clearTimeout(timer);
     }, [embla, setScrollSnaps, onSelect]);
 
     return (

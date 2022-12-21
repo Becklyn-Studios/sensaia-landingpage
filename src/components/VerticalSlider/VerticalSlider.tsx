@@ -6,6 +6,7 @@ import styled from "styled-components";
 import Image from "next/image";
 import { Parallax } from "react-parallax";
 import { useTranslation } from "next-i18next";
+import { breakpoints } from "@css/helper/breakpoints";
 
 import { Headline } from "../Headline/Headline";
 import { BlockHead } from "../BlockHead/BlockHead";
@@ -30,6 +31,11 @@ const SliderWrapper = styled.div`
                 flex-wrap: wrap;
                 padding: 8rem 0;
                 min-height:50rem;
+
+                ${breakpoints().max("xl")} {
+                    padding: 5rem 0;
+                    min-height:40rem;
+                }
             }
 
             &:first-child .slider__slide-inner {
@@ -78,7 +84,7 @@ const SliderWrapper = styled.div`
 
 export const VerticalSlider = () => {
     const { t } = useTranslation("common");
-
+    
     const featuresList = [
         {
             "media": "/slider/monitoring.svg",
@@ -135,9 +141,9 @@ export const VerticalSlider = () => {
                                             <div className="slider__content" style={{opacity: setOpacity(percentage, 0.5, 0.85)}}>
                                                 <Container>
                                                     <Row>
-                                                        <Col size={{ m: 12,  xl: 5, xxl: 4 }}>
+                                                        <Col size={{ m: 12, l:5, xl: 5, xxl: 4 }}>
                                                             <BlockHead>
-                                                                <Headline size="xxlarge">{item.title}</Headline>
+                                                                <Headline size="xxlarge" smallDeskSize="large" tabletSize="large" mobileSize="large">{item.title}</Headline>
                                                                 <p>{item.content}</p>
                                                             </BlockHead>
                                                         </Col>
@@ -147,11 +153,11 @@ export const VerticalSlider = () => {
 
                                             <div className="slider__main">
                                                 <Row>
-                                                    <Col size={{ xl: 6, xxl: 5 }}>
+                                                    <Col size={{ l:5, xl: 6, xxl: 5 }}>
                                                         <div className="hidden"></div>
                                                     </Col>
 
-                                                    <Col size={{ m: 12,  xl: 5, xxl: 6 }}>
+                                                    <Col size={{ m: 12, l:6, xl: 5, xxl: 6 }}>
                                                         <div className="slider__media" style={{opacity: setOpacity(percentage, 0.2, 1.2)}}>
                                                             <ImageMasked>
                                                                 <Image src={item.media} width={807.6} height={423} alt="icon" />

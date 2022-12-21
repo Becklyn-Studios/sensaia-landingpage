@@ -1,8 +1,9 @@
 /**
  * External dependencies
  */
-import React, { useEffect , useState, Dispatch, SetStateAction} from "react";
+import React, { useEffect , useState } from "react";
 import styled from "styled-components";
+import { breakpoints } from "@css/helper/breakpoints";
 
 const CursorWrapper = styled.div`
     --cursor-size: 5rem;
@@ -20,6 +21,10 @@ const CursorWrapper = styled.div`
     pointer-events:none;
     transition: width 0.3s, height 0.3s, background-color 0.3s;
 
+    ${breakpoints().max("l")} {
+        display:none;
+    }
+
     &.A,
     &.BUTTON,
     &.INPUT,
@@ -36,8 +41,8 @@ const CursorWrapper = styled.div`
 
 
 interface IProps {
-   setMousePositionX: Dispatch<SetStateAction<Function>>;
-   setMousePositionY: Dispatch<SetStateAction<Function>>;
+    setMousePositionX: React.Dispatch<React.SetStateAction<number>>;
+    setMousePositionY: React.Dispatch<React.SetStateAction<number>>;
 }
 
 export const CursorProvider: React.FC<IProps> = ({setMousePositionX, setMousePositionY}) => {

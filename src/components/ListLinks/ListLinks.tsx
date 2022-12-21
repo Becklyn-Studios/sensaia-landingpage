@@ -4,9 +4,11 @@
 import React from "react";
 import styled from "styled-components";
 import { useTranslation } from "next-i18next";
+import { breakpoints } from "@css/helper/breakpoints";
 
 const ListLinksWrapper = styled.div`
     font-family: "Sharp Grotesk DB Cyr 19";
+
     ul {
         list-style-type:none;
         display:inline-flex;
@@ -17,6 +19,9 @@ const ListLinksWrapper = styled.div`
             + li {
                 margin-left:4.3rem;
 
+                ${breakpoints().max("l")} {
+                    margin-left:3.3rem;
+                }
             }
         }
     }

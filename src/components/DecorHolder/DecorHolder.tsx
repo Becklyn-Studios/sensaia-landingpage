@@ -4,6 +4,7 @@
 import React from "react";
 import styled from "styled-components";
 import classNames       from 'classnames';
+import { breakpoints } from "@css/helper/breakpoints";
 
 import { DecorBlob } from "../DecorBlob/DecorBlob";
 
@@ -18,6 +19,17 @@ const DecorWrapper = styled.div`
 		width:70%;
 		opacity:0.3;
 		pointer-events:none;
+
+		${breakpoints().max("l")} {
+			top: 50%;
+			width:141%;
+			transform: translate(-64%,-50%);
+		}
+
+		${breakpoints().max("m")} {
+			top: 32%;
+			width:128%;
+		}
 
 		> div {
 			max-width:100%;
@@ -36,14 +48,49 @@ const DecorWrapper = styled.div`
 			right:10%;
 			width:71%;
 			transform: translate(50%,-50%);
+
+			${breakpoints().max("l")} {
+				top: 52.5%;
+				width:100.8%;
+				transform: translate(33.6%,-50%);
+			}
+
+			${breakpoints().max("m")} {
+				top: 58.2%;
+				width:200.8%;
+				transform: translate(69%,-50%);
+			}
+		}
+
+		&.big {
+			.decor__bg {
+				right:17%;
+				top:79%;
+
+				${breakpoints().max("l")} {
+					top: 67.8%;
+					transform: translate(55.5%,-50%);
+				}
+
+				${breakpoints().max("m")} {
+					top:61.5%;
+					transform: translate(68.5%,-50%);
+				}
+			}
 		}
 	}
 
 	&.big {
 		.decor__bg {
-			right:17%;
-			top:79%;
 			width:90%;
+
+			${breakpoints().max("l")} {
+				width:134.8%;
+			}
+
+			${breakpoints().max("m")} {
+				width:270%;
+			}
 		}
 	}
 `;

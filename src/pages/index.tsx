@@ -23,12 +23,13 @@ import { Form }           from "../components/Form/Form";
 import { About }          from "../components/About/About";
 import { Footer }         from "../components/Footer/Footer";    
 import { CursorProvider } from "../components/CursorProvider/CursorProvider";
-
-
+import { SliderGallery }  from "../components/SliderGallery/SliderGallery";
+import useMedia           from "../components/UseMedia/UseMedia";
 
 const Home: React.FC = () => {
     const [mousePositionY, setMousePositionY] = useState(99999);
     const [mousePositionX, setMousePositionX] = useState(99999);
+    const isTabletView = useMedia(1024)
 
     return (
         <div className="wrapper" style={{ "--mouse-left":mousePositionX+"px", "--mouse-top":mousePositionY+"px" } as React.CSSProperties}>
@@ -48,7 +49,11 @@ const Home: React.FC = () => {
                 </DecorHolder>
                 
                 <Spacer>
-                    <VerticalSlider/>
+                    {
+                        isTabletView.isMobile
+                            ? <SliderGallery/>
+                            : <VerticalSlider/>
+                    }
                 </Spacer>
             </section>
 

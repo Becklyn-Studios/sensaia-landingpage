@@ -1,8 +1,8 @@
 export const bp = {
     intrinsic: 0, // intrinsic
     s: 524, // phone
-    m: 768, // tablet
-    l: 1024, // small laptop
+    m: 767, // tablet
+    l: 1023, // small laptop
     xl: 1250, // laptop
     xxl: 1680, // desktop
 };

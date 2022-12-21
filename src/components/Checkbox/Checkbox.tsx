@@ -1,6 +1,8 @@
 import React  from "react";
 import classNames       from 'classnames';
 import styled from "styled-components";
+import { breakpoints } from "@css/helper/breakpoints";
+
 
 const CheckboxWrapper = styled.div`
 
@@ -26,6 +28,10 @@ const CheckboxWrapper = styled.div`
 		display: flex;
 		align-items:center;
 		min-height:3rem;
+
+		${breakpoints().max("m")} {
+			line-height:1.25;
+		}
 
 		&:before,
 		&:after {

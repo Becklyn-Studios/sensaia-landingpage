@@ -3,6 +3,7 @@
  */
 import React from "react";
 import styled from "styled-components";
+import { breakpoints } from "@css/helper/breakpoints";
 
 const Grid = styled.div`
     --guter-x : 2rem;
@@ -11,6 +12,11 @@ const Grid = styled.div`
     display:flex;
     flex-wrap: wrap;
     margin: calc(var(--guter-y) * -1) calc(var(--guter-x) * -0.5) 0;
+
+    ${breakpoints().max("l")} {
+        --guter-x : 1rem;
+        --guter-y : 1rem;
+    }
 `;
 
 

@@ -8,6 +8,7 @@ import 'aos/dist/aos.css';
 
 
 import { useTranslation } from "next-i18next";
+import { breakpoints } from "@css/helper/breakpoints";
 
 /**
  * Internal dependencies
@@ -20,6 +21,7 @@ import { BlockHead } from "../BlockHead/BlockHead";
 import { Row } from "../Row/Row";
 import { Col } from "../Col/Col";
 
+
 const FeaturesWrapper = styled.div`
     text-align:center;
 `;
@@ -27,17 +29,43 @@ const FeaturesWrapper = styled.div`
 const FeaturedHead = styled.div`
     margin:0 auto 8.9rem;
     max-width:81rem;
+
+    ${breakpoints().max("xxl")} {
+        max-width:66.67%;
+        padding:0 3rem;
+        margin:0 auto 9rem;
+    }
+
+    ${breakpoints().max("xl")} {
+        max-width:75%;
+        padding:0 2rem;
+        margin:0 auto 6.2rem;
+    }
+
+    ${breakpoints().max("m")} {
+        max-width:100%;
+        padding:0 0;
+        margin:0 auto 5.3rem;
+    }
 `;
 
 const FeaturedBody = styled.div`
     .row {
         justify-content:center;
+        
+        ${breakpoints().max("m")} {
+            --guter-y : 4.4rem;
+        }
     }
 `;
 
 const FeaturedFoot = styled.div`
     margin-top:5rem;
     text-aling:center;
+    
+    ${breakpoints().max("m")} {
+        margin-top:3rem;
+    }
 `;
 
 export const Features: React.FC<{}> = () => {
@@ -65,7 +93,7 @@ export const Features: React.FC<{}> = () => {
             <FeaturesWrapper className="featured">
                 <FeaturedHead className="featured__head" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
                     <BlockHead>
-                        <Headline size="large">{t("features.title")}</Headline>
+                        <Headline size="large" smallDeskSize="medium" tabletSize="medium" mobileSize="small">{t("features.title")}</Headline>
                         
                         <p>{t("features.sub-title")}</p>
                     </BlockHead>
@@ -75,7 +103,7 @@ export const Features: React.FC<{}> = () => {
                     <Row>
                         {
                             featuresList.map((item, index) => (
-                                <Col size={{ s: 12, m: 6, l: 8, xl: 5, xxl: 4 }} key={index}>
+                                <Col size={{ s: 12, m: 6, l: 5, xl: 5, xxl: 4 }} key={index}>
                                     <Feature icon={item.icon} title={item.title} text={item.subtitle} />
                                 </Col>
                             ))

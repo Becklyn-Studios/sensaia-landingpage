@@ -21,6 +21,16 @@ const IntroWrapper = styled.div`
         max-width: 99.4rem;
         margin:0 auto 9.9rem;
 
+        ${breakpoints().max("l")} {
+            max-width: 75%;
+            margin:0 auto 4.9rem;
+        }
+
+        ${breakpoints().max("m")} {
+            max-width: 94%;
+            margin:0 auto 4.9rem;
+        }
+
         .heading {
             text-align: center;
         }
@@ -35,6 +45,14 @@ const IntroWrapper = styled.div`
 
             ${breakpoints().max("xxl")} {
                 margin: 0 calc(50% - 68.9vw) 0 calc(50% - 69.2vw);
+            }
+
+            ${breakpoints().max("l")} {
+                margin: 0 calc(50% - 86.4vw) 0 calc(50% - 83vw);
+            }
+
+            ${breakpoints().max("m")} {
+                margin: 0 calc(50% - 100vw) 0 calc(50% - 93.3vw);
             }
 
             img {
@@ -59,6 +77,15 @@ const IntroWrapper = styled.div`
                             row-gap: 1.68rem;
                         }
 
+                        ${breakpoints().max("xl")} {
+                            column-gap: 1.1rem;
+                            row-gap: 1.1rem;
+                        }
+
+                        ${breakpoints().max("m")} {
+                            column-gap: 0.6rem;
+                            row-gap: 0.6rem;
+                        }
 
                         &:first-child {
                             max-width:84%;
@@ -72,6 +99,13 @@ const IntroWrapper = styled.div`
                             margin-top:3.5rem;
                         }
 
+                        ${breakpoints().max("l")} {
+                            margin-top:2.24rem;
+                        }
+
+                        ${breakpoints().max("m")} {
+                            margin-top:1.24rem;
+                        }
                     }
                 }
 
@@ -81,6 +115,14 @@ const IntroWrapper = styled.div`
 
                     ${breakpoints().max("xxl")} {
                         margin-left:3.48rem;
+                    }
+
+                    ${breakpoints().max("l")} {
+                        margin-left:2.22rem;
+                    }
+
+                    ${breakpoints().max("m")} {
+                        margin-left:1.2rem;
                     }
 
                     > ul {
@@ -94,6 +136,13 @@ const IntroWrapper = styled.div`
                             row-gap:3rem;
                         }
 
+                        ${breakpoints().max("l")} {
+                            row-gap:2.2rem;
+                        }
+
+                        ${breakpoints().max("m")} {
+                            row-gap:1.2rem;
+                        }
 
                         > li {
                             &:first-child {
@@ -109,6 +158,15 @@ const IntroWrapper = styled.div`
                                     margin-left:4rem;
                                     ${breakpoints().max("xxl")} {
                                         margin-left:3.4rem;
+                                    }
+
+                                    ${breakpoints().max("l")} {
+                                        margin-left:2.2rem;
+                                    }
+
+                                    ${breakpoints().max("m")} {
+                                        margin-left:1.2rem;
+                                        // margin-top:10.7rem;
                                     }
                                 }
                             }
@@ -132,7 +190,7 @@ export const Intro: React.FC<{}> = () => {
             <IntroWrapper>
                 <div className="intro__head" data-aos="fade-up">
                     <BlockHead>
-                        <Headline size="large">{t("intro-text")}</Headline>
+                        <Headline size="large" smallDeskSize="medium" tabletSize="small" mobileSize="small" >{t("intro-text")}</Headline>
                     </BlockHead>
                 </div>
 

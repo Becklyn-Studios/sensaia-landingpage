@@ -12,7 +12,19 @@ export default {
             control: "select",
             options: ["xxlarge", "xlarge", "large", "medium", "small", "xsmall"],
         },
-    },
+        smallDeskSize: {
+            control: "select",
+            options: ["xxlarge", "xlarge", "large", "medium", "small", "xsmall"],
+        },
+        tabletSize: {
+            control: "select",
+            options: ["xxlarge", "xlarge", "large", "medium", "small", "xsmall"],
+        },
+        mobileSize: {
+            control: "select",
+            options: ["xxlarge", "xlarge", "large", "medium", "small", "xsmall"],
+        }
+    }
 } as ComponentMeta<typeof Headline>;
 
 const Template: ComponentStory<typeof Headline> = args => (

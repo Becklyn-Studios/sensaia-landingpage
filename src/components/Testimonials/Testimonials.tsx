@@ -6,13 +6,13 @@ import styled from "styled-components";
 import { useTranslation } from "next-i18next";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { breakpoints } from "@css/helper/breakpoints";
 
 import { Container } from "../Container/Container";
 import { Headline } from "../Headline/Headline";
 import { Row } from "../Row/Row";
 import { Col } from "../Col/Col";
 import { SliderTestimonials } from "../SliderTestimonials/SliderTestimonials";
-import { breakpoints } from "@css/helper/breakpoints";
 
 const TestimonialsWrapper = styled.div`
     > .row {
@@ -28,6 +28,13 @@ const TestimonialsWrapper = styled.div`
             padding-bottom:7.2rem;
         }
 
+        ${breakpoints().max("l")} {
+            padding-bottom:1.9rem;
+        }
+
+        ${breakpoints().max("m")} {
+            padding-bottom:2.1rem;
+        }
     }
 `;
 
@@ -62,13 +69,13 @@ export const Testimonials: React.FC<{}> = () => {
         <Container>
             <TestimonialsWrapper>
                 <Row>
-                    <Col size={{ s: 12, m: 6, l: 8, xl: 5, xxl: 5 }} >
+                    <Col size={{ s: 12, m: 12, l: 5, xl: 5, xxl: 5 }} >
                         <div className="testimonials__content" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
-                            <Headline size="xlarge">{t("testimonials.title")}</Headline>
+                            <Headline size="xlarge" smallDeskSize="large" tabletSize="large" mobileSize="medium">{t("testimonials.title")}</Headline>
                         </div>
                     </Col>
 
-                    <Col size={{ s: 12, m: 6, l: 8, xl: 6, xxl: 5 }} >
+                    <Col size={{ s: 12, m: 12, l: 7, xl: 6, xxl: 5 }} >
                         <div className="testimonials__media" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
                             {<SliderTestimonials slides={testimonials}/>}
                         </div>

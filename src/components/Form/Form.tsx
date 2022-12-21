@@ -10,6 +10,7 @@ import * as yup         from "yup";
 import classNames       from 'classnames';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { breakpoints } from "@css/helper/breakpoints";
 
 import { Container } from "../Container/Container";
 import { Headline } from "../Headline/Headline";
@@ -38,8 +39,9 @@ const FormWrapper = styled.div`
     }
 
     .form__alert {
-        position:absolute;
-        top:-15rem;
+        position:fixed;
+        z-index:1;
+        top:10rem;
         left:50%;
         transform:translate(-50%, 0);
         padding: 1.8rem 3rem;
@@ -50,6 +52,11 @@ const FormWrapper = styled.div`
         opacity:0;
         transition: opacity 0.3s;
 
+        ${breakpoints().max("m")} {
+            top:8rem;
+            width:calc(100% - 4rem);
+        }
+
         &.is-visible {
             opacity: 1;
         }
@@ -58,16 +65,54 @@ const FormWrapper = styled.div`
     .form__head {
         text-align:center;
         margin-bottom:4.7rem;
+
+        ${breakpoints().max("l")} {
+            max-width: 75%;
+            margin: 0 auto 4.7rem;
+        }
+
+        ${breakpoints().max("m")} {
+            max-width: 100%;
+            margin: 0 auto 3rem;
+        }
+
+        p {
+            ${breakpoints().max("m")} {
+                padding:0 2rem;
+            }
+        }
     }
     
     .form__body {
-        > .row {
-            --guter-y: 2rem;
+        .row {
+            > *:first-child {
+                ${breakpoints().min("m")} {
+                    margin-right:50%;
+                }
+            }
+        }
+
+        .checkbox {
+            ${breakpoints().max("l")} {
+                margin-top:1rem;
+            }
+
+            ${breakpoints().max("m")} {
+                margin-top:1rem;
+            }
         }
     }
 
     .form__actions {
         margin-top:3.1rem;
+     
+        ${breakpoints().max("l")} {
+            margin-top:4.1rem;
+        }
+
+        ${breakpoints().max("m")} {
+            margin-top:2rem;
+        }
     }
 `;
 
@@ -107,12 +152,12 @@ export const Form: React.FC<{}> = () => {
         <Container>
             <FormWrapper>
                 <Row>
-                    <Col size={{ s: 12, m: 12, l: 12, xl: 8, xxl: 6 }}>
+                    <Col size={{ s: 12, m: 12, l: 10, xl: 8, xxl: 6 }}>
                         <div className={classNames('form__alert', { "is-visible": showAlert })}>{t("form.alert")}</div>
 
                         <div className="form__head" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
                             <BlockHead>
-                                <Headline size="large">{t("form.title")}</Headline>
+                                <Headline size="large" smallDeskSize="medium" tabletSize="large" mobileSize="medium">{t("form.title")}</Headline>
                                 
                                 <p>{t("form.sub-title")}</p>
                             </BlockHead>
@@ -121,7 +166,7 @@ export const Form: React.FC<{}> = () => {
                         <div className="form__body" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
                             <form onSubmit={handleSubmit(onSubmit)} >
                                 <Row>
-                                    <Col size={{ s: 12, m: 12, l: 12, xl: 6, xxl: 6 }}>
+                                    <Col size={{ s: 12, m: 6, l: 6, xl: 6, xxl: 6 }}>
                                         <Controller
                                             control={control}
                                             name={`title`}
@@ -132,11 +177,7 @@ export const Form: React.FC<{}> = () => {
                                         />
                                     </Col>
 
-                                    <Col size={{ s: 12, m: 12, l: 12, xl: 6, xxl: 6 }}>
-                                        <div className="hidden"></div>
-                                    </Col>
-
-                                    <Col size={{ s: 12, m: 12, l: 12, xl: 6, xxl: 6 }}>
+                                    <Col size={{ s: 12, m: 6, l: 6, xl: 6, xxl: 6 }}>
                                         <Controller
                                             control={control}
                                             name={`firstName`}
@@ -147,7 +188,7 @@ export const Form: React.FC<{}> = () => {
                                         />
                                     </Col>
 
-                                    <Col size={{ s: 12, m: 12, l: 12, xl: 6, xxl: 6 }}>
+                                    <Col size={{ s: 12, m: 6, l: 6, xl: 6, xxl: 6 }}>
                                         <Controller
                                             control={control}
                                             name={`lastName`}
@@ -158,7 +199,7 @@ export const Form: React.FC<{}> = () => {
                                         />
                                     </Col>
 
-                                    <Col size={{ s: 12, m: 12, l: 12, xl: 6, xxl: 6 }}>
+                                    <Col size={{ s: 12, m: 6, l: 6, xl: 6, xxl: 6 }}>
                                         <Controller
                                             control={control}
                                             name={`company`}
@@ -169,7 +210,7 @@ export const Form: React.FC<{}> = () => {
                                         />
                                     </Col>
 
-                                    <Col size={{ s: 12, m: 12, l: 12, xl: 6, xxl: 6 }}>
+                                    <Col size={{ s: 12, m: 6, l: 6, xl: 6, xxl: 6 }}>
                                         <Controller
                                             control={control}
                                             name={`email`}

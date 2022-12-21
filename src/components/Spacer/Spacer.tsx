@@ -10,7 +10,18 @@ const SpacerWrapper = styled.div`
     
     ${breakpoints().max("xxl")} {
         margin:35rem 0;
+    }
 
+    ${breakpoints().max("xl")} {
+        margin:25rem 0;
+    }
+
+    ${breakpoints().max("l")} {
+        margin:20rem 0;
+    }
+
+    ${breakpoints().max("m")} {
+        margin:15rem 0;
     }
 `;
 

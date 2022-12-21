@@ -4,6 +4,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Headline } from "../Headline/Headline";
+import { breakpoints } from "@css/helper/breakpoints";
 
 const TestimonialWrapper = styled.div`
     background: #143756;
@@ -13,6 +14,10 @@ const TestimonialWrapper = styled.div`
     min-height:39.2rem;
     display:flex;
     flex-direction:column;
+
+    ${breakpoints().max("m")} {
+        padding: 4rem 2.8rem 4.6rem;
+    }
 
     .heading {
         margin-bottom:2;
@@ -45,7 +50,7 @@ type Props = {
 export const Testimonial: React.FC<Props> = ({ comment, author }) => {
     return (
         <TestimonialWrapper>
-            <Headline size="small">{comment}</Headline>
+            <Headline size="small" smallDeskSize="small" tabletSize="small" mobileSize="small">{comment}</Headline>
             <p>{author}</p>
         </TestimonialWrapper>
     );

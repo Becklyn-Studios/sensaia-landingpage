@@ -10,7 +10,14 @@ const ContainerWrapper = styled.div`
 
     ${breakpoints().max("xxl")} {
     	max-width: 135.4rem;
+    }
 
+    ${breakpoints().max("l")} {
+    	padding: 0 4rem;
+    }
+
+    ${breakpoints().max("m")} {
+        padding: 0 2rem;
     }
 `;
 

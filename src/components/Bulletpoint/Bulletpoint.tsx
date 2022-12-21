@@ -7,6 +7,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 import { useTranslation } from "next-i18next";
+import { breakpoints } from "@css/helper/breakpoints";
 
 /**
  * Internal dependencies
@@ -21,22 +22,52 @@ import { Addition } from "../Addition/Addition";
 const BulletpointWrapper = styled.div`
     .bulletpoint__head {
         margin-bottom:10.1rem;
+
+        ${breakpoints().max("l")} {
+            margin-bottom:7rem;
+
+        }
     }
 
     .bulletpoint__body {
+        > .row {
+            ${breakpoints().max("l")} {
+                --guter-y : 4.9rem;
+            }
+        }
+
         .addition {
             &:not(:last-child) {
                 margin-bottom:3.2rem;
+
+                ${breakpoints().max("l")} {
+                    margin-bottom:2.2rem;
+                }
+
+                ${breakpoints().max("m")} {
+                    margin-bottom:2.3rem;
+                }
             }
         }
 
         ul {
             list-style-type:none;
 
+            ${breakpoints().max("l")} {
+                line-height:1.25;
+            }
 
             li {
                 position:relative;
                 padding-left:2.3rem;
+
+                ${breakpoints().max("l")} {
+                    padding-left:1.9rem;
+                }
+
+                ${breakpoints().max("m")} {
+                    padding-left:1.7rem;
+                }
 
                 &:before {
                     content:'';
@@ -47,10 +78,18 @@ const BulletpointWrapper = styled.div`
                     height:0.8rem;
                     border-radius:50%;
                     background-color: ${p => p.theme.colors.blue};
+
+                    ${breakpoints().max("l")} {
+                        top:0.7rem;
+                    }
                  }
 
                 + li {
                    margin-top:0.7rem;
+                    
+                    ${breakpoints().max("l")} {
+                       margin-top:1.1rem;
+                    }
                 }
             }
         }
@@ -84,8 +123,8 @@ export const Bulletpoint: React.FC<{}> = () => {
             <BulletpointWrapper>
                 <div className="bulletpoint__head" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
                     <Row>
-                        <Col size={{ s: 12, m: 6, l: 8, xl: 6, xxl: 5 }} >
-                            <Headline size="xlarge">{t("actions.title")}</Headline>
+                        <Col size={{ s: 12, m: 8, l: 8, xl: 6, xxl: 5 }} >
+                            <Headline size="xlarge" smallDeskSize="large" tabletSize="large" mobileSize="medium">{t("actions.title")}</Headline>
                         </Col>
                     </Row>
                 </div>
@@ -94,7 +133,7 @@ export const Bulletpoint: React.FC<{}> = () => {
                     <Row>
                         {
                             content.map((contentItem, contentIndex) => (
-                                <Col size={{ s: 12, m: 6, l: 8, xl: 5, xxl: 4 }} key={contentIndex}>
+                                <Col size={{ s: 12, m: 7, l: 6, xl: 5, xxl: 4 }} key={contentIndex}>
                                     <Addition size="base">{contentItem.subtitle}</Addition>
 
                                     <ul>

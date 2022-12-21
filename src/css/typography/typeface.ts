@@ -20,13 +20,8 @@ export const typefaces = {
     headlineS: createTypeface("2.4rem", "3.0rem", "-0.02em"),
     headlineXs: createTypeface("1.6rem", "2.4rem", "-0.02em"),
 
-    // textXl: createTypeface("2rem", "2.8rem", "-0.05rem"),
-    // textLg: createTypeface("1.8rem", "2.6rem", "-0.02em"),
     textMd: createTypeface("1.6rem", "2.4rem", "-0.02em"),
     textAdd: createTypeface("1.6rem", "2.2rem", "-0.02em"),
-    // textSm: createTypeface("1.4rem", "2rem", "-0.01rem"),
-    // textXs: createTypeface("1.2rem", "1.8rem", "-0.01rem"),
-    // text2Xs: createTypeface("1rem", "1.4rem", "-0.01rem"),
 } as const;
 
 export type Typeface = keyof typeof typefaces;

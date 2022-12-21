@@ -25,6 +25,16 @@ const HeroWrapper = styled.div`
         padding: 32.1rem 0 28.9rem;
     }
 
+    ${breakpoints().max("l")} {
+        padding: 30.1rem 7rem 28.9rem;
+        margin-bottom:9.1rem;
+    }
+
+    ${breakpoints().max("m")} {
+        padding: 21rem 0rem;
+        margin-bottom:4rem;
+    }
+
     .hero__decor {
         position: absolute;
         z-index:1;
@@ -33,6 +43,17 @@ const HeroWrapper = styled.div`
         transform: translate(-50%,-50%);
         width:100%;
         max-width: 63.3rem;
+
+        ${breakpoints().max("l")} {
+            max-width: none;
+            width:105%;
+        }
+
+        ${breakpoints().max("m")} {
+            max-width: none;
+            width:147.2%;
+            top: 47.3%;
+        }
     }
 `;
 
@@ -45,6 +66,14 @@ const HeroContentWrapper = styled.div`
 
     .button {
         margin-top:3.1rem;
+
+        ${breakpoints().max("l")} {
+            margin-top:5.1rem;
+        }
+
+        ${breakpoints().max("m")} {
+            margin-top:3rem;
+        }
     }
 `;
 
@@ -57,13 +86,13 @@ export const Hero: React.FC<{}> = () => {
 
     return (
         <Container>
-            <HeroWrapper data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
+            <HeroWrapper data-aos="fade-up" data-aos-anchor-placement="center-bottom">
                 <div className="hero__decor" >
                     <DecorBlob/>
                 </div>
 
-                <HeroContentWrapper data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
-                    <Headline size="xxlarge">{t("hero.text")}</Headline>
+                <HeroContentWrapper>
+                    <Headline size="xxlarge" smallDeskSize="xlarge" tabletSize="xlarge" mobileSize="medium">{t("hero.text")}</Headline>
 
                     <Button href="#">{t("hero.button")}</Button>
                 </HeroContentWrapper>

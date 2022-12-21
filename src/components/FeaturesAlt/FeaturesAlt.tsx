@@ -6,10 +6,12 @@ import styled from "styled-components";
 import { useTranslation } from "next-i18next";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { breakpoints } from "@css/helper/breakpoints";
 
 /**
  * Internal dependencies
  */
+
 import { Container } from "../Container/Container";
 import { Headline } from "../Headline/Headline";
 import { Feature } from "../Feature/Feature";
@@ -24,11 +26,23 @@ const FeaturesWrapper = styled.div`
 const FeaturedHead = styled.div`
     margin:0 auto 9rem;
     max-width:81rem;
+
+    ${breakpoints().max("l")} {
+        margin:0 auto 7.3rem;
+    }
+
+    ${breakpoints().max("m")} {
+        margin:0 auto 6.2rem;
+    }
 `;
 
 const FeaturedBody = styled.div`
     .row {
         justify-content:center;
+
+        ${breakpoints().max("l")} {
+            --guter-y : 5.5rem;
+        }
     }
 `;
 
@@ -63,15 +77,15 @@ export const FeaturesAlt: React.FC<{}> = () => {
             <FeaturesWrapper className="featured">
                 <FeaturedHead className="featured__head" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
                     <BlockHead>
-                        <Headline size="large">{t("features-big.title")}</Headline>
+                        <Headline size="large" smallDeskSize="medium" tabletSize="medium" mobileSize="small">{t("features-big.title")}</Headline>
                     </BlockHead>
                 </FeaturedHead>
 
-                <FeaturedBody className="featured__body" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
-                    <Row>
+                <FeaturedBody className="featured__body">
+                    <Row >
                         {
                             featuresList.map((item, index) => (
-                                <Col size={{ s: 12, m: 6, l: 8, xl: 3, xxl: 3 }} key={index}>
+                                <Col size={{ s: 12, m: 6, l: 3, xl: 3, xxl: 3 }} key={index}>
                                     <Feature icon={item.icon} title="" text={item.subtitle} />
                                 </Col>
                             ))
