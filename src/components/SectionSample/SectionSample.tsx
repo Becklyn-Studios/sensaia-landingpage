@@ -1,5 +1,6 @@
 import React, { PropsWithChildren } from "react";
 import styled from "styled-components";
+import { breakpoints } from "@css/helper/breakpoints";
 
 import { Container } from "../Container/Container";
 import { Row }       from "../Row/Row";
@@ -11,6 +12,18 @@ const SectionSampleWrapper = styled.div`
     --spacer-med: 7rem;
 
     padding: 17.5rem 0 0rem;
+
+    ${breakpoints().max("xl")} {
+        --spacer-big: 5rem;
+        --spacer-med: 4rem;
+        
+        padding: 12rem 0 0rem;
+    }
+
+    ${breakpoints().max("l")} {
+        --spacer-big: 7rem;
+        --spacer-med: 5rem;
+    }
 
     h1,h2,h3,h4,h5,h6,p {
         letter-spacing:-0.02em;
@@ -24,7 +37,23 @@ const SectionSampleWrapper = styled.div`
     h5 { font-size:1.6rem; line-height:1.5;  font-weight:500; margin-bottom:1.2rem; }
     h6 { font-size:1.6rem; line-height:1.38; font-weight:500; margin-bottom:0.4rem; color: ${p => p.theme.colors.blue}; }
 
-    p { margin-bottom:3rem; }
+    ${breakpoints().max("l")} {
+        h2 { font-size:3.8rem; line-height:1.11; }
+        h4 { margin-bottom:2rem; }
+        h5 { font-size:1.6rem; line-height:1.5;  font-weight:500; margin-bottom:1.2rem; }
+        h6 { font-size:1.6rem; line-height:1.38; font-weight:500; margin-bottom:0.4rem; color: ${p => p.theme.colors.blue}; }
+
+    }
+
+    p {
+        margin-bottom:3rem;
+
+
+        ${breakpoints().max("l")} {
+            margin-bottom:7rem;
+            word-break: break-word;
+        }
+    }
 
     > ol {
         &:not(:first-child) {
@@ -50,6 +79,16 @@ const SectionSampleWrapper = styled.div`
 
         p + h6 {
             margin-top:4.2rem;
+
+            ${breakpoints().max("l")} {
+                margin-top:3.2rem;
+            }
+        }
+
+        h4 + ol {
+            ${breakpoints().max("l")} {
+                margin-top:3rem;
+            }
         }
 
         h6 {
@@ -76,6 +115,12 @@ const SectionSampleWrapper = styled.div`
         li {
             position:relative;
             padding-left:2.2rem;
+
+            ${breakpoints().max("l")} {
+                padding-left:2.5rem;
+
+            }
+
 
             &:before {
                 content:"";

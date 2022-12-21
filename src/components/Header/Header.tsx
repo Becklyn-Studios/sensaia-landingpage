@@ -104,6 +104,7 @@ const HeaderWrapper = styled.div`
                     background-color: ${p => p.theme.colors.white};
                     transform: scaleX(0);
                     transition: transform 0.3s ease;
+                    pointer-events:none;
                 }
 
                 &:hover {

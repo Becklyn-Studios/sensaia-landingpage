@@ -19,6 +19,10 @@ const MenuWrapper = styled.div`
         gap: 0.8rem;
         line-height:1.11;
     }
+
+    a {
+        display:block;
+    }
 `;
 
 const Menu: React.FC<PropsWithChildren> = ({ children }) => {
