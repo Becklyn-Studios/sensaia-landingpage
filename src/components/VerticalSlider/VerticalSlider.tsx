@@ -62,6 +62,8 @@ const SliderWrapper = styled.div`
     }
 
     .slider__media {
+        pointer-events: none;
+        
         img {
             width:100%;
             height:auto;
