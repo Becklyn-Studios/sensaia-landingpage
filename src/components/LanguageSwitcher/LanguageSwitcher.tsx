@@ -24,7 +24,7 @@ export const LanguageSwitcher: React.FC<{}> = () => {
     const switchableLocale = currentLocale === "en" ? "de" : "en";
 
     const handleLocaleSwitch = () => {
-        router.push(router.pathname, "/", { locale: switchableLocale });
+        router.push(router.pathname, router.pathname, { locale: switchableLocale });
     };
 
     return (
