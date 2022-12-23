@@ -51,6 +51,7 @@ const HeaderWrapper = styled.div`
         margin-left: auto;
         width: 10%;
         flex-grow: 1;
+        z-index: 9;
 
         ${breakpoints().max("l")} {
             font-size: 3.8rem;
