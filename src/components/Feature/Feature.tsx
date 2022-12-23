@@ -1,56 +1,53 @@
 /**
  * External dependencies
  */
-import React, {useEffect} from "react";
+import React from "react";
 import styled from "styled-components";
 import Image from "next/image";
-import classNames       from 'classnames';
+import classNames from "classnames";
 import { breakpoints } from "@css/helper/breakpoints";
-import AOS from 'aos';
-import 'aos/dist/aos.css';
 
 import { Headline } from "../Headline/Headline";
 
 const FeatureMedia = styled.div`
-    position:absolute;
-    top:0;
-    left:50%;
-    transform:translate(-50%, -50%);
-    width:8rem;
-    height:8rem;
-    background-color:${p => p.theme.colors.white};
-    border-radius:50%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8rem;
+    height: 8rem;
+    background-color: ${p => p.theme.colors.white};
+    border-radius: 50%;
 
     ${breakpoints().max("l")} {
-        width:6.8rem;
-        height:6.8rem;
+        width: 6.8rem;
+        height: 6.8rem;
     }
 
     img {
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%,-50%);
-        max-width:70%;
-        width:auto;
-        height:auto;
+        transform: translate(-50%, -50%);
+        max-width: 70%;
+        width: auto;
+        height: auto;
     }
 `;
 
 const FeatureWrapper = styled.div`
     color: ${p => p.theme.colors.white};
-    width:100%;
-    height:100%;
-    text-align:center;
+    width: 100%;
+    height: 100%;
+    text-align: center;
 
     .feature__inner {
-        position:relative;
+        position: relative;
         background: #143756;
-        border: 0.1rem solid #3F5E79;
+        border: 0.1rem solid #3f5e79;
         border-radius: 1rem;
         padding: 8rem 2rem 5.2rem;
-        height:100%;
-
+        height: 100%;
 
         ${breakpoints().max("xl")} {
             padding: 6rem 2rem 4rem;
@@ -66,37 +63,37 @@ const FeatureWrapper = styled.div`
     }
 
     .feature__content {
-        max-width:36rem;
-        margin:0 auto;
+        max-width: 36rem;
+        margin: 0 auto;
 
         .heading {
             &:not(:last-child) {
-                margin-bottom:2.1rem;
-                
+                margin-bottom: 2.1rem;
+
                 ${breakpoints().max("l")} {
-                    margin-bottom:0.8rem;
+                    margin-bottom: 0.8rem;
                 }
             }
         }
 
         p {
             &:first-child:last-child {
-                max-width:29rem;
-                margin:0 auto;
+                max-width: 29rem;
+                margin: 0 auto;
             }
         }
     }
-   
+
     &.feature--no-icon {
         .feature__inner {
-            padding:5.3rem 3rem 5rem;
+            padding: 5.3rem 3rem 5rem;
 
             ${breakpoints().max("xxl")} {
-                padding:4.2rem 3rem 4rem;
+                padding: 4.2rem 3rem 4rem;
             }
 
             ${breakpoints().max("l")} {
-                padding:4rem 3rem 4.2rem;
+                padding: 4rem 3rem 4.2rem;
             }
 
             .heading:not(:last-child) {
@@ -114,9 +111,8 @@ const FeatureWrapper = styled.div`
 
             .feature__content {
                 ${breakpoints().max("l")} {
-                    max-width:94%;
+                    max-width: 94%;
                 }
-
             }
         }
     }
@@ -124,47 +120,58 @@ const FeatureWrapper = styled.div`
     &.feature--no-heading {
         .feature__inner {
             ${breakpoints().max("xxl")} {
-                padding:6.3rem 2rem 4.5rem;
+                padding: 6.3rem 2rem 4.5rem;
             }
 
             ${breakpoints().max("l")} {
-                padding: 5.5rem 3rem 3.3rem;    
+                padding: 5.5rem 3rem 3.3rem;
             }
         }
 
         .feature__media {
             ${breakpoints().max("xxl")} {
-                width:7.4rem;
-                height:7.4rem;            
+                width: 7.4rem;
+                height: 7.4rem;
             }
         }
     }
 `;
 
 type Props = {
-    icon : string,
-    title : string,
-    text : string,
+    icon: string;
+    title: string;
+    text: string;
 };
 
 export const Feature: React.FC<Props> = ({ icon, title = "", text }) => {
-    useEffect(() => {
-        AOS.init();
-    }, [])
     return (
-    	<FeatureWrapper className={classNames('feature', { "feature--no-icon": !!!icon, "feature--no-heading": !!!title })} data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
-    		<div className="feature__inner">
-    			{ !!icon &&
+        <FeatureWrapper
+            className={classNames("feature", {
+                "feature--no-icon": !!!icon,
+                "feature--no-heading": !!!title,
+            })}
+            data-aos="fade-up"
+            data-aos-anchor-placement="bottom-bottom">
+            <div className="feature__inner">
+                {!!icon && (
                     <FeatureMedia className="feature__media">
-    				    <Image src={icon} width={0} height={0} alt="icon" />
-    			    </FeatureMedia>
-                }
+                        <Image src={icon} width={0} height={0} alt="icon" />
+                    </FeatureMedia>
+                )}
 
                 <div className="feature__content">
-                    { !!title && <Headline size="small" smallDeskSize="small" tabletSize="xsmall" mobileSize="xsmall">{title}</Headline>}
+                    {!!title && (
+                        <Headline
+                            size="small"
+                            smallDeskSize="small"
+                            tabletSize="xsmall"
+                            mobileSize="xsmall">
+                            {title}
+                        </Headline>
+                    )}
                     <p>{text}</p>
                 </div>
-    		</div>
-    	</FeatureWrapper>
+            </div>
+        </FeatureWrapper>
     );
 };
