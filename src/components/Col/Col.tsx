@@ -13,18 +13,11 @@ const ColWrapper = styled.div<Props>`
     ${p => columns(p.size)}
 `;
 
-
-
 type Props = {
-    children: React.ReactNode,
-    size: object,
+    children: React.ReactNode;
+    size: object;
 };
 
 export const Col: React.FC<Props> = ({ children, size }) => {
-
-    return (
-        <ColWrapper size={size}>
-            {children}
-        </ColWrapper>
-    );
+    return <ColWrapper size={size}>{children}</ColWrapper>;
 };
