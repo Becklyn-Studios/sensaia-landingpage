@@ -6,10 +6,6 @@ export const GlobalStyle = createGlobalStyle`
     ${reset};
     ${stylesheet};
 
-    html {
-        // max-width: 100vw;
-    }
-
     body {
     	color: #fff;
         background-color: #041C31;
@@ -23,17 +19,9 @@ export const GlobalStyle = createGlobalStyle`
         position: relative;
         height: 100%;
         max-width: 100vw;
-        // overflow: hidden;
-        // width: 100vw;
-        // overflow-y: auto;
     }
 
     .hidden {
         display:none;
-    }
-
-    section {
-        // overflow-x: hidden;
-        // overflow-y:
     }
 `;

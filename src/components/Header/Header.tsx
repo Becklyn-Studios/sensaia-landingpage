@@ -3,11 +3,9 @@
  */
 import React from "react";
 import styled from "styled-components";
-// import { Link } from "react-scroll";
 import Link from "next/link";
 import { breakpoints } from "@css/helper/breakpoints";
 import classNames from "classnames";
-// import useMedia from "../UseMedia/UseMedia";
 import { useRouter } from "next/router";
 
 import { useTranslation } from "next-i18next";
@@ -149,7 +147,6 @@ export const Header: React.FC<{}> = () => {
 
     const Scroll = require("react-scroll");
     const Events = Scroll.Events;
-    // const isTabletView = useMedia(1024);
 
     Events.scrollEvent.register("begin", function () {
         setIsNavOpen(false);
@@ -163,46 +160,23 @@ export const Header: React.FC<{}> = () => {
                 <div className={classNames("header__menu", { "is-nav-open": isNavOpen })}>
                     <div className="header__menu-inner">
                         <Menu>
-                            <Link
-                                locale={router.locale}
-                                scroll={false}
-                                /*activeClass="active" smooth spy */ href="/sample" /*offset= { isTabletView ? -100 : 0}*/
-                            >
-                                Sample
-                            </Link>
-                            <Link
-                                locale={router.locale}
-                                scroll={false}
-                                /*activeClass="active" smooth spy */ href="/#section1" /*offset= { isTabletView ? -100 : 0}*/
-                            >
+                            <Link locale={router.locale} scroll={false} href="/#section1">
                                 {t("menu.Solar & Wind")}
                             </Link>
-                            <Link
-                                locale={router.locale}
-                                scroll={false}
-                                /*activeClass="active" smooth spy */ href="/#section2" /*offset= { isTabletView ? -100 : 0}*/
-                            >
+
+                            <Link locale={router.locale} scroll={false} href="/#section2">
                                 {t("menu.Features")}
                             </Link>
-                            <Link
-                                locale={router.locale}
-                                scroll={false}
-                                /*activeClass="active" smooth spy */ href="/#section3" /*offset= { isTabletView ? -100 : 0}*/
-                            >
+
+                            <Link locale={router.locale} scroll={false} href="/#section3">
                                 {t("menu.USPs")}
                             </Link>
-                            <Link
-                                locale={router.locale}
-                                scroll={false}
-                                /*activeClass="active" smooth spy */ href="/#form" /*offset= { isTabletView ? -100 : 0}*/
-                            >
+
+                            <Link locale={router.locale} scroll={false} href="/#form">
                                 {t("menu.Benefits")}
                             </Link>
-                            <Link
-                                locale={router.locale}
-                                scroll={false}
-                                /*activeClass="active" smooth spy */ href="/#section5" /*offset= { isTabletView ? -100 : 0}*/
-                            >
+
+                            <Link locale={router.locale} scroll={false} href="/#section5">
                                 {t("menu.About")}
                             </Link>
                         </Menu>
@@ -211,7 +185,7 @@ export const Header: React.FC<{}> = () => {
                     <div className="header__menu-utils">
                         <LanguageSwitcher />
 
-                        <Link /*activeClass="active" smooth spy to="form"*/ href="/#form">
+                        <Link href="/#form">
                             <Button>{t("contact-button")}</Button>
                         </Link>
                     </div>
