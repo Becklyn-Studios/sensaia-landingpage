@@ -149,9 +149,7 @@ export const Feature: React.FC<Props> = ({ icon, title = "", text }) => {
             className={classNames("feature", {
                 "feature--no-icon": !!!icon,
                 "feature--no-heading": !!!title,
-            })}
-            data-aos="fade-up"
-            data-aos-anchor-placement="bottom-bottom">
+            })}>
             <div className="feature__inner">
                 {!!icon && (
                     <FeatureMedia className="feature__media">

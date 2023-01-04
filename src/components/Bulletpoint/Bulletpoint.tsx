@@ -16,6 +16,7 @@ import { Headline } from "../Headline/Headline";
 import { Row } from "../Row/Row";
 import { Col } from "../Col/Col";
 import { Addition } from "../Addition/Addition";
+import { AnimateElement } from "../AnimateElement/AnimateElement";
 
 const BulletpointWrapper = styled.div`
     .bulletpoint__head {
@@ -128,47 +129,44 @@ export const Bulletpoint: React.FC<{}> = () => {
     return (
         <Container>
             <BulletpointWrapper>
-                <div
-                    className="bulletpoint__head"
-                    data-aos="fade-up"
-                    data-aos-anchor-placement="bottom-bottom">
-                    <Row>
-                        <Col size={{ s: 12, m: 8, l: 8, xl: 6, xxl: 5 }}>
-                            <Headline
-                                size="xlarge"
-                                smallDeskSize="large"
-                                tabletSize="large"
-                                mobileSize="medium">
-                                {t("actions.title")}
-                            </Headline>
-                        </Col>
-                    </Row>
-                </div>
-
-                <div
-                    className="bulletpoint__body"
-                    data-aos="fade-up"
-                    data-aos-anchor-placement="bottom-bottom">
-                    <Row>
-                        {content.map((contentItem, contentIndex) => (
-                            <Col size={{ s: 12, m: 7, l: 6, xl: 5, xxl: 4 }} key={contentIndex}>
-                                <Addition size="base">{contentItem.subtitle}</Addition>
-
-                                <ul>
-                                    {contentItem.list.map((listItem, listIndex) => (
-                                        <li key={listIndex}>{listItem}</li>
-                                    ))}
-                                </ul>
+                <div className="bulletpoint__head" >
+                    <AnimateElement>
+                        <Row>
+                            <Col size={{ s: 12, m: 8, l: 8, xl: 6, xxl: 5 }}>
+                                <Headline
+                                    size="xlarge"
+                                    smallDeskSize="large"
+                                    tabletSize="large"
+                                    mobileSize="medium">
+                                    {t("actions.title")}
+                                </Headline>
                             </Col>
-                        ))}
-                    </Row>
+                        </Row>
+                    </AnimateElement>
                 </div>
 
-                <div
-                    className="bulletpoint__foot"
-                    data-aos="fade-up"
-                    data-aos-anchor-placement="bottom-bottom">
-                    <Button href="#">{t("actions.button")}</Button>
+                <div className="bulletpoint__body" >
+                    <AnimateElement>
+                        <Row>
+                            {content.map((contentItem, contentIndex) => (
+                                <Col size={{ s: 12, m: 7, l: 6, xl: 5, xxl: 4 }} key={contentIndex}>
+                                    <Addition size="base">{contentItem.subtitle}</Addition>
+
+                                    <ul>
+                                        {contentItem.list.map((listItem, listIndex) => (
+                                            <li key={listIndex}>{listItem}</li>
+                                        ))}
+                                    </ul>
+                                </Col>
+                            ))}
+                        </Row>
+                    </AnimateElement>
+                </div>
+
+                <div className="bulletpoint__foot" >
+                    <AnimateElement>
+                        <Button href="#">{t("actions.button")}</Button>
+                    </AnimateElement>
                 </div>
             </BulletpointWrapper>
         </Container>

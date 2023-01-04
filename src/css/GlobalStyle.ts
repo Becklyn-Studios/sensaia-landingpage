@@ -6,22 +6,29 @@ export const GlobalStyle = createGlobalStyle`
     ${reset};
     ${stylesheet};
 
+    html {
+        scroll-behavior: smooth;
+    }
+
     body {
     	color: #fff;
         background-color: #041C31;
         font-family: 'Sharp Grotesk DB Cyr', sans-serif;
         letter-spacing: -0.02em;
         line-height: 1.5;
-    	overflow-x: hidden;
     }
 
     .wrapper {
         position: relative;
-        height: 100%;
-        max-width: 100vw;
+        overflow:hidden;
     }
 
     .hidden {
         display:none;
+    }
+
+    .scroll-to-element {
+        padding-top:10rem;
+        margin-top:-10rem;
     }
 `;

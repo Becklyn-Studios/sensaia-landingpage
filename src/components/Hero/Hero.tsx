@@ -13,6 +13,7 @@ import { Button } from "../Button/Button";
 import { Container } from "../Container/Container";
 import { Headline } from "../Headline/Headline";
 import { DecorBlob } from "../DecorBlob/DecorBlob";
+import { AnimateElement } from "../AnimateElement/AnimateElement";
 
 const HeroWrapper = styled.div`
     position: relative;
@@ -86,15 +87,17 @@ export const Hero: React.FC<{}> = () => {
                 </div>
 
                 <HeroContentWrapper>
-                    <Headline
-                        size="xxlarge"
-                        smallDeskSize="xlarge"
-                        tabletSize="xlarge"
-                        mobileSize="medium">
-                        {t("hero.text")}
-                    </Headline>
+                    <AnimateElement>
+                        <Headline
+                            size="xxlarge"
+                            smallDeskSize="xlarge"
+                            tabletSize="xlarge"
+                            mobileSize="medium">
+                            {t("hero.text")}
+                        </Headline>
 
-                    <Button href="#">{t("hero.button")}</Button>
+                        <Button href="#">{t("hero.button")}</Button>
+                    </AnimateElement>
                 </HeroContentWrapper>
             </HeroWrapper>
         </Container>

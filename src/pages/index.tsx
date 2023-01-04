@@ -34,59 +34,58 @@ const Home: React.FC = () => {
     return (
         <div className="wrapper" style={{ "--mouse-left":mousePositionX+"px", "--mouse-top":mousePositionY+"px" } as React.CSSProperties}>
             <CursorProvider setMousePositionX={setMousePositionX} setMousePositionY={setMousePositionY}/>
-
+            
             <Header/>
-
+            
             <Hero/>
-
-            <section id="section1">
+            
+            <section className="scroll-to-element" id="section1">
                 <DecorHolder>
                     <Intro/>
-
+            
                     <Spacer>
                         <Features/>
                     </Spacer>
                 </DecorHolder>
                 
-                <Spacer>
-                    {
-                        isTabletView.isMobile
-                            ? <SliderGallery/>
-                            : <VerticalSlider/>
-                    }
-                </Spacer>
+                {
+                    isTabletView.isMobile
+                        ? <SliderGallery/>
+                        : <VerticalSlider/>
+                }
             </section>
-
-            <section id="section2">
-                <DecorHolder position="right">
-                    <Spacer>
+            
+            <DecorHolder position="right">
+                <Spacer>
+                    <section className="scroll-to-element" id="section2">
                         <FeaturesAlt/>
-                    </Spacer>
-
-                    <Spacer>
-                        <Bulletpoint/>
-                    </Spacer>
-                </DecorHolder>
-            </section>
-
-            <section id="section3">
+                    </section>
+                </Spacer>
+            
                 <Spacer>
+                    <Bulletpoint/>
+                </Spacer>
+            </DecorHolder>
+            
+            <DecorHolder position="right" size="big">
+                <section className="scroll-to-element" id="section3">
                     <Testimonials/>
-                </Spacer>
-            </section>
+                </section>
 
-            <section id="form">
                 <Spacer>
-                    <Form/>
+                    <section className="scroll-to-element" id="form">
+                        <Form/>
+                    </section>
                 </Spacer>
-            </section>
 
-            <section id="section5">
-                <DecorHolder position="right" size="big">
-                    <About/>
-                </DecorHolder>
-            </section>
-            <Footer/>
+                <Spacer>
+                    <section className="scroll-to-element" id="section5">
+                        <About/>
+                    </section>
+                </Spacer>
+                
+                <Footer/>
+            </DecorHolder>
         </div>
     );
 };

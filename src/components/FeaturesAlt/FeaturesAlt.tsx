@@ -16,6 +16,7 @@ import { Feature } from "../Feature/Feature";
 import { BlockHead } from "../BlockHead/BlockHead";
 import { Row } from "../Row/Row";
 import { Col } from "../Col/Col";
+import { AnimateElement } from "../AnimateElement/AnimateElement";
 
 const FeaturesWrapper = styled.div`
     text-align: center;
@@ -69,29 +70,30 @@ export const FeaturesAlt: React.FC<{}> = () => {
     return (
         <Container>
             <FeaturesWrapper className="featured">
-                <FeaturedHead
-                    className="featured__head"
-                    data-aos="fade-up"
-                    data-aos-anchor-placement="bottom-bottom">
-                    <BlockHead>
-                        <Headline
-                            size="large"
-                            smallDeskSize="medium"
-                            tabletSize="medium"
-                            mobileSize="small">
-                            {t("features-big.title")}
-                        </Headline>
-                    </BlockHead>
+                <FeaturedHead className="featured__head">
+                    <AnimateElement>
+                        <BlockHead>
+                            <Headline
+                                size="large"
+                                smallDeskSize="medium"
+                                tabletSize="medium"
+                                mobileSize="small">
+                                {t("features-big.title")}
+                            </Headline>
+                        </BlockHead>
+                    </AnimateElement>
                 </FeaturedHead>
 
                 <FeaturedBody className="featured__body">
-                    <Row>
-                        {featuresList.map((item, index) => (
-                            <Col size={{ s: 12, m: 6, l: 3, xl: 3, xxl: 3 }} key={index}>
-                                <Feature icon={item.icon} title="" text={item.subtitle} />
-                            </Col>
-                        ))}
-                    </Row>
+                    <AnimateElement>
+                        <Row>
+                            {featuresList.map((item, index) => (
+                                <Col size={{ s: 12, m: 6, l: 3, xl: 3, xxl: 3 }} key={index}>
+                                    <Feature icon={item.icon} title="" text={item.subtitle} />
+                                </Col>
+                            ))}
+                        </Row>
+                    </AnimateElement>
                 </FeaturedBody>
             </FeaturesWrapper>
         </Container>

@@ -6,7 +6,6 @@ import styled from "styled-components";
 import Link from "next/link";
 import { breakpoints } from "@css/helper/breakpoints";
 import classNames from "classnames";
-import { useRouter } from "next/router";
 
 import { useTranslation } from "next-i18next";
 
@@ -19,6 +18,7 @@ import { Logo } from "../Logo/Logo";
 import Menu from "../Menu/Menu";
 import { LanguageSwitcher } from "../LanguageSwitcher/LanguageSwitcher";
 import { NavTrigger } from "../NavTrigger/NavTrigger";
+import { MenuLink } from "../MenuLink/MenuLink";
 
 const HeaderWrapper = styled.div`
     padding-top: 80px;
@@ -143,7 +143,6 @@ const HeaderWrapper = styled.div`
 
 export const Header: React.FC<{}> = () => {
     const { t } = useTranslation();
-    const router = useRouter();
     const [isNavOpen, setIsNavOpen] = React.useState(false);
 
     const Scroll = require("react-scroll");
@@ -161,25 +160,25 @@ export const Header: React.FC<{}> = () => {
                 <div className={classNames("header__menu", { "is-nav-open": isNavOpen })}>
                     <div className="header__menu-inner">
                         <Menu>
-                            <Link locale={router.locale} scroll={false} href="/#section1">
+                            <MenuLink id="/#section1" setIsNavOpen={setIsNavOpen}>
                                 {t("menu.Solar & Wind")}
-                            </Link>
+                            </MenuLink>
 
-                            <Link locale={router.locale} scroll={false} href="/#section2">
+                            <MenuLink id="/#section2" setIsNavOpen={setIsNavOpen}>
                                 {t("menu.Features")}
-                            </Link>
+                            </MenuLink>
 
-                            <Link locale={router.locale} scroll={false} href="/#section3">
+                            <MenuLink id="/#section3" setIsNavOpen={setIsNavOpen}>
                                 {t("menu.USPs")}
-                            </Link>
+                            </MenuLink>
 
-                            <Link locale={router.locale} scroll={false} href="/#form">
+                            <MenuLink id="/#form" setIsNavOpen={setIsNavOpen}>
                                 {t("menu.Benefits")}
-                            </Link>
+                            </MenuLink>
 
-                            <Link locale={router.locale} scroll={false} href="/#section5">
+                            <MenuLink id="/#section5" setIsNavOpen={setIsNavOpen}>
                                 {t("menu.About")}
-                            </Link>
+                            </MenuLink>
                         </Menu>
                     </div>
 

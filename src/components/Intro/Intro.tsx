@@ -13,6 +13,7 @@ import { breakpoints } from "@css/helper/breakpoints";
 import { Container } from "../Container/Container";
 import { Headline } from "../Headline/Headline";
 import { BlockHead } from "../BlockHead/BlockHead";
+import { AnimateElement } from "../AnimateElement/AnimateElement";
 
 const IntroWrapper = styled.div`
     .intro__head {
@@ -90,7 +91,7 @@ const IntroWrapper = styled.div`
                         }
                     }
 
-                    > img {
+                    > .animate {
                         margin-top: 4.1rem;
 
                         ${breakpoints().max("xxl")} {
@@ -182,16 +183,18 @@ export const Intro: React.FC<{}> = () => {
     return (
         <Container>
             <IntroWrapper>
-                <div className="intro__head" data-aos="fade-up">
-                    <BlockHead>
-                        <Headline
-                            size="large"
-                            smallDeskSize="medium"
-                            tabletSize="small"
-                            mobileSize="small">
-                            {t("intro-text")}
-                        </Headline>
-                    </BlockHead>
+                <div className="intro__head">
+                    <AnimateElement>
+                        <BlockHead>
+                            <Headline
+                                size="large"
+                                smallDeskSize="medium"
+                                tabletSize="small"
+                                mobileSize="small">
+                                {t("intro-text")}
+                            </Headline>
+                        </BlockHead>
+                    </AnimateElement>
                 </div>
 
                 <div className="intro__body">
@@ -199,93 +202,95 @@ export const Intro: React.FC<{}> = () => {
                         <li>
                             <ul>
                                 <li>
-                                    <Image
-                                        data-aos="fade-right"
-                                        data-aos-anchor-placement="center-bottom"
-                                        src="/cards/card-1.png"
-                                        width={390}
-                                        height={199}
-                                        alt="img"
-                                    />
+                                    <AnimateElement>
+                                        <Image
+                                            src="/cards/card-1.png"
+                                            width={390}
+                                            height={199}
+                                            alt="img"
+                                        />
+                                    </AnimateElement>
                                 </li>
 
                                 <li>
-                                    <Image
-                                        data-aos="fade-right"
-                                        data-aos-anchor-placement="center-bottom"
-                                        src="/cards/card-2.png"
-                                        width={390}
-                                        height={199}
-                                        alt="img"
-                                    />
+                                    <AnimateElement>
+                                        <Image
+                                            src="/cards/card-2.png"
+                                            width={390}
+                                            height={199}
+                                            alt="img"
+                                        />
+                                    </AnimateElement>
                                 </li>
 
                                 <li>
-                                    <Image
-                                        data-aos="fade-right"
-                                        data-aos-anchor-placement="center-bottom"
-                                        src="/cards/card-3.png"
-                                        width={390}
-                                        height={199}
-                                        alt="img"
-                                    />
+                                    <AnimateElement>
+                                        <Image
+                                            src="/cards/card-3.png"
+                                            width={390}
+                                            height={199}
+                                            alt="img"
+                                        />
+                                    </AnimateElement>
                                 </li>
 
                                 <li>
-                                    <Image
-                                        data-aos="fade-right"
-                                        data-aos-anchor-placement="center-bottom"
-                                        src="/cards/card-4.png"
-                                        width={390}
-                                        height={199}
-                                        alt="img"
-                                    />
+                                    <AnimateElement>
+                                        <Image
+                                            src="/cards/card-4.png"
+                                            width={390}
+                                            height={199}
+                                            alt="img"
+                                        />
+                                    </AnimateElement>
                                 </li>
                             </ul>
 
-                            <Image
-                                data-aos="fade-up-right"
-                                data-aos-anchor-placement="center-bottom"
-                                src="/cards/card-5.png"
-                                width={960}
-                                height={102}
-                                alt="img"
-                            />
+                            <AnimateElement>
+                                <Image
+                                    src="/cards/card-5.png"
+                                    width={960}
+                                    height={102}
+                                    alt="img"
+                                />
+                            </AnimateElement>
                         </li>
 
                         <li>
                             <ul>
-                                <li data-aos="fade-left" data-aos-anchor-placement="center-bottom">
-                                    <Image
-                                        src="/cards/card-6.png"
-                                        width={1170}
-                                        height={132}
-                                        alt="img"
-                                    />
+                                <li>
+                                    <AnimateElement>
+                                        <Image
+                                            src="/cards/card-6.png"
+                                            width={1170}
+                                            height={132}
+                                            alt="img"
+                                        />
+                                    </AnimateElement>
                                 </li>
 
                                 <li>
                                     <ul>
-                                        <li
-                                            data-aos="fade-up"
-                                            data-aos-anchor-placement="center-bottom">
-                                            <Image
-                                                src="/cards/card-7.png"
-                                                width={420}
-                                                height={594}
-                                                alt="img"
-                                            />
+                                        <li>
+                                            <AnimateElement>
+                                                <Image
+                                                    src="/cards/card-7.png"
+                                                    width={420}
+                                                    height={594}
+                                                    alt="img"
+                                                />
+                                            </AnimateElement>
                                         </li>
 
-                                        <li
-                                            data-aos="fade-up-left"
-                                            data-aos-anchor-placement="center-bottom">
-                                            <Image
-                                                src="/cards/card-8.png"
-                                                width={896}
-                                                height={485}
-                                                alt="img"
-                                            />
+                                        <li>
+                                            <AnimateElement>
+                                                <Image
+                                                    src="/cards/card-8.png"
+                                                    width={896}
+                                                    height={485}
+                                                    alt="img"
+                                                />
+                                            </AnimateElement>
                                         </li>
                                     </ul>
                                 </li>

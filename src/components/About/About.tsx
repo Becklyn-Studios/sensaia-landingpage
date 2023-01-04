@@ -13,6 +13,7 @@ import { BlockHead } from "../BlockHead/BlockHead";
 import { Row } from "../Row/Row";
 import { Col } from "../Col/Col";
 import { Feature } from "../Feature/Feature";
+import { AnimateElement } from "../AnimateElement/AnimateElement";
 
 const AboutWrapper = styled.div`
     .about__head {
@@ -57,38 +58,36 @@ export const About = () => {
     return (
         <Container>
             <AboutWrapper className="about">
-                <div
-                    className="about__head"
-                    data-aos="fade-up"
-                    data-aos-anchor-placement="bottom-bottom">
-                    <Row>
-                        <Col size={{ s: 12, m: 12, l: 10, xl: 9, xxl: 8 }}>
-                            <BlockHead>
-                                <Addition size="base">{t("about.small-title")}</Addition>
-                                <Headline
-                                    size="xlarge"
-                                    smallDeskSize="large"
-                                    tabletSize="large"
-                                    mobileSize="medium">
-                                    {t("about.title")}
-                                </Headline>
-                                <p>{t("about.sub-title")}</p>
-                            </BlockHead>
-                        </Col>
-                    </Row>
+                <div className="about__head" >
+                    <AnimateElement>
+                        <Row>
+                            <Col size={{ s: 12, m: 12, l: 10, xl: 9, xxl: 8 }}>
+                                <BlockHead>
+                                    <Addition size="base">{t("about.small-title")}</Addition>
+                                    <Headline
+                                        size="xlarge"
+                                        smallDeskSize="large"
+                                        tabletSize="large"
+                                        mobileSize="medium">
+                                        {t("about.title")}
+                                    </Headline>
+                                    <p>{t("about.sub-title")}</p>
+                                </BlockHead>
+                            </Col>
+                        </Row>
+                    </AnimateElement>
                 </div>
 
-                <div
-                    className="about__body"
-                    data-aos="fade-up"
-                    data-aos-anchor-placement="bottom-bottom">
-                    <Row>
-                        {list.map((item, index) => (
-                            <Col size={{ s: 12, m: 6, l: 4, xl: 3, xxl: 3 }} key={index}>
-                                <Feature icon="" title={item.title} text={item.content} />
-                            </Col>
-                        ))}
-                    </Row>
+                <div className="about__body" >
+                    <AnimateElement>
+                        <Row>
+                            {list.map((item, index) => (
+                                <Col size={{ s: 12, m: 6, l: 4, xl: 3, xxl: 3 }} key={index}>
+                                    <Feature icon="" title={item.title} text={item.content} />
+                                </Col>
+                            ))}
+                        </Row>
+                    </AnimateElement>
                 </div>
             </AboutWrapper>
         </Container>

@@ -19,6 +19,7 @@ import { CustomField } from "../CustomField/CustomField";
 import { CustomSelect } from "../CustomSelect/CustomSelect";
 import { Checkbox } from "../Checkbox/Checkbox";
 import { Button } from "../Button/Button";
+import { AnimateElement } from "../AnimateElement/AnimateElement";
 
 const SignupSchema = yup.object().shape({
     title: yup.string().required(),
@@ -155,133 +156,131 @@ export const Form: React.FC<{}> = () => {
                             {t("form.alert")}
                         </div>
 
-                        <div
-                            className="form__head"
-                            data-aos="fade-up"
-                            data-aos-anchor-placement="bottom-bottom">
-                            <BlockHead>
-                                <Headline
-                                    size="large"
-                                    smallDeskSize="medium"
-                                    tabletSize="large"
-                                    mobileSize="medium">
-                                    {t("form.title")}
-                                </Headline>
+                        <div className="form__head" >
+                            <AnimateElement>
+                                <BlockHead>
+                                    <Headline
+                                        size="large"
+                                        smallDeskSize="medium"
+                                        tabletSize="large"
+                                        mobileSize="medium">
+                                        {t("form.title")}
+                                    </Headline>
 
-                                <p>{t("form.sub-title")}</p>
-                            </BlockHead>
+                                    <p>{t("form.sub-title")}</p>
+                                </BlockHead>
+                            </AnimateElement>
                         </div>
 
-                        <div
-                            className="form__body"
-                            data-aos="fade-up"
-                            data-aos-anchor-placement="bottom-bottom">
-                            <form onSubmit={handleSubmit(onSubmit)}>
-                                <Row>
-                                    <Col size={{ s: 12, m: 6, l: 6, xl: 6, xxl: 6 }}>
-                                        <Controller
-                                            control={control}
-                                            name={`title`}
-                                            render={({ field }) => {
-                                                return (
-                                                    <CustomSelect
-                                                        label={t("form.fields.title") + "*"}
-                                                        error={!!errors.title}
-                                                        onChange={field.onChange}
-                                                        list={["Mr", "Ms", "–"]}
-                                                    />
-                                                );
-                                            }}
-                                        />
-                                    </Col>
+                        <div className="form__body" >
+                            <AnimateElement>
+                                <form onSubmit={handleSubmit(onSubmit)}>
+                                    <Row>
+                                        <Col size={{ s: 12, m: 6, l: 6, xl: 6, xxl: 6 }}>
+                                            <Controller
+                                                control={control}
+                                                name={`title`}
+                                                render={({ field }) => {
+                                                    return (
+                                                        <CustomSelect
+                                                            label={t("form.fields.title") + "*"}
+                                                            error={!!errors.title}
+                                                            onChange={field.onChange}
+                                                            list={["Mr", "Ms", "–"]}
+                                                        />
+                                                    );
+                                                }}
+                                            />
+                                        </Col>
 
-                                    <Col size={{ s: 12, m: 6, l: 6, xl: 6, xxl: 6 }}>
-                                        <Controller
-                                            control={control}
-                                            name={`firstName`}
-                                            render={({ field }) => {
-                                                return (
-                                                    <CustomField
-                                                        label={t("form.fields.first-name")}
-                                                        error={!!errors.firstName}
-                                                        onChange={field.onChange}
-                                                    />
-                                                );
-                                            }}
-                                        />
-                                    </Col>
+                                        <Col size={{ s: 12, m: 6, l: 6, xl: 6, xxl: 6 }}>
+                                            <Controller
+                                                control={control}
+                                                name={`firstName`}
+                                                render={({ field }) => {
+                                                    return (
+                                                        <CustomField
+                                                            label={t("form.fields.first-name")}
+                                                            error={!!errors.firstName}
+                                                            onChange={field.onChange}
+                                                        />
+                                                    );
+                                                }}
+                                            />
+                                        </Col>
 
-                                    <Col size={{ s: 12, m: 6, l: 6, xl: 6, xxl: 6 }}>
-                                        <Controller
-                                            control={control}
-                                            name={`lastName`}
-                                            render={({ field }) => {
-                                                return (
-                                                    <CustomField
-                                                        label={t("form.fields.last-name")}
-                                                        error={!!errors.lastName}
-                                                        onChange={field.onChange}
-                                                    />
-                                                );
-                                            }}
-                                        />
-                                    </Col>
+                                        <Col size={{ s: 12, m: 6, l: 6, xl: 6, xxl: 6 }}>
+                                            <Controller
+                                                control={control}
+                                                name={`lastName`}
+                                                render={({ field }) => {
+                                                    return (
+                                                        <CustomField
+                                                            label={t("form.fields.last-name")}
+                                                            error={!!errors.lastName}
+                                                            onChange={field.onChange}
+                                                        />
+                                                    );
+                                                }}
+                                            />
+                                        </Col>
 
-                                    <Col size={{ s: 12, m: 6, l: 6, xl: 6, xxl: 6 }}>
-                                        <Controller
-                                            control={control}
-                                            name={`company`}
-                                            render={({ field }) => {
-                                                return (
-                                                    <CustomField
-                                                        label={t("form.fields.company")}
-                                                        error={!!errors.company}
-                                                        onChange={field.onChange}
-                                                    />
-                                                );
-                                            }}
-                                        />
-                                    </Col>
+                                        <Col size={{ s: 12, m: 6, l: 6, xl: 6, xxl: 6 }}>
+                                            <Controller
+                                                control={control}
+                                                name={`company`}
+                                                render={({ field }) => {
+                                                    return (
+                                                        <CustomField
+                                                            label={t("form.fields.company")}
+                                                            error={!!errors.company}
+                                                            onChange={field.onChange}
+                                                        />
+                                                    );
+                                                }}
+                                            />
+                                        </Col>
 
-                                    <Col size={{ s: 12, m: 6, l: 6, xl: 6, xxl: 6 }}>
-                                        <Controller
-                                            control={control}
-                                            name={`email`}
-                                            render={({ field }) => {
-                                                return (
-                                                    <CustomField
-                                                        label={t("form.fields.mail")}
-                                                        error={!!errors.email}
-                                                        onChange={field.onChange}
-                                                    />
-                                                );
-                                            }}
-                                        />
-                                    </Col>
+                                        <Col size={{ s: 12, m: 6, l: 6, xl: 6, xxl: 6 }}>
+                                            <Controller
+                                                control={control}
+                                                name={`email`}
+                                                render={({ field }) => {
+                                                    return (
+                                                        <CustomField
+                                                            label={t("form.fields.mail")}
+                                                            error={!!errors.email}
+                                                            onChange={field.onChange}
+                                                        />
+                                                    );
+                                                }}
+                                            />
+                                        </Col>
 
-                                    <Col size={{ xl: 12, xxl: 12 }}>
-                                        <Controller
-                                            control={control}
-                                            name={`checkbox`}
-                                            render={({ field }) => {
-                                                return (
-                                                    <Checkbox
-                                                        label={t("form.checkbox")}
-                                                        error={!!errors.checkbox}
-                                                        onChange={field.onChange}
-                                                    />
-                                                );
-                                            }}
-                                        />
-                                    </Col>
+                                        <Col size={{ xl: 12, xxl: 12 }}>
+                                            <Controller
+                                                control={control}
+                                                name={`checkbox`}
+                                                render={({ field }) => {
+                                                    return (
+                                                        <Checkbox
+                                                            label={t("form.checkbox")}
+                                                            error={!!errors.checkbox}
+                                                            onChange={field.onChange}
+                                                        />
+                                                    );
+                                                }}
+                                            />
+                                        </Col>
 
-                                    <Col size={{ xl: 12, xxl: 12 }}>
-                                        <div className="form__actions">
-                                            <Button type="submit">Submit</Button>
-                                        </div>
-                                    </Col>
-                                </Row>
-                            </form>
+                                        <Col size={{ xl: 12, xxl: 12 }}>
+                                            <div className="form__actions">
+                                                <Button type="submit">Submit</Button>
+                                            </div>
+                                        </Col>
+                                    </Row>
+                                </form>
+                            </AnimateElement>
                         </div>
                     </Col>
                 </Row>

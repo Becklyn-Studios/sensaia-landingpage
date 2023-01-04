@@ -11,6 +11,7 @@ import { Headline } from "../Headline/Headline";
 import { Row } from "../Row/Row";
 import { Col } from "../Col/Col";
 import { SliderTestimonials } from "../SliderTestimonials/SliderTestimonials";
+import { AnimateElement } from "../AnimateElement/AnimateElement";
 
 const TestimonialsWrapper = styled.div`
     > .row {
@@ -63,27 +64,25 @@ export const Testimonials: React.FC<{}> = () => {
             <TestimonialsWrapper>
                 <Row>
                     <Col size={{ s: 12, m: 12, l: 5, xl: 5, xxl: 5 }}>
-                        <div
-                            className="testimonials__content"
-                            data-aos="fade-up"
-                            data-aos-anchor-placement="bottom-bottom">
-                            <Headline
-                                size="xlarge"
-                                smallDeskSize="large"
-                                tabletSize="large"
-                                mobileSize="medium">
-                                {t("testimonials.title")}
-                            </Headline>
+                        <div className="testimonials__content" >
+                            <AnimateElement>
+                                <Headline
+                                    size="xlarge"
+                                    smallDeskSize="large"
+                                    tabletSize="large"
+                                    mobileSize="medium">
+                                    {t("testimonials.title")}
+                                </Headline>
+                            </AnimateElement>
                         </div>
                     </Col>
 
                     <Col size={{ s: 12, m: 12, l: 7, xl: 6, xxl: 5 }}>
-                        <div
-                            className="testimonials__media"
-                            data-aos="fade-up"
-                            data-aos-anchor-placement="bottom-bottom">
-                            {<SliderTestimonials slides={testimonials} />}
-                        </div>
+                        <AnimateElement>
+                            <div className="testimonials__media" >
+                                {<SliderTestimonials slides={testimonials} />}
+                            </div>
+                        </AnimateElement>
                     </Col>
                 </Row>
             </TestimonialsWrapper>

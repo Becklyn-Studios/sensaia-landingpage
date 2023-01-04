@@ -10,6 +10,7 @@ import { DecorBlob } from "../DecorBlob/DecorBlob";
 
 const DecorWrapper = styled.div`
 	position:relative;
+    overflow:hidden;
 
 	.decor__bg {
 		position: absolute;
@@ -65,7 +66,7 @@ const DecorWrapper = styled.div`
 		&.big {
 			.decor__bg {
 				right:17%;
-				top:79%;
+				top:76%;
 
 				${breakpoints().max("l")} {
 					top: 67.8%;

@@ -23,6 +23,7 @@ const SliderWrapper = styled.div`
     }
 
     .slider__slides {
+        clip-path: polygon(0% -10rem, 100% -10rem, 100% calc(100% + 10rem), 0% calc(100% + 10rem));
         .slider__slide {
             &-inner {
                 position:relative;
