@@ -1,6 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 import { reset } from "./reset";
 import { stylesheet } from "./typography/font/stylesheet";
+import { breakpoints } from "@css/helper/breakpoints";
 
 export const GlobalStyle = createGlobalStyle`
     ${reset};
@@ -8,7 +9,6 @@ export const GlobalStyle = createGlobalStyle`
 
     html {
         scroll-behavior: smooth;
-        height:100%;
     }
 
     body {
@@ -18,11 +18,18 @@ export const GlobalStyle = createGlobalStyle`
         letter-spacing: -0.02em;
         line-height: 1.5;
         overflow-x:hidden;
+        max-width:100vw;
     }
 
     .wrapper {
         position: relative;
-        // overflow:hidden;
+        max-width:100vw;
+            overflow:hidden;
+
+        ${breakpoints().max("l")} {
+            overflow:hidden;
+        }
+
     }
 
     .hidden {

@@ -12,7 +12,6 @@ import { Row } from "../Row/Row";
 import { Col } from "../Col/Col";
 import { ListLogos } from "../ListLogos/ListLogos";
 import { ListLinks } from "../ListLinks/ListLinks";
-import { AnimateElement } from "../AnimateElement/AnimateElement";
 
 const FooterWrapper = styled.div`
     margin-top: 35rem;
@@ -103,47 +102,45 @@ export const Footer = () => {
     return (
         <Container>
             <FooterWrapper className="footer">
-                <AnimateElement>
-                    <div className="footer__main">
-                        <Row>
-                            <Col size={{ s: 12, m: 6, l: 6, xl: 6, xxl: 6 }}>
-                                <div className="footer__title">
-                                    <Headline
-                                        size="small"
-                                        smallDeskSize="small"
-                                        tabletSize="small"
-                                        mobileSize="small">
-                                        {t("footer.title")}
-                                    </Headline>
-                                </div>
-                            </Col>
+                <div className="footer__main">
+                    <Row>
+                        <Col size={{ s: 12, m: 6, l: 6, xl: 6, xxl: 6 }}>
+                            <div className="footer__title">
+                                <Headline
+                                    size="small"
+                                    smallDeskSize="small"
+                                    tabletSize="small"
+                                    mobileSize="small">
+                                    {t("footer.title")}
+                                </Headline>
+                            </div>
+                        </Col>
 
-                            <Col size={{ s: 12, m: 6, l: 6, xl: 6, xxl: 6 }}>
-                                <div className="footer__aside">
-                                    <ListLogos />
-                                </div>
-                            </Col>
-                        </Row>
-                    </div>
-                    
-                    <div className="footer__foot">
-                        <Row>
-                            <Col size={{ s: 12, m: 7, l: 6, xl: 6, xxl: 6 }}>
-                                <div className="footer__copyright">
-                                    <p>
-                                        <span>&copy; 2022 – STEAG GmbH.</span> All rights reserved.
-                                    </p>
-                                </div>
-                            </Col>
+                        <Col size={{ s: 12, m: 6, l: 6, xl: 6, xxl: 6 }}>
+                            <div className="footer__aside">
+                                <ListLogos />
+                            </div>
+                        </Col>
+                    </Row>
+                </div>
+                
+                <div className="footer__foot">
+                    <Row>
+                        <Col size={{ s: 12, m: 7, l: 6, xl: 6, xxl: 6 }}>
+                            <div className="footer__copyright">
+                                <p>
+                                    <span>&copy; 2022 – STEAG GmbH.</span> All rights reserved.
+                                </p>
+                            </div>
+                        </Col>
 
-                            <Col size={{ s: 12, m: 5, l: 6, xl: 6, xxl: 6 }}>
-                                <div className="footer__links">
-                                    <ListLinks />
-                                </div>
-                            </Col>
-                        </Row>
-                    </div>
-                </AnimateElement>
+                        <Col size={{ s: 12, m: 5, l: 6, xl: 6, xxl: 6 }}>
+                            <div className="footer__links">
+                                <ListLinks />
+                            </div>
+                        </Col>
+                    </Row>
+                </div>
             </FooterWrapper>
         </Container>
     );

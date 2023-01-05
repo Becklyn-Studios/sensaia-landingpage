@@ -1,7 +1,7 @@
 /**
  * External dependencies
  */
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import classNames       from 'classnames';
 import { breakpoints } from "@css/helper/breakpoints";
@@ -94,6 +94,20 @@ const DecorWrapper = styled.div`
 			}
 		}
 	}
+	
+	&:last-child {
+		position: absolute;
+		z-index:-1;
+		bottom:0;
+		right:0;
+		width:100vw;
+		height:100vw;
+
+        ${breakpoints().max("m")} {
+			width:100vw;
+			height:650vw;
+        }
+	}
 `;
 
 type Props = {
@@ -103,8 +117,24 @@ type Props = {
 };
 
 export const DecorHolder: React.FC<Props> = ({ children, position, size }) => {
+	const ref = React.useRef<HTMLDivElement>(null);
+
+	useEffect(() => {
+        const movedSection = ( ref?.current as HTMLElement );
+        movedSection.scrollTop = 0;
+
+        const wrapperMove = () => {
+            movedSection.scrollTop = 0;
+        }
+
+        movedSection.addEventListener("scroll", wrapperMove);
+        return () => {
+            movedSection.removeEventListener("scroll", wrapperMove);
+        };
+    }, []);
+
     return (
-    	<DecorWrapper className={classNames('decor', { "right": position=="right", "big": size=="big" })}>
+    	<DecorWrapper className={classNames('decor', { "right": position=="right", "big": size=="big" })} ref={ref}>
     		<div className="decor__bg">
     			<DecorBlob/>
     		</div>

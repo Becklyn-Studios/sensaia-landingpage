@@ -30,7 +30,6 @@ export const AnimateElement: React.FC<Props> = ({ children }) => {
 	const ref = React.useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
-
 	    const animate = () => {
 	    	const element = ( ref?.current as HTMLElement );
 	    	const offsetTop = element.getBoundingClientRect().top;

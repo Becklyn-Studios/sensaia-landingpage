@@ -11,7 +11,7 @@ const CursorWrapper = styled.div`
     position: absolute;
     z-index:10;
     top: var(--mouse-top);
-    left: var(--mouse-left);
+    left: min(calc(100vw - (var(--cursor-size)/2)), var(--mouse-left));
     transform: translate(-50%,-50%);
     width:var(--cursor-size);
     height:var(--cursor-size);

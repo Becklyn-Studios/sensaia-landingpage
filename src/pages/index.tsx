@@ -27,8 +27,8 @@ import { SliderGallery }  from "../components/SliderGallery/SliderGallery";
 import useMedia           from "../components/UseMedia/UseMedia";
 
 const Home: React.FC = () => {
-    const [mousePositionY, setMousePositionY] = useState(99999);
-    const [mousePositionX, setMousePositionX] = useState(99999);
+    const [mousePositionY, setMousePositionY] = useState(0);
+    const [mousePositionX, setMousePositionX] = useState(0);
     const isTabletView = useMedia(1024)
 
     return (
@@ -67,27 +67,24 @@ const Home: React.FC = () => {
                 </Spacer>
             </DecorHolder>
             
+            <section className="scroll-to-element" id="section3">
+                <Testimonials/>
+            </section>
+
+            <Spacer>
+                <section className="scroll-to-element" id="form">
+                    <Form/>
+                </section>
+            </Spacer>
+
+            <section className="scroll-to-element" id="section5">
+                <About/>
+            </section>
+
+            <Footer/>
+            
             <DecorHolder position="right" size="big">
-                <Spacer>
-                    <section className="scroll-to-element" id="section3">
-                        <Testimonials/>
-                    </section>
-                </Spacer>
-
-
-                <Spacer>
-                    <section className="scroll-to-element" id="form">
-                        <Form/>
-                    </section>
-                </Spacer>
-
-                <Spacer>
-                    <section className="scroll-to-element" id="section5">
-                        <About/>
-                    </section>
-                </Spacer>
-                
-                <Footer/>
+                <div className="hidden"></div>
             </DecorHolder>
         </div>
     );
