@@ -16,13 +16,13 @@ type Props = {
 export const MenuLink: React.FC<Props> = ({children, id, setIsNavOpen}) => {
     const router = useRouter();
     
-    const handleClick = (e) => {
+    const handleClick = () => {
         setIsNavOpen(false);
     };
 
     return (
         <LinkWrapper>
-            <Link locale={router.locale} scroll={false} href={id} onClick={ (e) => {handleClick(e)}} >
+            <Link locale={router.locale} scroll={false} href={id} onClick={handleClick} >
                 {children}
             </Link>
         </LinkWrapper>
