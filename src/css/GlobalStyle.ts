@@ -8,6 +8,7 @@ export const GlobalStyle = createGlobalStyle`
 
     html {
         scroll-behavior: smooth;
+        height:100%;
     }
 
     body {
@@ -16,11 +17,12 @@ export const GlobalStyle = createGlobalStyle`
         font-family: 'Sharp Grotesk DB Cyr', sans-serif;
         letter-spacing: -0.02em;
         line-height: 1.5;
+        overflow-x:hidden;
     }
 
     .wrapper {
         position: relative;
-        overflow:hidden;
+        // overflow:hidden;
     }
 
     .hidden {

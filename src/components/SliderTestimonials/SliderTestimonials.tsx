@@ -100,7 +100,7 @@ export const SliderTestimonials: React.FC<PropType> = ({slides}) => {
 
       const timer = setTimeout(() => {
           embla.reInit()
-      }, 100);
+      }, 200);
       return () => clearTimeout(timer);
     }, [embla, setScrollSnaps, onSelect]);
 

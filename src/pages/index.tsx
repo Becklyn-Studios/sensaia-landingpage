@@ -68,9 +68,12 @@ const Home: React.FC = () => {
             </DecorHolder>
             
             <DecorHolder position="right" size="big">
-                <section className="scroll-to-element" id="section3">
-                    <Testimonials/>
-                </section>
+                <Spacer>
+                    <section className="scroll-to-element" id="section3">
+                        <Testimonials/>
+                    </section>
+                </Spacer>
+
 
                 <Spacer>
                     <section className="scroll-to-element" id="form">

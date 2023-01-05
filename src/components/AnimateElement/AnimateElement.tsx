@@ -16,7 +16,7 @@ const AnimateElementWrapper = styled.div<Props>`
     }
 
     &.animate .animate__inner {
-    	transform:translateY(0);
+    	transform:translate(0, 0)!important;
     	opacity:1;
     }
 `;

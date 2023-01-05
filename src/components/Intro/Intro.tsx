@@ -89,6 +89,13 @@ const IntroWrapper = styled.div`
                         &:first-child {
                             max-width: 84%;
                         }
+
+                        li {
+                            &:nth-child(1) .animate__inner,
+                            &:nth-child(3) .animate__inner {
+                                transform:translate(-10rem, 10rem);
+                            }
+                        }
                     }
 
                     > .animate {
@@ -155,6 +162,11 @@ const IntroWrapper = styled.div`
                             li {
                                 + li {
                                     margin-left: 4rem;
+
+                                    .animate__inner {
+                                        transform:translate(10rem, 10rem);
+                                    }
+
                                     ${breakpoints().max("xxl")} {
                                         margin-left: 3.4rem;
                                     }
