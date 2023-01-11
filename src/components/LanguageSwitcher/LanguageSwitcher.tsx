@@ -21,23 +21,12 @@ const LanguageSwitcherAnchor = styled(Link)`
 
 export const LanguageSwitcher: React.FC = () => {
     const { isDefaultLocale } = useLocale();
-    const { asPath } = useRouter();
 
     const targetLocale = isDefaultLocale ? LOCALE_DE : LOCALE_DEFAULT;
 
-    const getTargetPath = () => {
-        if (asPath.startsWith(`/${LOCALE_DEFAULT}`)) {
-            return asPath.replace(`/${LOCALE_DEFAULT}`, `/${LOCALE_DE}`);
-        } else if (asPath.startsWith(`/${LOCALE_DE}`)) {
-            return asPath.replace(`/${LOCALE_DE}`, "/");
-        } else {
-            return asPath.replace("/", `/${LOCALE_DE}`);
-        }
-    };
-
     return (
         <LanguageSwitcherAnchor
-            href={getTargetPath()}
+            href={`/${isDefaultLocale ? LOCALE_DE : ""}`}
             className="language-switcher"
             lang={targetLocale}
             hrefLang={targetLocale}>
