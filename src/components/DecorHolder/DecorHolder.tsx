@@ -10,6 +10,7 @@ import { DecorBlob } from "../DecorBlob/DecorBlob";
 
 const DecorWrapper = styled.div`
 	position:relative;
+    overflow:hidden;
 
 	.decor__bg {
 		position: absolute;
