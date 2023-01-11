@@ -4,7 +4,7 @@ import { Header } from "../../components/Header/Header";
 import { SectionSample } from "../../components/SectionSample/SectionSample";
 import { Footer } from "../../components/Footer/Footer";
 import { GetStaticProps } from "next";
-import { LOCALE_DE } from "@lib/constant";
+import { LOCALE_DEFAULT } from "@lib/constant";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { Meta } from "@lib/meta";
 import { useTranslation } from "next-i18next";
@@ -370,8 +370,8 @@ const Privacy: React.FC = () => {
                                 inadmissible and that personal data cannot currently be transferred
                                 to the USA in a data protection-compliant manner. The reason for
                                 this is existing laws in the USA that give security authorities
-                                far-reaching powers to monitor &quot;foreign communications&quot;. We hereby
-                                expressly draw your attention to this risk.
+                                far-reaching powers to monitor &quot;foreign communications&quot;.
+                                We hereby expressly draw your attention to this risk.
                             </p>
                         </li>
 
@@ -416,7 +416,7 @@ const Privacy: React.FC = () => {
 export const getStaticProps: GetStaticProps = async () => {
     return {
         props: {
-            ...(await serverSideTranslations(LOCALE_DE, ["common"])),
+            ...(await serverSideTranslations(LOCALE_DEFAULT, ["common"])),
         },
     };
 };
