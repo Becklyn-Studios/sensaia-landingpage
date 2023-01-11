@@ -207,7 +207,9 @@ export const Header: React.FC = () => {
                         <div className="header__menu-utils">
                             <LanguageSwitcher />
 
-                            <Button onClick={() => push("#form")}>{t("contact-button")}</Button>
+                            <Button onClick={() => push("#form", undefined, { scroll: false })}>
+                                {t("contact-button")}
+                            </Button>
                         </div>
                     </div>
 
