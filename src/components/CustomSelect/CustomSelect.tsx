@@ -111,11 +111,12 @@ const SelectWrapper = styled.div`
 type Props = {
     label: string,
     error: boolean,
+    errorMessage: string,
     list: Array<string>,
     onChange: Function,
 }
 
-export const CustomSelect: React.FC<Props> = ({label, error, onChange, list}) => {
+export const CustomSelect: React.FC<Props> = ({label, error, onChange, list, errorMessage}) => {
     const [value, setValue] = useState(label)
     const [hasValue, setHasValue] = useState(false);
 
@@ -145,7 +146,7 @@ export const CustomSelect: React.FC<Props> = ({label, error, onChange, list}) =>
                 </Listbox>
             </div>
 
-            { error && <p className="select__hint">Error: This is a required field.</p> }
+            { error && <p className="select__hint">{errorMessage}</p> }
         </SelectWrapper>
     );
 };

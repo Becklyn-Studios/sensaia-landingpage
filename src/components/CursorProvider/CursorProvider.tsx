@@ -9,7 +9,7 @@ const CursorWrapper = styled.div`
     --cursor-size: 5rem;
 
     position: absolute;
-    z-index:10;
+    z-index:14;
     top: var(--mouse-top);
     left: min(calc(100vw - (var(--cursor-size)/2)), var(--mouse-left));
     transform: translate(-50%,-50%);
@@ -19,7 +19,8 @@ const CursorWrapper = styled.div`
     border: 0.4rem solid ${p => p.theme.colors.yellow};
     border-radius:50%;
     pointer-events:none;
-    transition: width 0.3s, height 0.3s, background-color 0.3s;
+    opacity: 0;
+    transition: width 0.3s, height 0.3s, background-color 0.3s, opacity 0.3s;
 
     ${breakpoints().max("l")} {
         display:none;
@@ -27,15 +28,10 @@ const CursorWrapper = styled.div`
 
     &.A,
     &.BUTTON,
-    &.INPUT,
-    &.IMG {
-        --cursor-size:15rem;
+    &.INPUT{
+        --cursor-size:10rem;
         background-color:transparent;
-    }
-
-    &.IMG {
-        width:20rem;
-        height:20rem;
+        opacity: 1;
     }
 `;
 

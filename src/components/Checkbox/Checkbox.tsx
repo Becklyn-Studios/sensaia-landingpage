@@ -33,6 +33,13 @@ const CheckboxWrapper = styled.div`
             line-height: 1.25;
         }
 
+        a {
+            position:relative;
+            z-index:3;
+            text-decoration:underline;
+            margin:0 0.4em;
+        }
+
         &:before,
         &:after {
             content: "";
@@ -77,14 +84,17 @@ const CheckboxWrapper = styled.div`
 `;
 
 type Props = {
-    label: string;
+    labelStart: string;
+    labelLink: string;
+    labelLinkTxt:string;
+    labelEnd:string;
     error: boolean;
+    errorMessage: string;
     onChange: Function;
 };
 
-export const Checkbox: React.FC<Props> = ({ label, error, onChange }) => {
+export const Checkbox: React.FC<Props> = ({ labelStart, labelLink, labelLinkTxt, labelEnd, error, onChange, errorMessage }) => {
     const [checked, setChecked] = React.useState(false);
-
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
         onChange(event);
         setChecked(!checked);
@@ -94,10 +104,10 @@ export const Checkbox: React.FC<Props> = ({ label, error, onChange }) => {
         <CheckboxWrapper className={classNames("checkbox", { error: error })}>
             <div className="checkbox__holder">
                 <input type="checkbox" checked={checked} onChange={handleChange} />
-                <label> {label} </label>
+                <label> {labelStart} <a href={`${labelLink}`}>{labelLinkTxt}</a> {labelEnd}</label>
             </div>
 
-            {error && <p className="checkbox__hint">Error: This is a required field.</p>}
+            {error && <p className="checkbox__hint">{errorMessage}</p>}
         </CheckboxWrapper>
     );
 };

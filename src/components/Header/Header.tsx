@@ -21,13 +21,16 @@ import { NavTrigger } from "../NavTrigger/NavTrigger";
 import { MenuLink } from "../MenuLink/MenuLink";
 
 const HeaderWrapper = styled.div`
-    padding-top: 80px;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
+    position:fixed;
+    z-index:13;
+    top:0;
+    left:0;
+    width:100%;
+    background-color: #041C31;
+    padding: 6rem 0;
 
     ${breakpoints().max("xxl")} {
-        padding-top: 40px;
+        padding: 4rem 0;
     }
 
     ${breakpoints().max("l")} {
@@ -36,11 +39,17 @@ const HeaderWrapper = styled.div`
         top: 0;
         left: 0;
         width: 100%;
-        padding: 4rem 4rem;
+        padding: 4rem 0;
     }
 
     ${breakpoints().max("m")} {
-        padding: 2.2rem 2rem;
+        padding: 2.2rem 0;
+    }
+
+    .header__inner {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
     }
 
     .header__menu {
@@ -153,46 +162,50 @@ export const Header: React.FC<{}> = () => {
     });
 
     return (
-        <Container>
-            <HeaderWrapper>
-                <Logo />
+        <HeaderWrapper>
+            <Container>
+                <div className="header__inner">
+                    
+                    <Logo />
 
-                <div className={classNames("header__menu", { "is-nav-open": isNavOpen })}>
-                    <div className="header__menu-inner">
-                        <Menu>
-                            <MenuLink id="/#section1" setIsNavOpen={setIsNavOpen}>
-                                {t("menu.Solar & Wind")}
-                            </MenuLink>
+                    <div className={classNames("header__menu", { "is-nav-open": isNavOpen })}>
+                        <div className="header__menu-inner">
+                            <Menu>
+                                <MenuLink id="/#section1" setIsNavOpen={setIsNavOpen}>
+                                    {t("menu.Solar & Wind")}
+                                </MenuLink>
 
-                            <MenuLink id="/#section2" setIsNavOpen={setIsNavOpen}>
-                                {t("menu.Features")}
-                            </MenuLink>
+                                <MenuLink id="/#section2" setIsNavOpen={setIsNavOpen}>
+                                    {t("menu.Features")}
+                                </MenuLink>
 
-                            <MenuLink id="/#section3" setIsNavOpen={setIsNavOpen}>
-                                {t("menu.USPs")}
-                            </MenuLink>
+                                <MenuLink id="/#section3" setIsNavOpen={setIsNavOpen}>
+                                    {t("menu.USPs")}
+                                </MenuLink>
 
-                            <MenuLink id="/#form" setIsNavOpen={setIsNavOpen}>
-                                {t("menu.Benefits")}
-                            </MenuLink>
+                                <MenuLink id="/#form" setIsNavOpen={setIsNavOpen}>
+                                    {t("menu.Benefits")}
+                                </MenuLink>
 
-                            <MenuLink id="/#section5" setIsNavOpen={setIsNavOpen}>
-                                {t("menu.About")}
-                            </MenuLink>
-                        </Menu>
+                                <MenuLink id="/#section5" setIsNavOpen={setIsNavOpen}>
+                                    {t("menu.About")}
+                                </MenuLink>
+                            </Menu>
+                        </div>
+
+                        <div className="header__menu-utils">
+                            <LanguageSwitcher />
+
+                            <Link href="/#form">
+                                <Button>{t("contact-button")}</Button>
+                            </Link>
+                        </div>
                     </div>
 
-                    <div className="header__menu-utils">
-                        <LanguageSwitcher />
-
-                        <Link href="/#form">
-                            <Button>{t("contact-button")}</Button>
-                        </Link>
-                    </div>
+                    <NavTrigger isNavOpen={isNavOpen} setIsNavOpen={setIsNavOpen} />
+                    
                 </div>
-
-                <NavTrigger isNavOpen={isNavOpen} setIsNavOpen={setIsNavOpen} />
-            </HeaderWrapper>
-        </Container>
+            </Container>
+        </HeaderWrapper>
     );
 };

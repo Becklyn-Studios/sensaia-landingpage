@@ -123,12 +123,23 @@
       "sub-title":"Would you like to learn more about our sensational asset management solution? We’d love to introduce Sensaia to you in a live demo. Get exclusive insights with our O&M experts and explore the possibilities of digitalization as an enabler for mastering the energy transition.",
       "fields":{
          "title":"Title",
+         "title-error-text":"Error: This is a required field.",
          "first-name":"First name",
+         "first-name-error-text":"Error: This is a required field.",
          "last-name":"Last name",
+         "last-name-error-text":"Error: This is a required field.",
          "company":"Company",
-         "mail":"E-mail address"
+         "company-error-text":"Error: This is a required field.",
+         "mail":"E-mail address",
+         "mail-error-text":"Invalid E-Mail Address"
       },
-      "checkbox":"I have read the information on data protection and I agree",
+      "checkbox-content":{
+         "checkbox-start":"I have read the information on",
+         "checkbox-link-txt":"data protection",
+         "checkbox-link":"/sample",
+         "checkbox-end":"and I agree"
+      },
+      "checkbox-error-text":"Error: This is a required field.",
       "submit":"Submit"
    },
    "about":{

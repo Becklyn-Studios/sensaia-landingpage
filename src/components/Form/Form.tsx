@@ -26,7 +26,7 @@ const SignupSchema = yup.object().shape({
     firstName: yup.string().required(),
     lastName: yup.string().required(),
     company: yup.string().required(),
-    email: yup.string().email().required(),
+    email: yup.string().email("Enter valid Email").required(),
     checkbox: yup.boolean().default(false).oneOf([true]),
 });
 
@@ -186,6 +186,7 @@ export const Form: React.FC<{}> = () => {
                                                             label={t("form.fields.title") + "*"}
                                                             error={!!errors.title}
                                                             onChange={field.onChange}
+                                                            errorMessage={t("form.fields.title-error-text")}
                                                             list={["Mr", "Ms", "–"]}
                                                         />
                                                     );
@@ -202,6 +203,7 @@ export const Form: React.FC<{}> = () => {
                                                         <CustomField
                                                             label={t("form.fields.first-name")}
                                                             error={!!errors.firstName}
+                                                            errorMessage={t("form.fields.first-name-error-text")}
                                                             onChange={field.onChange}
                                                         />
                                                     );
@@ -218,6 +220,7 @@ export const Form: React.FC<{}> = () => {
                                                         <CustomField
                                                             label={t("form.fields.last-name")}
                                                             error={!!errors.lastName}
+                                                            errorMessage={t("form.fields.last-name-error-text")}
                                                             onChange={field.onChange}
                                                         />
                                                     );
@@ -234,6 +237,7 @@ export const Form: React.FC<{}> = () => {
                                                         <CustomField
                                                             label={t("form.fields.company")}
                                                             error={!!errors.company}
+                                                            errorMessage={t("form.fields.company-error-text")}
                                                             onChange={field.onChange}
                                                         />
                                                     );
@@ -250,6 +254,7 @@ export const Form: React.FC<{}> = () => {
                                                         <CustomField
                                                             label={t("form.fields.mail")}
                                                             error={!!errors.email}
+                                                            errorMessage={t("form.fields.mail-error-text")}
                                                             onChange={field.onChange}
                                                         />
                                                     );
@@ -264,8 +269,12 @@ export const Form: React.FC<{}> = () => {
                                                 render={({ field }) => {
                                                     return (
                                                         <Checkbox
-                                                            label={t("form.checkbox")}
+                                                            labelStart={t("form.checkbox-content.checkbox-start")}
+                                                            labelLink={t("form.checkbox-content.checkbox-link")}
+                                                            labelLinkTxt={t("form.checkbox-content.checkbox-link-txt")}
+                                                            labelEnd={t("form.checkbox-content.checkbox-end")}
                                                             error={!!errors.checkbox}
+                                                            errorMessage={t("form.checkbox-error-text")}
                                                             onChange={field.onChange}
                                                         />
                                                     );

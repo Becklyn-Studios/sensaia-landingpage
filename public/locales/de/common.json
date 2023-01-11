@@ -123,12 +123,23 @@
       "sub-title":"Möchtest du mehr über unsere sensationelle Asset-Management-Lösung erfahren? Gerne stellen  wir dir Sensaia in einer Live-Demo vor. Erhalte exklusive Einblicke von unseren O&M-Experten und  entdecke die Möglichkeiten der Digitalisierung als Wegbereiter der Energiewende.",
       "fields":{
          "title":"Title",
+         "title-error-text":"Fehler: Das ist ein Pflichtfeld.",
          "first-name":"Vorname",
+         "first-name-error-text":"Fehler: Das ist ein Pflichtfeld.",
          "last-name":"Nachname",
+         "last-name-error-text":"Fehler: Das ist ein Pflichtfeld.",
          "company":"Unternehmen",
-         "mail":"E-Mail Adresse"
+         "company-error-text":"Fehler: Das ist ein Pflichtfeld.",
+         "mail":"E-Mail Adresse",
+         "mail-error-text":"Ungültige E-Mail Adresse"
       },
-      "checkbox":"Ich habe die Datenschutzerklärung gelesen und stimme zu.",
+      "checkbox-content":{
+         "checkbox-start":"Ich habe die",
+         "checkbox-link-txt":"Datenschutzerklärung gelesen",
+         "checkbox-link":"/de/sample",
+         "checkbox-end":"und stimme zu."
+      },
+      "checkbox-error-text":"Fehler: Das ist ein Pflichtfeld.",
       "submit":"Abschicken"
    },
    "about":{

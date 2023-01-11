@@ -101,13 +101,15 @@ const FieldWrapper = styled.div`
 type Props = {
     label: string,
     error: boolean,
+    errorMessage: string,
     onChange: Function,
 }
 
-export const CustomField: React.FC<Props> = ({label, error, onChange}) => {
+export const CustomField: React.FC<Props> = ({label, error, onChange, errorMessage}) => {
     const [hasValue, setHasValue] = useState(false);
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>):void => {
+        console.log(event)
         onChange(event)
         setHasValue(!!(event.target as HTMLInputElement).value)
     }
@@ -123,7 +125,7 @@ export const CustomField: React.FC<Props> = ({label, error, onChange}) => {
                 </svg>
             </div>
 
-            { error && <p className="field__hint">Error: This is a required field.</p> }
+            { error && <p className="field__hint">{errorMessage}</p> }
         </FieldWrapper>
     );
 };

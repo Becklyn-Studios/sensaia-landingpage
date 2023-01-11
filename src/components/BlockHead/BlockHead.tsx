@@ -44,7 +44,7 @@ type Props = {
 
 export const BlockHead: React.FC<Props> = ({ children }) => {
     return (
-    	<BlockHeadWrapper>
+    	<BlockHeadWrapper className="block-head">
     		{children}
     	</BlockHeadWrapper>
     );

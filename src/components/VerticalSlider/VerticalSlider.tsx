@@ -31,7 +31,7 @@ const SliderWrapper = styled.div`
                 align-items:center;
                 flex-wrap: wrap;
                 padding: 8rem 0;
-                min-height:50rem;
+                min-height:55rem;
 
                 ${breakpoints().max("xl")} {
                     padding: 5rem 0;
@@ -39,12 +39,12 @@ const SliderWrapper = styled.div`
                 }
             }
 
-            &:first-child .slider__slide-inner {
-                padding-top: 0;
-            }
-            &:last-child .slider__slide-inner {
-                padding-bottom: 0;
-            }
+            // &:first-child .slider__slide-inner {
+            //     padding-top: 0;
+            // }
+            // &:last-child .slider__slide-inner {
+            //     padding-bottom: 0;
+            // }
         }
     }
 
@@ -141,7 +141,7 @@ export const VerticalSlider = () => {
                                 <Parallax
                                     renderLayer={(percentage) => (  
                                         <div className="slider__slide-inner">
-                                            <div className="slider__content" style={{opacity: setOpacity(percentage, 0.5, 0.85)}}>
+                                            <div className="slider__content" style={{opacity: setOpacity(percentage, 0.4, 0.9)}}>
                                                 <Container>
                                                     <Row>
                                                         <Col size={{ m: 12, l:5, xl: 5, xxl: 4 }}>

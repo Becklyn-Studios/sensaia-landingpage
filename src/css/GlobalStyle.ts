@@ -24,12 +24,21 @@ export const GlobalStyle = createGlobalStyle`
     .wrapper {
         position: relative;
         max-width:100vw;
-            overflow:hidden;
+        overflow:hidden;
+        padding-top: 17rem;
+
+        ${breakpoints().max("xxl")} {
+            padding-top: 12rem;
+        }
 
         ${breakpoints().max("l")} {
+            padding-top: 10rem;
             overflow:hidden;
         }
 
+        ${breakpoints().max("m")} {
+            padding: 2.2rem 2rem;
+        }
     }
 
     .hidden {
