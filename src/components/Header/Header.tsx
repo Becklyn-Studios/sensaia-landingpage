@@ -1,7 +1,7 @@
 /**
  * External dependencies
  */
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import Link from "next/link";
 import { breakpoints } from "@css/helper/breakpoints";
@@ -21,16 +21,16 @@ import { NavTrigger } from "../NavTrigger/NavTrigger";
 import { MenuLink } from "../MenuLink/MenuLink";
 
 const HeaderWrapper = styled.div`
-    position:fixed;
-    z-index:13;
-    top:0;
-    left:0;
-    width:100%;
-    background-color: #041C31;
-    padding: 6rem 0;
+    position: fixed;
+    z-index: 13;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2.2rem 0;
+    transition: background-color 0.2s;
 
-    ${breakpoints().max("xxl")} {
-        padding: 4rem 0;
+    ${breakpoints().min("l")} {
+        background-color: #041c31;
     }
 
     ${breakpoints().max("l")} {
@@ -39,11 +39,6 @@ const HeaderWrapper = styled.div`
         top: 0;
         left: 0;
         width: 100%;
-        padding: 4rem 0;
-    }
-
-    ${breakpoints().max("m")} {
-        padding: 2.2rem 0;
     }
 
     .header__inner {
@@ -118,6 +113,7 @@ const HeaderWrapper = styled.div`
 
                 &:hover {
                     cursor: pointer;
+
                     &:before {
                         transform: scaleX(1);
                     }
@@ -146,13 +142,19 @@ const HeaderWrapper = styled.div`
         ${breakpoints().min("l")} {
             display: none !important;
         }
+
         margin-left: auto;
+    }
+
+    &.is-scrolled {
+        background-color: #041c31;
     }
 `;
 
-export const Header: React.FC<{}> = () => {
+export const Header: React.FC = () => {
     const { t } = useTranslation();
     const [isNavOpen, setIsNavOpen] = React.useState(false);
+    const [isScrolled, setIsScrolled] = React.useState(false);
 
     const Scroll = require("react-scroll");
     const Events = Scroll.Events;
@@ -161,11 +163,19 @@ export const Header: React.FC<{}> = () => {
         setIsNavOpen(false);
     });
 
+    useEffect(() => {
+        const onScroll = () => {
+            setIsScrolled(scrollY > 100);
+        };
+
+        window.addEventListener("scroll", onScroll);
+        return () => window.removeEventListener("scroll", onScroll);
+    }, []);
+
     return (
-        <HeaderWrapper>
+        <HeaderWrapper className={classNames({ "is-scrolled": isScrolled })}>
             <Container>
                 <div className="header__inner">
-                    
                     <Logo />
 
                     <div className={classNames("header__menu", { "is-nav-open": isNavOpen })}>
@@ -203,7 +213,6 @@ export const Header: React.FC<{}> = () => {
                     </div>
 
                     <NavTrigger isNavOpen={isNavOpen} setIsNavOpen={setIsNavOpen} />
-                    
                 </div>
             </Container>
         </HeaderWrapper>
