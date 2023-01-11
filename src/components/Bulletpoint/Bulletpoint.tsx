@@ -17,6 +17,8 @@ import { Row } from "../Row/Row";
 import { Col } from "../Col/Col";
 import { Addition } from "../Addition/Addition";
 import { AnimateElement } from "../AnimateElement/AnimateElement";
+import { useRouter } from "next/router";
+import { useLocale } from "@lib/hook/useLocale";
 
 const BulletpointWrapper = styled.div`
     .bulletpoint__head {
@@ -100,6 +102,8 @@ const BulletpointWrapper = styled.div`
 
 export const Bulletpoint: React.FC<{}> = () => {
     const { t } = useTranslation("common");
+    const { push } = useRouter();
+    const { locale, isDefaultLocale } = useLocale();
 
     const content = [
         {
@@ -129,7 +133,7 @@ export const Bulletpoint: React.FC<{}> = () => {
     return (
         <Container>
             <BulletpointWrapper>
-                <div className="bulletpoint__head" >
+                <div className="bulletpoint__head">
                     <AnimateElement>
                         <Row>
                             <Col size={{ s: 12, m: 8, l: 8, xl: 6, xxl: 5 }}>
@@ -145,7 +149,7 @@ export const Bulletpoint: React.FC<{}> = () => {
                     </AnimateElement>
                 </div>
 
-                <div className="bulletpoint__body" >
+                <div className="bulletpoint__body">
                     <AnimateElement>
                         <Row>
                             {content.map((contentItem, contentIndex) => (
@@ -163,9 +167,16 @@ export const Bulletpoint: React.FC<{}> = () => {
                     </AnimateElement>
                 </div>
 
-                <div className="bulletpoint__foot" >
+                <div className="bulletpoint__foot">
                     <AnimateElement>
-                        <Button href="#">{t("actions.button")}</Button>
+                        <Button
+                            onClick={() =>
+                                push(`/${isDefaultLocale ? "" : locale}#form`, undefined, {
+                                    scroll: false,
+                                })
+                            }>
+                            {t("actions.button")}
+                        </Button>
                     </AnimateElement>
                 </div>
             </BulletpointWrapper>

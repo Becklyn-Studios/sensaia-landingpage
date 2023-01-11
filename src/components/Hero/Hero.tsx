@@ -14,6 +14,8 @@ import { Container } from "../Container/Container";
 import { Headline } from "../Headline/Headline";
 import { DecorBlob } from "../DecorBlob/DecorBlob";
 import { AnimateElement } from "../AnimateElement/AnimateElement";
+import { useRouter } from "next/router";
+import { useLocale } from "@lib/hook/useLocale";
 
 const HeroWrapper = styled.div`
     position: relative;
@@ -78,6 +80,8 @@ const HeroContentWrapper = styled.div`
 
 export const Hero: React.FC<{}> = () => {
     const { t } = useTranslation("common");
+    const { push } = useRouter();
+    const { locale, isDefaultLocale } = useLocale();
 
     return (
         <Container>
@@ -96,7 +100,14 @@ export const Hero: React.FC<{}> = () => {
                             {t("hero.text")}
                         </Headline>
 
-                        <Button href="#">{t("hero.button")}</Button>
+                        <Button
+                            onClick={() =>
+                                push(`/${isDefaultLocale ? "" : locale}#form`, undefined, {
+                                    scroll: false,
+                                })
+                            }>
+                            {t("hero.button")}
+                        </Button>
                     </AnimateElement>
                 </HeroContentWrapper>
             </HeroWrapper>

@@ -141,7 +141,7 @@
     "checkbox-content": {
       "checkbox-start": "Ich habe die",
       "checkbox-link-txt": "Datenschutzerklärung gelesen",
-      "checkbox-link": "/de/sample",
+      "checkbox-link": "/de/datenschutz",
       "checkbox-end": "und stimme zu."
     },
     "checkbox-error-text": "Fehler: Das ist ein Pflichtfeld.",

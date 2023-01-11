@@ -141,7 +141,7 @@
     "checkbox-content": {
       "checkbox-start": "I have read the information on",
       "checkbox-link-txt": "data protection",
-      "checkbox-link": "/sample",
+      "checkbox-link": "/en/privacy",
       "checkbox-end": "and I agree"
     },
     "checkbox-error-text": "Error: This is a required field.",

@@ -3,32 +3,31 @@
  */
 import React, { useState } from "react";
 import i18nextConfig from "../../../next-i18next.config";
-import type {GetStaticPaths, GetStaticProps} from "next";
+import type { GetStaticPaths, GetStaticProps } from "next";
 
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 
-
 /**
  * Internal dependencies
  */
-import { Header }         from "../../components/Header/Header";
-import { Hero }           from "../../components/Hero/Hero";
-import { Features }       from "../../components/Features/Features";
-import { Spacer }         from "../../components/Spacer/Spacer";
-import { Intro }          from "../../components/Intro/Intro";
-import { DecorHolder }    from "../../components/DecorHolder/DecorHolder";
+import { Header } from "../../components/Header/Header";
+import { Hero } from "../../components/Hero/Hero";
+import { Features } from "../../components/Features/Features";
+import { Spacer } from "../../components/Spacer/Spacer";
+import { Intro } from "../../components/Intro/Intro";
+import { DecorHolder } from "../../components/DecorHolder/DecorHolder";
 import { VerticalSlider } from "../../components/VerticalSlider/VerticalSlider";
-import { Testimonials }   from "../../components/Testimonials/Testimonials";
-import { FeaturesAlt }    from "../../components/FeaturesAlt/FeaturesAlt";
-import { Bulletpoint }    from "../../components/Bulletpoint/Bulletpoint";
-import { Form }           from "../../components/Form/Form";
-import { About }          from "../../components/About/About";
-import { Footer }         from "../../components/Footer/Footer";
+import { Testimonials } from "../../components/Testimonials/Testimonials";
+import { FeaturesAlt } from "../../components/FeaturesAlt/FeaturesAlt";
+import { Bulletpoint } from "../../components/Bulletpoint/Bulletpoint";
+import { Form } from "../../components/Form/Form";
+import { About } from "../../components/About/About";
+import { Footer } from "../../components/Footer/Footer";
 import { CursorProvider } from "../../components/CursorProvider/CursorProvider";
-import { SliderGallery }  from "../../components/SliderGallery/SliderGallery";
-import { Meta }           from "@lib/meta";
-import useMedia           from "../../components/UseMedia/UseMedia";
+import { SliderGallery } from "../../components/SliderGallery/SliderGallery";
+import { Meta } from "@lib/meta";
+import useMedia from "../../components/UseMedia/UseMedia";
 import { LOCALE_DEFAULT } from "@lib/constant";
 
 const Home: React.FC = () => {
@@ -57,18 +56,18 @@ const Home: React.FC = () => {
             <Hero />
 
             <DecorHolder>
-                <section className="scroll-to-element" id="intro">
-                    <Intro />
-                </section>
+                <Intro />
 
                 <Spacer>
-                    <section className="scroll-to-element" id="features">
+                    <section className="scroll-to-element" id="intro">
                         <Features />
                     </section>
                 </Spacer>
             </DecorHolder>
 
-            {isTabletView.isMobile ? <SliderGallery /> : <VerticalSlider />}
+            <section className="scroll-to-element" id="features">
+                {isTabletView.isMobile ? <SliderGallery /> : <VerticalSlider />}
+            </section>
 
             <DecorHolder position="right">
                 <Spacer>

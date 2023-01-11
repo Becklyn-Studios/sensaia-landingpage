@@ -18,6 +18,8 @@ import { BlockHead } from "../BlockHead/BlockHead";
 import { Row } from "../Row/Row";
 import { Col } from "../Col/Col";
 import { AnimateElement } from "../AnimateElement/AnimateElement";
+import { useRouter } from "next/router";
+import { useLocale } from "@lib/hook/useLocale";
 
 const FeaturesWrapper = styled.div`
     text-align: center;
@@ -67,6 +69,8 @@ const FeaturedFoot = styled.div`
 
 export const Features: React.FC<{}> = () => {
     const { t } = useTranslation("common");
+    const { push } = useRouter();
+    const { locale, isDefaultLocale } = useLocale();
 
     const featuresList = [
         {
@@ -105,7 +109,11 @@ export const Features: React.FC<{}> = () => {
                         <Row>
                             {featuresList.map((item, index) => (
                                 <Col size={{ s: 12, m: 6, l: 5, xl: 5, xxl: 4 }} key={index}>
-                                    <Feature icon={item.icon} title={item.title} text={item.subtitle} />
+                                    <Feature
+                                        icon={item.icon}
+                                        title={item.title}
+                                        text={item.subtitle}
+                                    />
                                 </Col>
                             ))}
                         </Row>
@@ -114,7 +122,14 @@ export const Features: React.FC<{}> = () => {
 
                 <FeaturedFoot data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
                     <AnimateElement>
-                        <Button href="#">{t("features.button")}</Button>
+                        <Button
+                            onClick={() =>
+                                push(`/${isDefaultLocale ? "" : locale}#form`, undefined, {
+                                    scroll: false,
+                                })
+                            }>
+                            {t("features.button")}
+                        </Button>
                     </AnimateElement>
                 </FeaturedFoot>
             </FeaturesWrapper>
