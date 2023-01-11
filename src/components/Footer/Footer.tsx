@@ -129,7 +129,7 @@ export const Footer = () => {
                         <Col size={{ s: 12, m: 7, l: 6, xl: 6, xxl: 6 }}>
                             <div className="footer__copyright">
                                 <p>
-                                    <span>&copy; 2022 – STEAG GmbH.</span> All rights reserved.
+                                    <span>&copy; 2023 – STEAG GmbH.</span> All rights reserved.
                                 </p>
                             </div>
                         </Col>

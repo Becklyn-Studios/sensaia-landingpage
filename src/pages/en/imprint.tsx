@@ -40,7 +40,7 @@ const Imprint: React.FC = () => {
                         <h4>Published by</h4>
 
                         <p>
-                            Igony GmbH
+                            Iqony GmbH
                             <br />
                             Rüttenscheider Str. 1-3
                             <br />
