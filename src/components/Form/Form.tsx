@@ -144,12 +144,18 @@ export const Form: React.FC<{}> = () => {
     });
 
     const onSubmit: SubmitHandler<FormValues> = async data => {
+        const body = new URLSearchParams();
+
+        for (const prop in data) {
+            body.set(prop, data[prop as keyof FormValues].toString());
+        }
+
         const res = await fetch("https://www.sens-energy.com/de/mailapi/?type=1673441066", {
             method: "POST",
             headers: {
-                "Content-Type": "application/json",
+                "Content-Type": "application/x-www-form-urlencoded",
             },
-            body: JSON.stringify(data),
+            body,
         })
             .then(res => res.json())
             .catch(console.error);
