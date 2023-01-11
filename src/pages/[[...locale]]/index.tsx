@@ -29,67 +29,75 @@ import { CursorProvider } from "../../components/CursorProvider/CursorProvider";
 import { SliderGallery }  from "../../components/SliderGallery/SliderGallery";
 import { Meta }           from "@lib/meta";
 import useMedia           from "../../components/UseMedia/UseMedia";
-import {LOCALE_DEFAULT} from "@lib/constant";
+import { LOCALE_DEFAULT } from "@lib/constant";
 
 const Home: React.FC = () => {
     const { t } = useTranslation();
     const [mousePositionY, setMousePositionY] = useState(0);
     const [mousePositionX, setMousePositionX] = useState(0);
-    const isTabletView = useMedia(1024)
+    const isTabletView = useMedia(1024);
 
     return (
-        <div className="wrapper" style={{ "--mouse-left":mousePositionX+"px", "--mouse-top":mousePositionY+"px" } as React.CSSProperties}>
-            <Meta title={ t("meta.title") } description={ t("meta.description") } />
-            <CursorProvider setMousePositionX={setMousePositionX} setMousePositionY={setMousePositionY}/>
-            
-            <Header/>
-            
-            <Hero/>
-            
-            <section className="scroll-to-element" id="section1">
-                <DecorHolder>
-                    <Intro/>
-            
-                    <Spacer>
-                        <Features/>
-                    </Spacer>
-                </DecorHolder>
-                
+        <div
+            className="wrapper"
+            style={
                 {
-                    isTabletView.isMobile
-                        ? <SliderGallery/>
-                        : <VerticalSlider/>
-                }
-            </section>
-            
-            <DecorHolder position="right">
+                    "--mouse-left": mousePositionX + "px",
+                    "--mouse-top": mousePositionY + "px",
+                } as React.CSSProperties
+            }>
+            <Meta title={t("meta.title")} description={t("meta.description")} />
+            <CursorProvider
+                setMousePositionX={setMousePositionX}
+                setMousePositionY={setMousePositionY}
+            />
+
+            <Header />
+
+            <Hero />
+
+            <DecorHolder>
+                <section className="scroll-to-element" id="intro">
+                    <Intro />
+                </section>
+
                 <Spacer>
-                    <section className="scroll-to-element" id="section2">
-                        <FeaturesAlt/>
+                    <section className="scroll-to-element" id="features">
+                        <Features />
                     </section>
                 </Spacer>
-            
+            </DecorHolder>
+
+            {isTabletView.isMobile ? <SliderGallery /> : <VerticalSlider />}
+
+            <DecorHolder position="right">
                 <Spacer>
-                    <Bulletpoint/>
+                    <section className="scroll-to-element" id="usps">
+                        <FeaturesAlt />
+                    </section>
+                </Spacer>
+
+                <Spacer>
+                    <section className="scroll-to-element" id="benefits">
+                        <Bulletpoint />
+                    </section>
                 </Spacer>
             </DecorHolder>
-            
-            <section className="scroll-to-element" id="section3">
-                <Testimonials/>
-            </section>
+
+            <Testimonials />
 
             <Spacer>
-                <section className="scroll-to-element" id="form">
-                    <Form/>
+                <section className="scroll-to-element" id="experience">
+                    <About />
                 </section>
             </Spacer>
 
-            <section className="scroll-to-element" id="section5">
-                <About/>
+            <section className="scroll-to-element" id="form">
+                <Form />
             </section>
 
-            <Footer/>
-            
+            <Footer />
+
             <DecorHolder position="right" size="big">
                 <div className="hidden"></div>
             </DecorHolder>

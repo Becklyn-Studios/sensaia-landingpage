@@ -3,7 +3,6 @@
  */
 import React, { useEffect } from "react";
 import styled from "styled-components";
-import Link from "next/link";
 import { breakpoints } from "@css/helper/breakpoints";
 import classNames from "classnames";
 
@@ -19,6 +18,7 @@ import Menu from "../Menu/Menu";
 import { LanguageSwitcher } from "../LanguageSwitcher/LanguageSwitcher";
 import { NavTrigger } from "../NavTrigger/NavTrigger";
 import { MenuLink } from "../MenuLink/MenuLink";
+import { useRouter } from "next/router";
 
 const HeaderWrapper = styled.div`
     position: fixed;
@@ -153,6 +153,7 @@ const HeaderWrapper = styled.div`
 
 export const Header: React.FC = () => {
     const { t } = useTranslation();
+    const {push} = useRouter();
     const [isNavOpen, setIsNavOpen] = React.useState(false);
     const [isScrolled, setIsScrolled] = React.useState(false);
 
@@ -181,23 +182,23 @@ export const Header: React.FC = () => {
                     <div className={classNames("header__menu", { "is-nav-open": isNavOpen })}>
                         <div className="header__menu-inner">
                             <Menu>
-                                <MenuLink id="/#section1" setIsNavOpen={setIsNavOpen}>
+                                <MenuLink id="intro" setIsNavOpen={setIsNavOpen}>
                                     {t("menu.Solar & Wind")}
                                 </MenuLink>
 
-                                <MenuLink id="/#section2" setIsNavOpen={setIsNavOpen}>
+                                <MenuLink id="features" setIsNavOpen={setIsNavOpen}>
                                     {t("menu.Features")}
                                 </MenuLink>
 
-                                <MenuLink id="/#section3" setIsNavOpen={setIsNavOpen}>
+                                <MenuLink id="usps" setIsNavOpen={setIsNavOpen}>
                                     {t("menu.USPs")}
                                 </MenuLink>
 
-                                <MenuLink id="/#form" setIsNavOpen={setIsNavOpen}>
+                                <MenuLink id="benefits" setIsNavOpen={setIsNavOpen}>
                                     {t("menu.Benefits")}
                                 </MenuLink>
 
-                                <MenuLink id="/#section5" setIsNavOpen={setIsNavOpen}>
+                                <MenuLink id="experience" setIsNavOpen={setIsNavOpen}>
                                     {t("menu.About")}
                                 </MenuLink>
                             </Menu>
@@ -206,9 +207,7 @@ export const Header: React.FC = () => {
                         <div className="header__menu-utils">
                             <LanguageSwitcher />
 
-                            <Link href="/#form">
-                                <Button>{t("contact-button")}</Button>
-                            </Link>
+                            <Button onClick={() => push("#form")}>{t("contact-button")}</Button>
                         </div>
                     </div>
 

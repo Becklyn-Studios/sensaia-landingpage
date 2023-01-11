@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Link from "next/link";
-import { useRouter } from "next/router";
+import { useLocale } from "@lib/hook/useLocale";
 
 const LinkWrapper = styled.button`
    
@@ -14,7 +14,7 @@ type Props = {
 };
 
 export const MenuLink: React.FC<Props> = ({children, id, setIsNavOpen}) => {
-    const router = useRouter();
+    const { locale, isDefaultLocale } = useLocale();
     
     const handleClick = () => {
         setIsNavOpen(false);
@@ -22,7 +22,7 @@ export const MenuLink: React.FC<Props> = ({children, id, setIsNavOpen}) => {
 
     return (
         <LinkWrapper>
-            <Link locale={router.locale} scroll={false} href={id} onClick={handleClick} >
+            <Link scroll={false} href={isDefaultLocale ? `#${id}` : `/${locale}#${id}`} onClick={handleClick} >
                 {children}
             </Link>
         </LinkWrapper>
