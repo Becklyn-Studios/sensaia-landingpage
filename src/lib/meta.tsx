@@ -2,7 +2,7 @@ import React from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { getAppUrl } from "@lib/util";
-import { DEFAULT_LOCALE } from "@lib/constant";
+import { LOCALE_DEFAULT } from "@lib/constant";
 
 interface MetaProps {
     title: string;
@@ -11,13 +11,15 @@ interface MetaProps {
 }
 
 export const Meta: React.FC<MetaProps> = ({ title, description, notFound }) => {
-    const { asPath, locale } = useRouter();
+    const { asPath } = useRouter();
 
     const appUrl = getAppUrl();
-    const url =
+    const localizedUrl =
         appUrl +
-        (locale !== DEFAULT_LOCALE ? "/" + locale : "") +
-        (asPath.endsWith("/") ? asPath.slice(0, -1) : asPath);
+        (asPath.includes(`/${LOCALE_DEFAULT}`)
+            ? asPath.replace(`/${LOCALE_DEFAULT}`, "/")
+            : asPath);
+    const url = localizedUrl.endsWith("/") ? localizedUrl.slice(0, -1) : localizedUrl;
 
     return (
         <Head>
@@ -36,7 +38,12 @@ export const Meta: React.FC<MetaProps> = ({ title, description, notFound }) => {
             <link rel="apple-touch-icon" sizes="144x144" href="/meta/apple-icon-144x144.png" />
             <link rel="apple-touch-icon" sizes="152x152" href="/meta/apple-icon-152x152.png" />
             <link rel="apple-touch-icon" sizes="180x180" href="/meta/apple-icon-180x180.png" />
-            <link rel="icon" type="image/png" sizes="192x192" href="/meta/android-icon-192x192.png" />
+            <link
+                rel="icon"
+                type="image/png"
+                sizes="192x192"
+                href="/meta/android-icon-192x192.png"
+            />
             <link rel="icon" type="image/png" sizes="32x32" href="/meta/favicon-32x32.png" />
             <link rel="icon" type="image/png" sizes="96x96" href="/meta/favicon-96x96.png" />
             <link rel="icon" type="image/png" sizes="16x16" href="/meta/favicon-16x16.png" />

@@ -3,33 +3,38 @@
  */
 import React from "react";
 import styled from "styled-components";
-import { useRouter } from "next/router";
+import Link from "next/link";
 import { hover } from "@css/helper";
+import { useLocale } from "@lib/hook/useLocale";
+import { LOCALE_DE, LOCALE_DEFAULT } from "@lib/constant";
+import { useRouter } from "next/router";
 
-const LanguageSwitcherButton = styled.div`
+const LanguageSwitcherAnchor = styled(Link)`
     font-size: 16px;
     line-height: 16px;
     color: #3f5e79;
-    cursor: pointer;
 
     ${hover`
         opacity: .7;
     `}
 `;
 
-export const LanguageSwitcher: React.FC<{}> = () => {
-    const router = useRouter();
+export const LanguageSwitcher: React.FC = () => {
+    const { isDefaultLocale } = useLocale();
+    const { asPath } = useRouter();
 
-    const currentLocale = router.locale;
-    const switchableLocale = currentLocale === "en" ? "de" : "en";
-
-    const handleLocaleSwitch = () => {
-        router.push(router.pathname, router.pathname, { locale: switchableLocale });
-    };
+    const targetLocale = isDefaultLocale ? LOCALE_DE : LOCALE_DEFAULT;
+    const targetPath = isDefaultLocale
+        ? asPath.replace(`/${LOCALE_DEFAULT}`, `/${LOCALE_DE}`).replace("/", `/${LOCALE_DE}`)
+        : asPath.replace(`/${LOCALE_DE}`, "/");
 
     return (
-        <LanguageSwitcherButton className="language-switcher" onClick={handleLocaleSwitch}>
-            <a>{switchableLocale.toUpperCase()}</a>
-        </LanguageSwitcherButton>
+        <LanguageSwitcherAnchor
+            href={targetPath}
+            className="language-switcher"
+            lang={targetLocale}
+            hrefLang={targetLocale}>
+            {targetLocale.toUpperCase()}
+        </LanguageSwitcherAnchor>
     );
 };

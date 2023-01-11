@@ -2,7 +2,8 @@
  * External dependencies
  */
 import React, { useState } from "react";
-import type { GetStaticProps } from "next";
+import i18nextConfig from "../../../next-i18next.config";
+import type {GetStaticPaths, GetStaticProps} from "next";
 
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
@@ -11,23 +12,24 @@ import { useTranslation } from "next-i18next";
 /**
  * Internal dependencies
  */
-import { Header }         from "../components/Header/Header";
-import { Hero }           from "../components/Hero/Hero";
-import { Features }       from "../components/Features/Features";
-import { Spacer }         from "../components/Spacer/Spacer";
-import { Intro }          from "../components/Intro/Intro";
-import { DecorHolder }    from "../components/DecorHolder/DecorHolder";
-import { VerticalSlider } from "../components/VerticalSlider/VerticalSlider";
-import { Testimonials }   from "../components/Testimonials/Testimonials";
-import { FeaturesAlt }    from "../components/FeaturesAlt/FeaturesAlt";
-import { Bulletpoint }    from "../components/Bulletpoint/Bulletpoint";
-import { Form }           from "../components/Form/Form";
-import { About }          from "../components/About/About";
-import { Footer }         from "../components/Footer/Footer";    
-import { CursorProvider } from "../components/CursorProvider/CursorProvider";
-import { SliderGallery }  from "../components/SliderGallery/SliderGallery";
+import { Header }         from "../../components/Header/Header";
+import { Hero }           from "../../components/Hero/Hero";
+import { Features }       from "../../components/Features/Features";
+import { Spacer }         from "../../components/Spacer/Spacer";
+import { Intro }          from "../../components/Intro/Intro";
+import { DecorHolder }    from "../../components/DecorHolder/DecorHolder";
+import { VerticalSlider } from "../../components/VerticalSlider/VerticalSlider";
+import { Testimonials }   from "../../components/Testimonials/Testimonials";
+import { FeaturesAlt }    from "../../components/FeaturesAlt/FeaturesAlt";
+import { Bulletpoint }    from "../../components/Bulletpoint/Bulletpoint";
+import { Form }           from "../../components/Form/Form";
+import { About }          from "../../components/About/About";
+import { Footer }         from "../../components/Footer/Footer";
+import { CursorProvider } from "../../components/CursorProvider/CursorProvider";
+import { SliderGallery }  from "../../components/SliderGallery/SliderGallery";
 import { Meta }           from "@lib/meta";
-import useMedia           from "../components/UseMedia/UseMedia";
+import useMedia           from "../../components/UseMedia/UseMedia";
+import {LOCALE_DEFAULT} from "@lib/constant";
 
 const Home: React.FC = () => {
     const { t } = useTranslation();
@@ -95,15 +97,31 @@ const Home: React.FC = () => {
     );
 };
 
-export default Home;
+export const getStaticPaths: GetStaticPaths = () => {
+    return {
+        fallback: false,
+        paths: [
+            { params: { locale: [] } }, // "/" for default locale
+            ...i18nextConfig.i18n.locales.map(lng => ({
+                params: {
+                    locale: [lng],
+                },
+            })),
+        ],
+    };
+};
 
-export const getStaticProps: GetStaticProps = async context => {
-    const { locale = "en" } = context;
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+    const locale =
+        params && Array.isArray(params["locale"]) && params["locale"].length
+            ? params["locale"][0]
+            : LOCALE_DEFAULT;
 
     return {
         props: {
             ...(await serverSideTranslations(locale, ["common"])),
-            // Will be passed to the page component as props
         },
     };
 };
+
+export default Home;
