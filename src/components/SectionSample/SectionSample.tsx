@@ -66,7 +66,7 @@ const SectionSampleWrapper = styled.div`
     }
   
     .group + .group {
-        margin-top: var(--spacer-med);
+        margin-top: var(--spacer-big);
     }
 
     ol {
