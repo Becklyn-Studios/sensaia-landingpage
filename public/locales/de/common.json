@@ -169,7 +169,9 @@
     "title": "Renewable Energy Intelligence.",
     "menu": {
       "data-privacy": "Datenschutz",
-      "impressum": "Impressum"
+      "data-privacy-link": "/de/datenschutz",
+      "impressum": "Impressum",
+      "impressum-link": "/de/impressum"
     }
   }
 }

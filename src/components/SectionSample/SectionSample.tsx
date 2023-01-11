@@ -25,6 +25,10 @@ const SectionSampleWrapper = styled.div`
         --spacer-med: 5rem;
     }
 
+    a {
+        text-decoration: underline;
+    }
+  
     h1,h2,h3,h4,h5,h6,p {
         letter-spacing:-0.02em;
         &:last-child {
@@ -59,6 +63,10 @@ const SectionSampleWrapper = styled.div`
         &:not(:first-child) {
             margin-top:var(--spacer-big);
         }
+    }
+  
+    .group + .group {
+        margin-top: var(--spacer-med);
     }
 
     ol {

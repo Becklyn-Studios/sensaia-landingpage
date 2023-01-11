@@ -43,11 +43,11 @@ export const ListLinks = () => {
     const list = [
         {
             "title": t("footer.menu.data-privacy"),
-            "link": "#"
+            "link": t("footer.menu.data-privacy-link")
         },
         {
             "title": t("footer.menu.impressum"),
-            "link": "#"
+            "link": t("footer.menu.impressum-link")
         }
     ]
 

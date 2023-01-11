@@ -17,7 +17,7 @@ export const Meta: React.FC<MetaProps> = ({ title, description, notFound }) => {
     const localizedUrl =
         appUrl +
         (asPath.includes(`/${LOCALE_DEFAULT}`)
-            ? asPath.replace(`/${LOCALE_DEFAULT}`, "/")
+            ? asPath.replace(`/${LOCALE_DEFAULT}`, "")
             : asPath);
     const url = localizedUrl.endsWith("/") ? localizedUrl.slice(0, -1) : localizedUrl;
 
