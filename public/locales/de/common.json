@@ -123,6 +123,7 @@
   },
   "form": {
     "alert": "Deine Anfrage wurde verschickt. Wir melden uns bald bei dir.",
+    "error": "Es ist ein Fehler aufgetreten. Bitte versuche es später erneut!",
     "title": "Live-Demo erhalten",
     "sub-title": "Möchtest du mehr über unsere sensationelle Asset-Management-Lösung erfahren? Gerne stellen wir dir Sensaia in einer Live-Demo vor. Erhalte exklusive Einblicke von unseren O&M-Experten und entdecke die Möglichkeiten der Digitalisierung als Wegbereiter der Energiewende.",
     "fields": {

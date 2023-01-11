@@ -109,7 +109,6 @@ export const CustomField: React.FC<Props> = ({label, error, onChange, errorMessa
     const [hasValue, setHasValue] = useState(false);
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>):void => {
-        console.log(event)
         onChange(event)
         setHasValue(!!(event.target as HTMLInputElement).value)
     }

@@ -23,11 +23,11 @@ import { AnimateElement } from "../AnimateElement/AnimateElement";
 
 const SignupSchema = yup.object().shape({
     title: yup.string().required(),
-    firstName: yup.string().required(),
-    lastName: yup.string().required(),
+    firstname: yup.string().required(),
+    lastname: yup.string().required(),
     company: yup.string().required(),
     email: yup.string().email("Enter valid Email").required(),
-    checkbox: yup.boolean().default(false).oneOf([true]),
+    dataprotection: yup.boolean().default(false).oneOf([true]),
 });
 
 const FormWrapper = styled.div`
@@ -59,6 +59,11 @@ const FormWrapper = styled.div`
         &.is-visible {
             opacity: 1;
         }
+    }
+
+    .form__error {
+        background: #cb1717;
+        color: ${p => p.theme.colors.white};
     }
 
     .form__head {
@@ -117,16 +122,17 @@ const FormWrapper = styled.div`
 
 type FormValues = {
     title: string;
-    firstName: string;
-    lastName: string;
+    firstname: string;
+    lastname: string;
     company: string;
     email: string;
-    checkbox: boolean;
+    dataprotection: boolean;
 };
 
 export const Form: React.FC<{}> = () => {
     const { t } = useTranslation("common");
-    const [showAlert, setShowAlert] = useState(false);
+    const [showAlert, setShowAlert] = useState<boolean>(false);
+    const [showError, setShowError] = useState<boolean>(false);
 
     const {
         handleSubmit,
@@ -137,14 +143,26 @@ export const Form: React.FC<{}> = () => {
         resolver: yupResolver(SignupSchema),
     });
 
-    const onSubmit: SubmitHandler<FormValues> = data => {
-        console.log(data);
+    const onSubmit: SubmitHandler<FormValues> = async data => {
+        const res = await fetch("https://www.sens-energy.com/de/mailapi/?type=1673441066", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+        }).then(res => res.json());
 
-        setShowAlert(true);
-        const timer = setTimeout(() => {
-            setShowAlert(false);
-        }, 2500);
-        return () => clearTimeout(timer);
+        if (res.success) {
+            setShowAlert(true);
+            setTimeout(() => {
+                setShowAlert(false);
+            }, 4000);
+        } else {
+            setShowError(true);
+            setTimeout(() => {
+                setShowError(false);
+            }, 4000);
+        }
     };
 
     return (
@@ -156,7 +174,14 @@ export const Form: React.FC<{}> = () => {
                             {t("form.alert")}
                         </div>
 
-                        <div className="form__head" >
+                        <div
+                            className={classNames("form__alert form__error", {
+                                "is-visible": showError,
+                            })}>
+                            {t("form.error")}
+                        </div>
+
+                        <div className="form__head">
                             <AnimateElement>
                                 <BlockHead>
                                     <Headline
@@ -172,7 +197,7 @@ export const Form: React.FC<{}> = () => {
                             </AnimateElement>
                         </div>
 
-                        <div className="form__body" >
+                        <div className="form__body">
                             <AnimateElement>
                                 <form onSubmit={handleSubmit(onSubmit)}>
                                     <Row>
@@ -186,7 +211,9 @@ export const Form: React.FC<{}> = () => {
                                                             label={t("form.fields.title") + "*"}
                                                             error={!!errors.title}
                                                             onChange={field.onChange}
-                                                            errorMessage={t("form.fields.title-error-text")}
+                                                            errorMessage={t(
+                                                                "form.fields.title-error-text"
+                                                            )}
                                                             list={["Mr", "Ms", "–"]}
                                                         />
                                                     );
@@ -197,13 +224,15 @@ export const Form: React.FC<{}> = () => {
                                         <Col size={{ s: 12, m: 6, l: 6, xl: 6, xxl: 6 }}>
                                             <Controller
                                                 control={control}
-                                                name={`firstName`}
+                                                name={`firstname`}
                                                 render={({ field }) => {
                                                     return (
                                                         <CustomField
                                                             label={t("form.fields.first-name")}
-                                                            error={!!errors.firstName}
-                                                            errorMessage={t("form.fields.first-name-error-text")}
+                                                            error={!!errors.firstname}
+                                                            errorMessage={t(
+                                                                "form.fields.first-name-error-text"
+                                                            )}
                                                             onChange={field.onChange}
                                                         />
                                                     );
@@ -214,13 +243,15 @@ export const Form: React.FC<{}> = () => {
                                         <Col size={{ s: 12, m: 6, l: 6, xl: 6, xxl: 6 }}>
                                             <Controller
                                                 control={control}
-                                                name={`lastName`}
+                                                name={`lastname`}
                                                 render={({ field }) => {
                                                     return (
                                                         <CustomField
                                                             label={t("form.fields.last-name")}
-                                                            error={!!errors.lastName}
-                                                            errorMessage={t("form.fields.last-name-error-text")}
+                                                            error={!!errors.lastname}
+                                                            errorMessage={t(
+                                                                "form.fields.last-name-error-text"
+                                                            )}
                                                             onChange={field.onChange}
                                                         />
                                                     );
@@ -237,7 +268,9 @@ export const Form: React.FC<{}> = () => {
                                                         <CustomField
                                                             label={t("form.fields.company")}
                                                             error={!!errors.company}
-                                                            errorMessage={t("form.fields.company-error-text")}
+                                                            errorMessage={t(
+                                                                "form.fields.company-error-text"
+                                                            )}
                                                             onChange={field.onChange}
                                                         />
                                                     );
@@ -254,7 +287,9 @@ export const Form: React.FC<{}> = () => {
                                                         <CustomField
                                                             label={t("form.fields.mail")}
                                                             error={!!errors.email}
-                                                            errorMessage={t("form.fields.mail-error-text")}
+                                                            errorMessage={t(
+                                                                "form.fields.mail-error-text"
+                                                            )}
                                                             onChange={field.onChange}
                                                         />
                                                     );
@@ -265,16 +300,26 @@ export const Form: React.FC<{}> = () => {
                                         <Col size={{ xl: 12, xxl: 12 }}>
                                             <Controller
                                                 control={control}
-                                                name={`checkbox`}
+                                                name={`dataprotection`}
                                                 render={({ field }) => {
                                                     return (
                                                         <Checkbox
-                                                            labelStart={t("form.checkbox-content.checkbox-start")}
-                                                            labelLink={t("form.checkbox-content.checkbox-link")}
-                                                            labelLinkTxt={t("form.checkbox-content.checkbox-link-txt")}
-                                                            labelEnd={t("form.checkbox-content.checkbox-end")}
-                                                            error={!!errors.checkbox}
-                                                            errorMessage={t("form.checkbox-error-text")}
+                                                            labelStart={t(
+                                                                "form.checkbox-content.checkbox-start"
+                                                            )}
+                                                            labelLink={t(
+                                                                "form.checkbox-content.checkbox-link"
+                                                            )}
+                                                            labelLinkTxt={t(
+                                                                "form.checkbox-content.checkbox-link-txt"
+                                                            )}
+                                                            labelEnd={t(
+                                                                "form.checkbox-content.checkbox-end"
+                                                            )}
+                                                            error={!!errors.dataprotection}
+                                                            errorMessage={t(
+                                                                "form.checkbox-error-text"
+                                                            )}
                                                             onChange={field.onChange}
                                                         />
                                                     );
