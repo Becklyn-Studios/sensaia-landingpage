@@ -7,7 +7,6 @@ import Link from "next/link";
 import { hover } from "@css/helper";
 import { useLocale } from "@lib/hook/useLocale";
 import { LOCALE_DE, LOCALE_DEFAULT } from "@lib/constant";
-import { useRouter } from "next/router";
 
 const LanguageSwitcherAnchor = styled(Link)`
     font-size: 16px;
