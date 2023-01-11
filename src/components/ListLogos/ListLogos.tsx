@@ -45,17 +45,17 @@ export const ListLogos = () => {
         {
           "img": <Image src="/logos/logo-sensaia.svg" width={105.37} height={16.15} alt="logo" />,
           "imgTablet": <Image src="/logos/logo-sensaia.svg" width={89} height={14} alt="logo" />,
-          "link": "#"
+          "link": "/"
         },
         {
-          "img": <Image src="/logos/logo-steag.svg" width={66} height={20} alt="logo" />,
-          "imgTablet": <Image src="/logos/logo-steag.svg" width={58.9} height={18.39} alt="logo" />,
-          "link": "#"
+          "img": <Image src="/logos/logo-iqony.svg" width={66} height={20} alt="logo" />,
+          "imgTablet": <Image src="/logos/logo-iqony.svg" width={58.9} height={18.39} alt="logo" />,
+          "link": "https://www.iqony.energy/"
         },
         {
-          "img": <Image src="/logos/logo-sens.png" width={64} height={25} alt="logo" />,
-          "imgTablet": <Image src="/logos/logo-sens.png" width={54} height={21} alt="logo" />,
-          "link": "#"
+          "img": <Image src="/logos/logo-sens.svg" width={64} height={25} alt="logo" />,
+          "imgTablet": <Image src="/logos/logo-sens.svg" width={54} height={21} alt="logo" />,
+          "link": "https://www.sens-energy.com/de/"
         }
     ]
 
