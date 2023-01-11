@@ -1,4 +1,8 @@
 {
+   "meta":{
+      "title":"Sensaia | Smarte Asset-Management-Software | Solar und Wind",
+      "description":"Sensaia ist eine O&M-Softwarelösung für PV- und WEA-Anlagen. Mit KI ermöglicht sie Predictive Maintenance & die Optimierung von erneuerbaren Energien."
+   },
    "menu":{
       "Solar & Wind":"Sonne & Wind",
       "Features":"Merkmale",

@@ -5,6 +5,8 @@ import React, { useState } from "react";
 import type { GetStaticProps } from "next";
 
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useTranslation } from "next-i18next";
+
 
 /**
  * Internal dependencies
@@ -24,15 +26,18 @@ import { About }          from "../components/About/About";
 import { Footer }         from "../components/Footer/Footer";    
 import { CursorProvider } from "../components/CursorProvider/CursorProvider";
 import { SliderGallery }  from "../components/SliderGallery/SliderGallery";
+import { Meta }           from "@lib/meta";
 import useMedia           from "../components/UseMedia/UseMedia";
 
 const Home: React.FC = () => {
+    const { t } = useTranslation();
     const [mousePositionY, setMousePositionY] = useState(0);
     const [mousePositionX, setMousePositionX] = useState(0);
     const isTabletView = useMedia(1024)
 
     return (
         <div className="wrapper" style={{ "--mouse-left":mousePositionX+"px", "--mouse-top":mousePositionY+"px" } as React.CSSProperties}>
+            <Meta title={ t("meta.title") } description={ t("meta.description") } />
             <CursorProvider setMousePositionX={setMousePositionX} setMousePositionY={setMousePositionY}/>
             
             <Header/>

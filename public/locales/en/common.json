@@ -1,4 +1,8 @@
 {
+   "meta":{
+      "title":"Sensaia | Smart Asset Management Software | Solar and Wind",
+      "description":"Sensaia is an O&M software solution for PV and WTG assets. Powered by AI, Sensaia enables predictive maintenance and optimization of renewable energy."
+   },
    "menu":{
       "Solar & Wind":"Solar & Wind",
       "Features":"Features",
