@@ -9,7 +9,7 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { Meta } from "@lib/meta";
 import { useTranslation } from "next-i18next";
 
-const Imprint: React.FC = () => {
+const Privacy: React.FC = () => {
     const { t } = useTranslation();
     const [mousePositionY, setMousePositionY] = useState(99999);
     const [mousePositionX, setMousePositionX] = useState(99999);
@@ -447,4 +447,4 @@ export const getStaticProps: GetStaticProps = async () => {
     };
 };
 
-export default Imprint;
+export default Privacy;
