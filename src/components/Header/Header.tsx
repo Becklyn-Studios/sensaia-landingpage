@@ -19,6 +19,7 @@ import { LanguageSwitcher } from "../LanguageSwitcher/LanguageSwitcher";
 import { NavTrigger } from "../NavTrigger/NavTrigger";
 import { MenuLink } from "../MenuLink/MenuLink";
 import { useRouter } from "next/router";
+import { useLocale } from "@lib/hook/useLocale";
 
 const HeaderWrapper = styled.div`
     position: fixed;
@@ -153,7 +154,8 @@ const HeaderWrapper = styled.div`
 
 export const Header: React.FC = () => {
     const { t } = useTranslation();
-    const {push} = useRouter();
+    const { push } = useRouter();
+    const { locale, isDefaultLocale } = useLocale();
     const [isNavOpen, setIsNavOpen] = React.useState(false);
     const [isScrolled, setIsScrolled] = React.useState(false);
 
@@ -207,7 +209,12 @@ export const Header: React.FC = () => {
                         <div className="header__menu-utils">
                             <LanguageSwitcher />
 
-                            <Button onClick={() => push("#form", undefined, { scroll: false })}>
+                            <Button
+                                onClick={() =>
+                                    push(`/${isDefaultLocale ? "" : locale}#form`, undefined, {
+                                        scroll: false,
+                                    })
+                                }>
                                 {t("contact-button")}
                             </Button>
                         </div>
