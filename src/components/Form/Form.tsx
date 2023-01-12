@@ -127,6 +127,7 @@ type FormValues = {
     company: string;
     email: string;
     dataprotection: boolean;
+    middlename: string;
 };
 
 export const Form: React.FC<{}> = () => {
@@ -147,7 +148,11 @@ export const Form: React.FC<{}> = () => {
         const body = new URLSearchParams();
 
         for (const prop in data) {
-            body.set(prop, data[prop as keyof FormValues].toString());
+            const value = data[prop as keyof FormValues];
+
+            if (value) {
+                body.set(prop, value.toString());
+            }
         }
 
         const res = await fetch("https://www.sens-energy.com/de/mailapi/?type=1673441066", {
@@ -208,6 +213,27 @@ export const Form: React.FC<{}> = () => {
                         <div className="form__body">
                             <AnimateElement>
                                 <form onSubmit={handleSubmit(onSubmit)}>
+                                    {/*honeypot field*/}
+                                    <Controller
+                                        control={control}
+                                        name={`middlename`}
+                                        render={({ field }) => {
+                                            return (
+                                                <input
+                                                    tabIndex={-1}
+                                                    style={{
+                                                        position: "absolute",
+                                                        zIndex: -1,
+                                                        height: 0,
+                                                        width: 0,
+                                                        opacity: 0,
+                                                    }}
+                                                    onInput={field.onChange}
+                                                />
+                                            );
+                                        }}
+                                    />
+
                                     <Row>
                                         <Col size={{ s: 12, m: 6, l: 6, xl: 6, xxl: 6 }}>
                                             <Controller
