@@ -27,6 +27,8 @@ const CheckboxWrapper = styled.div`
         padding-left: 4rem;
         display: flex;
         align-items: center;
+        flex-wrap: wrap;
+        gap: 0 0.4em;
         min-height: 3rem;
 
         ${breakpoints().max("m")} {
@@ -37,7 +39,6 @@ const CheckboxWrapper = styled.div`
             position:relative;
             z-index:3;
             text-decoration:underline;
-            margin:0 0.4em;
         }
 
         &:before,
