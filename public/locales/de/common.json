@@ -140,9 +140,9 @@
     },
     "checkbox-content": {
       "checkbox-start": "Ich habe die",
-      "checkbox-link-txt": "Datenschutzerklärung gelesen",
+      "checkbox-link-txt": "Datenschutzerklärung",
       "checkbox-link": "/de/datenschutz",
-      "checkbox-end": "und stimme zu."
+      "checkbox-end": "gelesen und stimme zu."
     },
     "checkbox-error-text": "Fehler: Das ist ein Pflichtfeld.",
     "submit": "Abschicken"
