@@ -30,7 +30,7 @@ const BulletpointWrapper = styled.div`
     }
 
     .bulletpoint__body {
-        > .row {
+        .row {
             ${breakpoints().max("l")} {
                 --guter-y: 4.9rem;
             }
