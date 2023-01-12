@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Sensaia | Smarte Asset-Management-Software | Solar und Wind",
-    "description": "Sensaia ist eine O&M-Softwarelösung für PV- und WEA-Anlagen. Mit KI ermöglicht sie Predictive Maintenance & die Optimierung von erneuerbaren Energien."
+    "description": "Sensaia ist eine O&M-Softwarelösung für PV- und WEA-Anlagen. Mit KI ermöglicht sie Predictive Maintenance & die Optimierung von Erneuerbaren Energien."
   },
   "menu": {
     "Solar & Wind": "Solar & Wind",
@@ -18,7 +18,7 @@
   "intro-text": "Entdecke Sensaia: Die smarteste Plattform für ganzheitliches Asset Management zur Optimierung erneuerbarer Energien.",
   "features": {
     "title": "Alles, was erneuerbare Anlagen brauchen. Auf einer Plattform.",
-    "sub-title": "Sensaia ist eine digitale Lösung für Menschen, die Solar- und Windkraft-Anlagen besitzen, betreiben oder verwalten. Sensaia hilft dabei, Insights in Actions umzuwandeln und so die Rentabilität von Anlagen im Bereich der erneuerbaren Energien zu steigern. Die skalierbare Asset-Management-Lösung ist technologieunabhängig und auf Solar- und Windenergie spezialisiert.",
+    "sub-title": "Sensaia ist eine digitale Lösung für Menschen, die Solar- und Windkraft-Anlagen besitzen, betreiben oder verwalten. Sensaia hilft dabei, Insights in Actions umzuwandeln und so die Rentabilität von Anlagen im Bereich der Erneuerbaren Energien zu steigern. Die skalierbare Asset-Management-Lösung ist technologieunabhängig und auf Solar- und Windenergie spezialisiert.",
     "list-features": [
       {
         "title": "Use Cases für Solar",
@@ -39,7 +39,7 @@
       },
       {
         "title": "Predicting.",
-        "content": "Die KI von Sensaia ermöglicht präzise Vorhersagen von Systemausfällen – und zwar rechtzeitig. Das geschieht durch bewährte Algorithmen, die seit mehr als zehn Jahren erfolgreich im Energiesektors eingesetzt werden."
+        "content": "Die KI von Sensaia ermöglicht präzise Vorhersagen von Systemausfällen – und zwar rechtzeitig. Das geschieht durch bewährte Algorithmen, die seit mehr als zehn Jahren erfolgreich im Energiesektor eingesetzt werden."
       },
       {
         "title": "Alerting.",
@@ -68,7 +68,7 @@
         "sub-title": "Erstklassige Bedienoberfläche und zahlreiche Workflows für O&M-Aufgaben"
       },
       {
-        "sub-title": "Schnelles Onboarding und effizienter Betrieb all deiner Erneuerbaren Energie Anlagen"
+        "sub-title": "Schnelles Onboarding und effizienter Betrieb all deiner Erneuerbaren-Energien-Anlagen"
       }
     ]
   },
@@ -116,7 +116,7 @@
         "author": "Maintenance Manager, Wien Energie"
       },
       {
-        "comment": "Die Unterstützung bei der Überwachung der Windturbinen hat alle Standards erfüllt. Wir konnten nicht nur die Verfügbarkeit und Leistung erhöhen, sonder zudem den Zustand der Turbinen verbessern.",
+        "comment": "Die Unterstützung bei der Überwachung der Windturbinen hat alle Standards erfüllt. Wir konnten nicht nur die Verfügbarkeit und Leistung erhöhen, sondern zudem den Zustand der Turbinen verbessern.",
         "author": "Hidroelectrica Wind Services SRL"
       }
     ]
@@ -150,14 +150,14 @@
   "about": {
     "small-title": "Erfahrungen",
     "title": "Erfahren in IT und O&M der Erneuerbaren.",
-    "sub-title": "Sensaia stützt sich auf jahrzehntelange Erfahrung im Energiebereich. Wir planen, bauen und betreiben Anlagen für erneuerbare Energien auf der ganzen Welt und bieten Lösungen für die Energiewende. Durch unsere Expertise im Bereich O&M von Solar- und Windparks erkannten wir den Bedarf an einer Softwarelösung, die mitdenkt, Zeit und Geld spart und, kurzum, die Dinge besser macht.",
+    "sub-title": "Sensaia stützt sich auf jahrzehntelange Erfahrung im Energiebereich. Wir planen, bauen und betreiben Anlagen für Erneuerbare Energien auf der ganzen Welt und bieten Lösungen für die Energiewende. Durch unsere Expertise im Bereich O&M von Solar- und Windparks erkannten wir den Bedarf an einer Softwarelösung, die mitdenkt, Zeit und Geld spart und, kurzum, die Dinge besser macht.",
     "list": [
       {
         "title": "45+ GW  installierte Leistung",
         "content": "nutzen die bewährten AI-Algorithmen von Sensaia  – entwickelt mit einem \"Energy Sector-First\"-Ansatz"
       },
       {
-        "title": "100.000 $  Ertragspotenzia",
+        "title": "100.000 $  Ertragspotenzial",
         "content": "durch die Vermeidung von kontrollierbaren Ausfallzeiten – das zeigen unsere Erfahrungen aus Windprojekten"
       },
       {
