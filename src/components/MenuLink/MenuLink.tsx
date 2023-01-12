@@ -22,7 +22,7 @@ export const MenuLink: React.FC<Props> = ({children, id, setIsNavOpen}) => {
 
     return (
         <LinkWrapper>
-            <Link scroll={false} href={isDefaultLocale ? `#${id}` : `/${locale}#${id}`} onClick={handleClick} >
+            <Link scroll={false} href={isDefaultLocale ? `/#${id}` : `/${locale}#${id}`} onClick={handleClick} >
                 {children}
             </Link>
         </LinkWrapper>
